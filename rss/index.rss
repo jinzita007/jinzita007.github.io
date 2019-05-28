@@ -1,4 +1,30 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>无根树の博客</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>无根树の博客</title><link>http://localhost:2368/</link></image><generator>Ghost 1.20</generator><lastBuildDate>Tue, 28 May 2019 06:04:43 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>React-Hot-Loader: react-🔥-dom patch is not detected. React 16.6+ features may not work.</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>无根树の博客</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>无根树の博客</title><link>http://localhost:2368/</link></image><generator>Ghost 1.20</generator><lastBuildDate>Tue, 28 May 2019 07:49:34 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>pip安装buster报错</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;我在mac上安装Ghost静态站点生成器时候遇到错误&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;pip安装buster：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ pip install buster
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后报错的是：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Traceback (most recent call last): File &amp;quot;/usr/local/bin/easy_install&amp;quot;...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;mac安装了两个python版本，有一个版本太高了，所以需要删除一个就可以了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最佳解决方案是：正确地降级到Python 2.7.x解决了这个问题&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;</description><link>http://localhost:2368/an-zhuang/</link><guid isPermaLink="false">5cece40bb021382f21e45719</guid><category>python</category><category>ghost</category><dc:creator>woaitianwen</dc:creator><pubDate>Tue, 28 May 2019 07:47:32 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;我在mac上安装Ghost静态站点生成器时候遇到错误&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;pip安装buster：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ pip install buster
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后报错的是：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Traceback (most recent call last): File &amp;quot;/usr/local/bin/easy_install&amp;quot;...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;mac安装了两个python版本，有一个版本太高了，所以需要删除一个就可以了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最佳解决方案是：正确地降级到Python 2.7.x解决了这个问题&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;</content:encoded></item><item><title>React-Hot-Loader: react-🔥-dom patch is not detected. React 16.6+ features may not work.</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
 &lt;p&gt;React-Hot-Loader：未检测到react-🔥-dom补丁。 React 16.6+功能可能无效。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;使用启动项目,现在我在浏览器控制器看到这个警告：&lt;/p&gt;
@@ -556,78 +582,4 @@ order of preference, my.cnf, $MYSQL_TCP_PORT,
 &lt;blockquote&gt;
 &lt;p&gt;但是要注意的是给开放3306端口&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;/div&gt;</content:encoded></item><item><title>Nginx默认配置文件</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
-&lt;p&gt;一般使用默认站点配置文件，我们可能会删除一个站点配置文件，所以要备份一下吧。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;打开default.conf文件&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;server {
-    listen       8080;
-    server_name  localhost;
-
-    #charset koi8-r;
-    #access_log  /var/log/nginx/host.access.log  main;
-
-    location / {
-        root   /usr/share/nginx/html;
-        index  index.html index.htm;
-    }
-
-    #error_page  404              /404.html;
-
-    # redirect server error pages to the static page /50x.html
-    #
-    error_page&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><link>http://localhost:2368/nginxmo-ren-pei-zhi-wen-jian/</link><guid isPermaLink="false">5c28c80dda09925f1ca048c5</guid><category>Linux</category><category>Nginx</category><dc:creator>woaitianwen</dc:creator><pubDate>Sun, 30 Dec 2018 13:30:48 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
-&lt;p&gt;一般使用默认站点配置文件，我们可能会删除一个站点配置文件，所以要备份一下吧。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;打开default.conf文件&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;server {
-    listen       8080;
-    server_name  localhost;
-
-    #charset koi8-r;
-    #access_log  /var/log/nginx/host.access.log  main;
-
-    location / {
-        root   /usr/share/nginx/html;
-        index  index.html index.htm;
-    }
-
-    #error_page  404              /404.html;
-
-    # redirect server error pages to the static page /50x.html
-    #
-    error_page   500 502 503 504  /50x.html;
-    location = /50x.html {
-        root   /usr/share/nginx/html;
-    }
-
-    # proxy the PHP scripts to Apache listening on 127.0.0.1:80
-    #
-    #location ~ \.php$ {
-    #    proxy_pass   http://127.0.0.1;
-    #}
-
-    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
-    #
-    #location ~ \.php$ {
-    #    root           html;
-    #    fastcgi_pass   127.0.0.1:9000;
-    #    fastcgi_index  index.php;
-    #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
-    #    include        fastcgi_params;
-    #}
-
-    # deny access to .htaccess files, if Apache's document root
-    # concurs with nginx's one
-    #
-    #location ~ /\.ht {
-    #    deny  all;
-    #}
-}
-
-&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;</content:encoded></item></channel></rss>
