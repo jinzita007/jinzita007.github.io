@@ -1,0 +1,197 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="为GitHub页面设置Ghost博客">
+    <meta property="og:description" content="我想要使用Ghost构建自己的静态GitHub页面 启动Ghost ghost start 下载buster工具 $ git clone https://github.com/axitkhurana/buster 在buster文件进入buster文件： $ cd buster 从本地运行的Ghost实例生成静态页面 $ python buster.py generate --domain=http://localhost:2368 预览生成的内容localhost:9000 $ python buster.py preview 提交并将更改静态文件部署到Github存储库 $ python buster.py deploy 如果编写新博客帖子或者更新现有的帖子，只需启动Ghost,编辑，然后生成和部署静态页面">
+    <meta property="og:url" content="http://localhost:2368/wei-githubye-mian-she-zhi-ghost/">
+    <meta property="article:published_time" content="2019-05-28T08:16:04.000Z">
+    <meta property="article:modified_time" content="2019-05-28T07:51:18.000Z">
+    <meta property="article:tag" content="ghost">
+    <meta property="article:tag" content="github">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="为GitHub页面设置Ghost博客">
+    <meta name="twitter:description" content="我想要使用Ghost构建自己的静态GitHub页面">
+    <meta name="twitter:url" content="http://localhost:2368/wei-githubye-mian-she-zhi-ghost/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="woaitianwen">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="ghost, github">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "woaitianwen",
+        "url": "http://localhost:2368/author/woaitianwen/",
+        "sameAs": []
+    },
+    "headline": "为GitHub页面设置Ghost博客",
+    "url": "http://localhost:2368/wei-githubye-mian-she-zhi-ghost/",
+    "datePublished": "2019-05-28T08:16:04.000Z",
+    "dateModified": "2019-05-28T07:51:18.000Z",
+    "keywords": "ghost, github",
+    "description": "我想要使用Ghost构建自己的静态GitHub页面 启动Ghost ghost start 下载buster工具 $ git clone https://github.com/axitkhurana/buster 在buster文件进入buster文件： $ cd buster 从本地运行的Ghost实例生成静态页面 $ python buster.py generate --domain&#x3D;http://localhost:2368 预览生成的内容localhost:9000 $ python buster.py preview 提交并将更改静态文件部署到Github存储库 $ python buster.py deploy 如果编写新博客帖子或者更新现有的帖子，只需启动Ghost,编辑，然后生成和部署静态页面",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-ghost-tag tag-github">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="../">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="../records/">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="../tags/">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>为GitHub页面设置Ghost博客</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2019-05-28</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/ghost-tag/">ghost</a> <a href="../tag/github/">github</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>我想要使用Ghost构建自己的静态GitHub页面</p>
+</blockquote>
+<p>启动Ghost</p>
+<pre><code>ghost start
+</code></pre>
+<p>下载buster工具</p>
+<pre><code>$ git clone https://github.com/axitkhurana/buster
+</code></pre>
+<p>在buster文件进入buster文件：</p>
+<pre><code>$ cd buster
+</code></pre>
+<p>从本地运行的Ghost实例生成静态页面</p>
+<pre><code>$ python buster.py generate --domain=http://localhost:2368
+</code></pre>
+<p>预览生成的内容localhost:9000</p>
+<pre><code>$ python buster.py preview
+</code></pre>
+<p>提交并将更改静态文件部署到Github存储库</p>
+<pre><code>$ python buster.py deploy
+</code></pre>
+<blockquote>
+<p>如果编写新博客帖子或者更新现有的帖子，只需启动Ghost,编辑，然后生成和部署静态页面</p>
+</blockquote>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

@@ -1,4 +1,52 @@
-<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>无根树の博客</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>无根树の博客</title><link>http://localhost:2368/</link></image><generator>Ghost 1.20</generator><lastBuildDate>Tue, 28 May 2019 07:49:34 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>pip安装buster报错</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>无根树の博客</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>无根树の博客</title><link>http://localhost:2368/</link></image><generator>Ghost 1.20</generator><lastBuildDate>Tue, 28 May 2019 08:16:36 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>为GitHub页面设置Ghost博客</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;我想要使用Ghost构建自己的静态GitHub页面&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;启动Ghost&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ghost start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下载buster工具&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git clone https://github.com/axitkhurana/buster
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在buster文件进入buster文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cd buster
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;从本地运行的Ghost实例生成静态页面&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ python buster.py generate --domain=http://localhost:2368
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览生成的内容localhost:9000&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ python buster.py preview
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;提交并将更改静态文件部署到Github存储库&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ python buster.py deploy
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果编写新博客帖子或者更新现有的帖子，只需启动Ghost,编辑，然后生成和部署静态页面&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;</description><link>http://localhost:2368/wei-githubye-mian-she-zhi-ghost/</link><guid isPermaLink="false">5cece876b021382f21e4571c</guid><category>ghost</category><category>github</category><dc:creator>woaitianwen</dc:creator><pubDate>Tue, 28 May 2019 08:16:04 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;我想要使用Ghost构建自己的静态GitHub页面&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;启动Ghost&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ghost start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下载buster工具&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git clone https://github.com/axitkhurana/buster
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在buster文件进入buster文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cd buster
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;从本地运行的Ghost实例生成静态页面&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ python buster.py generate --domain=http://localhost:2368
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;预览生成的内容localhost:9000&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ python buster.py preview
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;提交并将更改静态文件部署到Github存储库&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ python buster.py deploy
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果编写新博客帖子或者更新现有的帖子，只需启动Ghost,编辑，然后生成和部署静态页面&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;</content:encoded></item><item><title>pip安装buster报错</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
 &lt;p&gt;我在mac上安装Ghost静态站点生成器时候遇到错误&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;pip安装buster：&lt;/p&gt;
@@ -491,95 +539,5 @@ tcp        0      0 :::22                       :::*                        LIST
 &lt;/code&gt;&lt;/pre&gt;
 &lt;blockquote&gt;
 &lt;p&gt;以上解决了问题，可以正常上传&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/div&gt;</content:encoded></item><item><title>Linux系统MySQL开启远程连接</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
-&lt;p&gt;MySQL默认root用户只能本地访问，不能远程连接管理mysql数据库。这篇文章主要介绍了我们如何使用Linux系统下实现远程连接MySQL数据库的方法。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我们命令来登录MySQL数据库&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;mysql -uroot -p 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;创建用户用来远程连接&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;grant all privileges on *.* to 'root'@'%' identified by 'password';
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;命令立即生效&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;flush privileges;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;重启服务&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;service mysql restart
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在本地远程连接&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;mysql -h 服务器ip地址 -P 3306 -u root -p
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;尝试连接报错信息：&lt;code&gt;Can't connect to MySQL server on 'x.x.x.x' (61)&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;查找my.cnf配置文件的位置&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;$ mysql&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><link>http://localhost:2368/linuxxi-tong-mysqlkai-qi-yuan-cheng-lian-jie/</link><guid isPermaLink="false">5c28cd1bda09925f1ca048c8</guid><category>Linux</category><category>Mysql</category><dc:creator>woaitianwen</dc:creator><pubDate>Sun, 30 Dec 2018 13:53:54 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
-&lt;p&gt;MySQL默认root用户只能本地访问，不能远程连接管理mysql数据库。这篇文章主要介绍了我们如何使用Linux系统下实现远程连接MySQL数据库的方法。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我们命令来登录MySQL数据库&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;mysql -uroot -p 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;创建用户用来远程连接&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;grant all privileges on *.* to 'root'@'%' identified by 'password';
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;命令立即生效&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;flush privileges;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;重启服务&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;service mysql restart
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在本地远程连接&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;mysql -h 服务器ip地址 -P 3306 -u root -p
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;尝试连接报错信息：&lt;code&gt;Can't connect to MySQL server on 'x.x.x.x' (61)&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;查找my.cnf配置文件的位置&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;$ mysql --help|grep my.cnf
-order of preference, my.cnf, $MYSQL_TCP_PORT,
-/etc/mysql/my.cnf /etc/my.cnf ~/.my.cnf 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;修改my.cnf配置文件&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;vi /etc/my.cnf
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;增加下一行&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;bind-address    = 0.0.0.0
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;然后重新启动服务器并再试一次&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code&gt;service mysql restart
-&lt;/code&gt;&lt;/pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;但是要注意的是给开放3306端口&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;</content:encoded></item></channel></rss>
