@@ -1,0 +1,191 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Let's encrypt 遇到 'ascii' codec can't decode byte 0xe5 的解法">
+    <meta property="og:description" content="Let's encrpyt在更新续期的时候，遇到下面错误的信息： Attempting to renew cert (shiro.weiyuanzhuo.cc) from /etc/letsencrypt/renewal/shiro.weiyuanzhuo.cc.conf produced an unexpected error: 'ascii' codec can't decode byte 0xe8 in position 2: ordinal not in range(128). Skipping. All renewal attempts failed. The following certs could not be renewed:   /etc/letsencrypt/">
+    <meta property="og:url" content="http://localhost:2368/lets-encrypt-yu-dao-ascii-codec-cant-decode-byte-0xe5-de-jie-fa/">
+    <meta property="article:published_time" content="2019-03-18T03:38:41.000Z">
+    <meta property="article:modified_time" content="2019-03-18T03:30:34.000Z">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="SSL">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Let's encrypt 遇到 'ascii' codec can't decode byte 0xe5 的解法">
+    <meta name="twitter:description" content="Let's encrpyt在更新续期的时候，遇到下面错误的信息">
+    <meta name="twitter:url" content="http://localhost:2368/lets-encrypt-yu-dao-ascii-codec-cant-decode-byte-0xe5-de-jie-fa/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="woaitianwen">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Linux, SSL">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "woaitianwen",
+        "url": "http://localhost:2368/author/woaitianwen/",
+        "sameAs": []
+    },
+    "headline": "Let&#x27;s encrypt 遇到 &#x27;ascii&#x27; codec can&#x27;t decode byte 0xe5 的解法",
+    "url": "http://localhost:2368/lets-encrypt-yu-dao-ascii-codec-cant-decode-byte-0xe5-de-jie-fa/",
+    "datePublished": "2019-03-18T03:38:41.000Z",
+    "dateModified": "2019-03-18T03:30:34.000Z",
+    "keywords": "Linux, SSL",
+    "description": "Let&#x27;s encrpyt在更新续期的时候，遇到下面错误的信息： Attempting to renew cert (shiro.weiyuanzhuo.cc) from /etc/letsencrypt/renewal/shiro.weiyuanzhuo.cc.conf produced an unexpected error: &#x27;ascii&#x27; codec can&#x27;t decode byte 0xe8 in position 2: ordinal not in range(128). Skipping. All renewal attempts failed. The following certs could not be renewed:   /etc/letsencrypt/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-linux tag-ssl">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Let's encrypt 遇到 'ascii' codec can't decode byte 0xe5 的解法</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2019-03-18</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/linux/">Linux</a> <a href="../tag/ssl/">SSL</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>Let's encrpyt在更新续期的时候，遇到下面错误的信息：</p>
+</blockquote>
+<pre><code>Attempting to renew cert (shiro.weiyuanzhuo.cc) from /etc/letsencrypt/renewal/shiro.weiyuanzhuo.cc.conf produced an unexpected error: 'ascii' codec can't decode byte 0xe8 in position 2: ordinal not in range(128). Skipping.
+All renewal attempts failed. The following certs could not be renewed:
+  /etc/letsencrypt/live/shiro.weiyuanzhuo.cc/fullchain.pem (failure)
+
+</code></pre>
+<p>要怎么解决如何？</p>
+<p>我在看到有关一篇<a href="https://github.com/certbot/certbot/issues/5509">UnicodeDecodeError: 'ascii' codec can't decode byte 0xe7 in position 2: ordinal not in range(128)</a>，但是解决方法一样的。</p>
+<p>使用以下命令：</p>
+<pre><code>grep -r -P '[^\x00-\x7f]' /etc/apache2 /etc/letsencrypt /etc/nginx
+</code></pre>
+<p>发现问题：</p>
+<pre><code>/etc/nginx/conf.d/shiro.conf:   # 解决 413 Request Entity Too Large
+/etc/nginx/nginx.conf:    worker_connections  10240; # 并发十几倍提高快
+</code></pre>
+<p>刪除这些编号，在重新执行 Let's encrypt script 就可以通过啦~</p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

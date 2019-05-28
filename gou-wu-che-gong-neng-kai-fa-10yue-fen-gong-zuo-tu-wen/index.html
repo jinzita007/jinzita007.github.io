@@ -1,0 +1,291 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="购物车功能开发（10月份工作图文）">
+    <meta property="og:description" content="水到家手机项目首页的难点是购物车功能，比如说当数量是0的时候，减号自动隐藏，当数量超过0的时候，减号自动显示；底部购物车下方的红色是总数量，比如说单击加号的时候，下方的数量有数字等。 一、购物车功能效果图 当数量是0的时候，减号自动隐藏 index.html： 增加display:none为隐藏 //购物车列表减号 &amp;lt;em class=&amp;quot;mui-btn mui-numbox-btn-minus&amp;quot; style=&amp;quot;display:none&amp;quot;&amp;gt;-&amp;lt;/em&amp;gt; function jiaZai(brand_id) {     if (flag) {         tempData += '&amp;lt;em class=&amp;quot;mui-btn mui-numbox-btn-minus&amp;quot;&amp;gt;">
+    <meta property="og:url" content="http://localhost:2368/gou-wu-che-gong-neng-kai-fa-10yue-fen-gong-zuo-tu-wen/">
+    <meta property="article:published_time" content="2016-11-15T15:27:57.000Z">
+    <meta property="article:modified_time" content="2016-11-19T18:17:51.000Z">
+    <meta property="article:tag" content="前端">
+    <meta property="article:tag" content="Javascript">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="购物车功能开发（10月份工作图文）">
+    <meta name="twitter:description" content="水到家手机项目首页的难点是购物车功能。">
+    <meta name="twitter:url" content="http://localhost:2368/gou-wu-che-gong-neng-kai-fa-10yue-fen-gong-zuo-tu-wen/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="前端, Javascript">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "购物车功能开发（10月份工作图文）",
+    "url": "http://localhost:2368/gou-wu-che-gong-neng-kai-fa-10yue-fen-gong-zuo-tu-wen/",
+    "datePublished": "2016-11-15T15:27:57.000Z",
+    "dateModified": "2016-11-19T18:17:51.000Z",
+    "keywords": "前端, Javascript",
+    "description": "水到家手机项目首页的难点是购物车功能，比如说当数量是0的时候，减号自动隐藏，当数量超过0的时候，减号自动显示；底部购物车下方的红色是总数量，比如说单击加号的时候，下方的数量有数字等。 一、购物车功能效果图 当数量是0的时候，减号自动隐藏 index.html： 增加display:none为隐藏 //购物车列表减号 &amp;lt;em class&#x3D;&amp;quot;mui-btn mui-numbox-btn-minus&amp;quot; style&#x3D;&amp;quot;display:none&amp;quot;&amp;gt;-&amp;lt;/em&amp;gt; function jiaZai(brand_id) {     if (flag) {         tempData +&#x3D; &#x27;&amp;lt;em class&#x3D;&amp;quot;mui-btn mui-numbox-btn-minus&amp;quot;&amp;gt;",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-qian-duan tag-javascript">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>购物车功能开发（10月份工作图文）</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-11-15</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/qian-duan/">前端</a> <a href="../tag/javascript/">Javascript</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>水到家手机项目首页的难点是购物车功能，比如说当数量是0的时候，减号自动隐藏，当数量超过0的时候，减号自动显示；底部购物车下方的红色是总数量，比如说单击加号的时候，下方的数量有数字等。</p>
+</blockquote>
+<p>一、购物车功能效果图</p>
+<p><img src="http://ofk69lr9k.bkt.clouddn.com/Snip20161111_61.png" alt=""></p>
+<p>当数量是0的时候，减号自动隐藏</p>
+<p>index.html：</p>
+<p>增加<em>display:none</em>为隐藏</p>
+<pre><code class="language-html">//购物车列表减号
+&lt;em class="mui-btn mui-numbox-btn-minus" style="display:none"&gt;-&lt;/em&gt;
+</code></pre>
+<pre><code class="language-javascript">function jiaZai(brand_id) {
+    if (flag) {
+        tempData += '&lt;em class="mui-btn mui-numbox-btn-minus"&gt;-&lt;/em&gt;' +
+            '&lt;input class="mui-numbox-input numBox" type="number" value="' + productlist[j].num + '" readonly="readonly" /&gt;' +
+            '&lt;em class="mui-btn mui-numbox-btn-plus"&gt;+&lt;/em&gt;' +
+            '&lt;input type="hidden" value="' + productlist[j].num + '" class="goods_totalPrice" /&gt;';
+
+    } else {
+
+        tempData += '&lt;em class="mui-btn mui-numbox-btn-minus" style="display:none"&gt;-&lt;/em&gt;' +
+            '&lt;input class="mui-numbox-input numBox" type="number" value="" readonly="readonly" /&gt;' +
+            '&lt;em class="mui-btn mui-numbox-btn-plus"&gt;+&lt;/em&gt;' +
+            '&lt;input type="hidden" value="0" class="goods_totalPrice" /&gt;';
+    }
+} else {
+    tempData += '&lt;em class="mui-btn mui-numbox-btn-minus" style="display:none"&gt;-&lt;/em&gt;' +
+        '&lt;input class="mui-numbox-input numBox" type="number" value="" readonly="readonly" /&gt;' +
+        '&lt;em class="mui-btn mui-numbox-btn-plus"&gt;+&lt;/em&gt;' +
+        '&lt;input type="hidden" value="0" class="goods_totalPrice" /&gt;';
+}
+}
+
+</code></pre>
+<pre><code class="language-javascript"> //定义更改购物的减少商品
+function reduceCartNum(obj, num) {
+    if (goods_num == 0) {
+        obj.parent().parent().find(".mui-numbox-btn-minus").hide();
+    }
+}
+
+</code></pre>
+<p>总数量等于或者大于0就判断减号的显示与隐藏方法</p>
+<p>如果数量是0的时候，刷新之后减号默认隐藏，设置.mui-btn元素增加<em>display:none</em>  为默认隐藏</p>
+<p>如果数量是大于0的时候，刷新之后减号就显示，设置.mui-btn元素增加<em>display:none</em>  为默认显示</p>
+<pre><code class="language-javascript">$("#bottomCartNum").bind('DOMNodeInserted', function() {
+    if ($(this).html() != 0) {
+        $(this).css({
+            'background-color': '#D44444',
+            'color': '#fff'
+        });
+        $(".mui-bar-tabs").find(".mui-btn").css('display', 'block');
+    } else {
+        $(".mui-bar-tabs").find(".mui-btn").css('display', 'none');
+    }
+})
+
+</code></pre>
+<p>点击加号的时候，如果底部购物车的红色小圆大于0，设置为显示<em>show()</em>;</p>
+<pre><code class="language-javascript">$("#goods_list").on("click", ".mui-numbox-btn-plus", function(event) {
+            $("#bottomCartNum").show();
+        }
+
+</code></pre>
+<p>点击减号的时候，如果红色小圆为0，设置.buttons元素的结算按钮就隐藏<em>hide()</em>;</p>
+<pre><code class="language-javascript">//定义更改购物的减少商品
+function reduceCartNum(obj, num) {
+    if (cartdata.totalNumber == 0) {
+        //  $(".mui-barss").hide(); //如果0的话，购物车就自动隐藏
+        $(".buttons").hide();
+        $("#bottomCartNum").html(cartdata.totalNumber).hide();
+    }
+}
+
+</code></pre>
+<p>弹出购物车事件：</p>
+<p>单击减号事件：</p>
+<p><img src="http://ofk69lr9k.bkt.clouddn.com/Snip20161111_62.png" alt=""></p>
+<p>当数量等于0的时候，设置.mui-numbox-btn-minus元素加上<em>display:none</em>时隐藏；</p>
+<p>当数量大于0的时候，设置.mui-numbox-btn-minus元素加上<em>display:block</em>时显示；</p>
+<pre><code class="language-javascript">//定义更改购物的
+function reducePopCartNum(obj, num) {
+    if (goods_num == 0) {
+        tempObj.find(".mui-numbox-btn-minus").css('display', 'none');
+        tempObj.find(".numBox").css('display', 'none');
+    } else {
+        tempObj.find(".numBox").val(goods_num);
+    }
+}
+
+</code></pre>
+<p>单击加号事件：</p>
+<p>当数量等于0的时候，设置.mui-numbox-btn-minus元素加上<em>display:none</em>时隐藏；</p>
+<pre><code class="language-javascript">//定义加事件
+function addPopCartNum(obj, num) {
+    if (goods_num == 0) {
+        tempObj.find(".mui-numbox-btn-minus").css('display', 'none');
+        tempObj.find(".numBox").css('display', 'none');
+    } else {
+        tempObj.find(".numBox").val(goods_num);
+    }
+}
+
+</code></pre>
+<p>商品列表页的数量和弹出购物车中的列表是同步:</p>
+<p><img src="http://ofk69lr9k.bkt.clouddn.com/Snip20161111_63.png" alt=""></p>
+<p>弹出减号事件：</p>
+<p>修改一下：<code>var tempObj = $("li[goods_id="+goods_id+"]")</code> ;如果数量大于0的时候，商品列表中的减号与加号之间数字：设置为.numBox加上 <code>tempObj.find(".numBox").val(goods_num)</code>;</p>
+<pre><code class="language-javascript">//定义更改购物的
+function reducePopCartNum(obj, num) {
+    var tempObj = $("li[goods_id=" + goods_id + "]");
+    if (goods_num == 0) {
+        tempObj.find(".mui-numbox-btn-minus").css('display', 'none');
+        tempObj.find(".numBox").css('display', 'none');
+    } else {
+        tempObj.find(".numBox").val(goods_num);
+    }
+}
+</code></pre>
+<p>弹出加号事件：弹出减号做法是一样的。</p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

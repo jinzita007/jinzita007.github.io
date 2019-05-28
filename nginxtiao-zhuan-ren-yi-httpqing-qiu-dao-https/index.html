@@ -1,0 +1,190 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Nginx跳转任意Http请求到Https">
+    <meta property="og:description" content="我刚刚Linux自建SSH证书，然后在谷歌浏览器打开https://note.yulong360.com，说证书无效，说明不认可我的SSH证书，这是没办法的。我找了好多次SSH证书的安装方法，大部分是昂贵的啊！幸好的是我找到了免费的SSH证书，就是Let's Encrypt。安装了SSH证书之后，成功打开了HTTPS网站，是绿条，你看这个多霸气啊！ nginx配置文件： server {     listen 80;     server_name www.domain.com;     #永久重定向到 https 站点     return 301 https://$server_name$request_uri; } server {    ssl_certificate /home/ubuntu/www.domain.com.crt;    ssl_certificate_key /home/ubuntu/">
+    <meta property="og:url" content="http://localhost:2368/nginxtiao-zhuan-ren-yi-httpqing-qiu-dao-https/">
+    <meta property="article:published_time" content="2018-01-28T12:43:29.000Z">
+    <meta property="article:modified_time" content="2018-01-28T12:32:53.000Z">
+    <meta property="article:tag" content="Nginx">
+    <meta property="article:tag" content="SSH">
+    <meta property="article:tag" content="HTTPS">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Nginx跳转任意Http请求到Https">
+    <meta name="twitter:description" content="我刚刚Linux自建SSH证书，然后在谷歌浏览器打开https://note.yulong360.com，说证书无效，说明不认可我的SSH证书，这是没办法的。我找了好多次SSH证书的安装方法，大部分是昂贵的啊！幸好的是我找到了免费的SSH证书，就是Let's Encrypt。安装了SSH证书之后，成功打开了HTTPS网站，是绿条，你看这个多霸气啊！">
+    <meta name="twitter:url" content="http://localhost:2368/nginxtiao-zhuan-ren-yi-httpqing-qiu-dao-https/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Nginx, SSH, HTTPS">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Nginx跳转任意Http请求到Https",
+    "url": "http://localhost:2368/nginxtiao-zhuan-ren-yi-httpqing-qiu-dao-https/",
+    "datePublished": "2018-01-28T12:43:29.000Z",
+    "dateModified": "2018-01-28T12:32:53.000Z",
+    "keywords": "Nginx, SSH, HTTPS",
+    "description": "我刚刚Linux自建SSH证书，然后在谷歌浏览器打开https://note.yulong360.com，说证书无效，说明不认可我的SSH证书，这是没办法的。我找了好多次SSH证书的安装方法，大部分是昂贵的啊！幸好的是我找到了免费的SSH证书，就是Let&#x27;s Encrypt。安装了SSH证书之后，成功打开了HTTPS网站，是绿条，你看这个多霸气啊！ nginx配置文件： server {     listen 80;     server_name www.domain.com;     #永久重定向到 https 站点     return 301 https://$server_name$request_uri; } server {    ssl_certificate /home/ubuntu/www.domain.com.crt;    ssl_certificate_key /home/ubuntu/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-nginx tag-ssh tag-https">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Nginx跳转任意Http请求到Https</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-01-28</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/nginx/">Nginx</a> <a href="../tag/ssh/">SSH</a> <a href="../tag/https/">HTTPS</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>我刚刚Linux自建SSH证书，然后在谷歌浏览器打开https://note.yulong360.com，说证书无效，说明不认可我的SSH证书，这是没办法的。我找了好多次SSH证书的安装方法，大部分是昂贵的啊！幸好的是我找到了免费的SSH证书，就是Let's Encrypt。安装了SSH证书之后，成功打开了HTTPS网站，是绿条，你看这个多霸气啊！</p>
+</blockquote>
+<p>nginx配置文件：</p>
+<pre><code>server {
+    listen 80;
+    server_name www.domain.com;
+    #永久重定向到 https 站点
+    return 301 https://$server_name$request_uri;
+}
+server {
+   ssl_certificate /home/ubuntu/www.domain.com.crt;
+   ssl_certificate_key /home/ubuntu/domain.com.key; 
+}
+</code></pre>
+<p>然后启动nginx服务：</p>
+<pre><code>service nginx restart
+</code></pre>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

@@ -1,0 +1,182 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="安装PHP的OpenSSL">
+    <meta property="og:description" content="如果在HTTPS官网去下载包，会报错信息：Unable to find the wrapper &amp;quot;https&amp;quot;.所以需要安装OpenSSL软件包就能解决这个问题。 见下错误： How do I fix the error ‘Unable to find the wrapper “https” – did you forget to enable it when you configured PHP?’ 要解决此错误，您需要安装PHP在您的网络服务器OpenSSL软件包。 在FreeBSD服务器，您可能需要安装以下软件：php53_openssl并重新启动Web服务器。 在Windows服务器上，打开php.ini配置文件和简单的注释，下面的行： 去掉逗号行了 ;extension=php_openssl 并重新启动Web服务器。应该可以解决错误。">
+    <meta property="og:url" content="http://localhost:2368/an-zhuang-phpde-openssl/">
+    <meta property="article:published_time" content="2016-10-14T03:26:00.000Z">
+    <meta property="article:modified_time" content="2016-11-21T10:19:00.000Z">
+    <meta property="article:tag" content="php">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="安装PHP的OpenSSL">
+    <meta name="twitter:description" content='如果在HTTPS官网去下载包，会报错信息：Unable to find the wrapper "https".'>
+    <meta name="twitter:url" content="http://localhost:2368/an-zhuang-phpde-openssl/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="php">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "安装PHP的OpenSSL",
+    "url": "http://localhost:2368/an-zhuang-phpde-openssl/",
+    "datePublished": "2016-10-14T03:26:00.000Z",
+    "dateModified": "2016-11-21T10:19:00.000Z",
+    "keywords": "php",
+    "description": "如果在HTTPS官网去下载包，会报错信息：Unable to find the wrapper &amp;quot;https&amp;quot;.所以需要安装OpenSSL软件包就能解决这个问题。 见下错误： How do I fix the error ‘Unable to find the wrapper “https” – did you forget to enable it when you configured PHP?’ 要解决此错误，您需要安装PHP在您的网络服务器OpenSSL软件包。 在FreeBSD服务器，您可能需要安装以下软件：php53_openssl并重新启动Web服务器。 在Windows服务器上，打开php.ini配置文件和简单的注释，下面的行： 去掉逗号行了 ;extension&#x3D;php_openssl 并重新启动Web服务器。应该可以解决错误。",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-php-2">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="../records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>安装PHP的OpenSSL</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-10-14</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/php-2/">php</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>如果在HTTPS官网去下载包，会报错信息：Unable to find the wrapper "https".所以需要安装OpenSSL软件包就能解决这个问题。</p>
+</blockquote>
+<p>见下错误：</p>
+<pre><code>How do I fix the error ‘Unable to find the wrapper “https” – did you forget to enable it when you configured PHP?’
+</code></pre>
+<p>要解决此错误，您需要安装PHP在您的网络服务器OpenSSL软件包。</p>
+<p>在FreeBSD服务器，您可能需要安装以下软件：php53_openssl并重新启动Web服务器。</p>
+<p>在Windows服务器上，打开php.ini配置文件和简单的注释，下面的行：<br>
+去掉逗号行了</p>
+<pre><code>;extension=php_openssl
+</code></pre>
+<p>并重新启动Web服务器。应该可以解决错误。</p>
+<p>参考地址：<a href="http://piwik.org/faq/troubleshooting/faq_177/">http://piwik.org/faq/troubleshooting/faq_177/</a></p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

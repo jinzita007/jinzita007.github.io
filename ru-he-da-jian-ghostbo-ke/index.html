@@ -1,0 +1,233 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="如何搭建Ghost博客">
+    <meta property="og:description" content="折腾了一晚上都没睡，都在研究如何建立Ghost的博客，原来这么很简单的，我真的简直无语了。 我就开始介绍Ghost博客，是谁发明这个玩意儿，好像是老外牛人搞的。经过我选择了Ghost博客，因为它有Markdown的功能，适合创作与笔记吧。这个很简单的，可以马上写作你想要的东西。这我不说了Ghost的简介，我知道Ghost博客怎么放在服务器运作呢？好像是Node.js服务器吧。 工具／原料 1.Node.js 2.Nginx 安装／步骤 1.Ghost开源博客平台http://www.ghostchina.com/download/ 2.安装之前要确认环境配置 Nodejs版本号: node -v v4.2.0 npm -v 2.14.7 这个有了两个安装的版本号，大大放心去搭建Ghost吧 注意：Ghost的要求是Node.js版本不要超过v4.5就行了">
+    <meta property="og:url" content="http://localhost:2368/ru-he-da-jian-ghostbo-ke/">
+    <meta property="article:published_time" content="2016-09-28T04:13:00.000Z">
+    <meta property="article:modified_time" content="2016-11-21T07:05:18.000Z">
+    <meta property="article:tag" content="Node.js">
+    <meta property="article:tag" content="ghost">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="如何搭建Ghost博客">
+    <meta name="twitter:description" content="折腾了一晚上都没睡，都在研究如何建立Ghost的博客，原来这么很简单的，我真的简直无语了。">
+    <meta name="twitter:url" content="http://localhost:2368/ru-he-da-jian-ghostbo-ke/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Node.js, ghost">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "如何搭建Ghost博客",
+    "url": "http://localhost:2368/ru-he-da-jian-ghostbo-ke/",
+    "datePublished": "2016-09-28T04:13:00.000Z",
+    "dateModified": "2016-11-21T07:05:18.000Z",
+    "keywords": "Node.js, ghost",
+    "description": "折腾了一晚上都没睡，都在研究如何建立Ghost的博客，原来这么很简单的，我真的简直无语了。 我就开始介绍Ghost博客，是谁发明这个玩意儿，好像是老外牛人搞的。经过我选择了Ghost博客，因为它有Markdown的功能，适合创作与笔记吧。这个很简单的，可以马上写作你想要的东西。这我不说了Ghost的简介，我知道Ghost博客怎么放在服务器运作呢？好像是Node.js服务器吧。 工具／原料 1.Node.js 2.Nginx 安装／步骤 1.Ghost开源博客平台http://www.ghostchina.com/download/ 2.安装之前要确认环境配置 Nodejs版本号: node -v v4.2.0 npm -v 2.14.7 这个有了两个安装的版本号，大大放心去搭建Ghost吧 注意：Ghost的要求是Node.js版本不要超过v4.5就行了",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-node-js tag-ghost-tag">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>如何搭建Ghost博客</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-09-28</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/node-js/">Node.js</a> <a href="../tag/ghost-tag/">ghost</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>折腾了一晚上都没睡，都在研究如何建立Ghost的博客，原来这么很简单的，我真的简直无语了。</p>
+</blockquote>
+<p>我就开始介绍Ghost博客，是谁发明这个玩意儿，好像是老外牛人搞的。经过我选择了Ghost博客，因为它有Markdown的功能，适合创作与笔记吧。这个很简单的，可以马上写作你想要的东西。这我不说了Ghost的简介，我知道Ghost博客怎么放在服务器运作呢？好像是Node.js服务器吧。</p>
+<p><strong>工具／原料</strong></p>
+<p>1.Node.js</p>
+<p>2.Nginx</p>
+<p><strong>安装／步骤</strong></p>
+<p>1.Ghost开源博客平台http://www.ghostchina.com/download/</p>
+<p>2.安装之前要确认环境配置<br>
+Nodejs版本号:</p>
+<pre><code>node -v
+v4.2.0
+</code></pre>
+<pre><code>npm -v
+2.14.7
+</code></pre>
+<p>这个有了两个安装的版本号，大大放心去搭建Ghost吧</p>
+<p><em>注意：Ghost的要求是Node.js版本不要超过v4.5就行了</em></p>
+<p>3.Nginx的配置：</p>
+<pre><code>server {  
+    listen 8080;
+    server_name localhost;
+
+    location / {
+        proxy_set_header   X-Real-IP $remote_addr;
+        proxy_set_header   Host      $http_host;
+        proxy_pass         http://127.0.0.1:2368;
+    }
+}
+</code></pre>
+<p>4.在终端执行：</p>
+<pre><code>nginx
+</code></pre>
+<p>5.下载好了Ghost文件，然后解压文件</p>
+<p>6.Ghost设置：</p>
+<pre><code>sudo cp config.example.js config.js
+</code></pre>
+<p>7.我们要对config.js这个文件进行修改：</p>
+<pre><code>sudo nano config.js
+</code></pre>
+<p>要看你配置的能力吧，可以参考网上资料吧</p>
+<p>8.Mac自带的终端命令：进入Ghost文件目录</p>
+<pre><code>cd Ghost
+</code></pre>
+<p>9.然后开启服务</p>
+<pre><code class="language-shell">npm start --production 
+</code></pre>
+<p>10.大概会显示：</p>
+<pre><code>&gt; ghost@0.7.4 start /Users/zhouyulong/Ghost
+&gt; node index
+
+Migrations: Up to date at version 004
+Ghost is running in production... 
+Your blog is now available on http://localhost:2368 
+Ctrl+C to shut down
+</code></pre>
+<p>11.然后浏览器输入http://localhost:2368 可以看到Ghost博客页面</p>
+<p><strong>小总结：</strong></p>
+<p>我写的东西可能不够完整的，因为略了一些的东西，比方说安装Nginx和Node.js的说明图文等这个没写具体内容。我相信你有聪明的能力和能做到吧。</p>
+<p>Ghost作为一个新的博客，和其他的博客是不一样的。虽然它可能有不足的地方，但是我们能相信它会越来越好的。好了，如果你想要建立博客的话，不要放弃自己吧，其实Ghost真的好玩，你可以用它来记录中最美好的时刻，也可以分享你自己的创意吧。</p>
+<p>别忘了，如果遇到这个有问题也可以联系我电邮：jinzita007@yahoo.com</p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

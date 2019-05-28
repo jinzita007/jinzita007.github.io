@@ -1,0 +1,179 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="RuntimeException in EncryptionServiceProvider.php line 29: No supported encrypter found. The cipher and / or key length are invalid">
+    <meta property="og:description" content="在浏览器输入：localhost:8000 这时候突然报错信息： RuntimeException in EncryptionServiceProvider.php line 29: No supported encrypter found. The cipher and / or key length are invalid 你能试试命令生成key： php artisan key:generate 参考地址： http://stackoverflow.com/questions/34371551/runtimeexception-in-encryptionserviceprovider-php-line-29-no-supported-encrypte">
+    <meta property="og:url" content="http://localhost:2368/runtimeexception-in-encryptionserviceprovider-php-line-29-no-supported-encrypter-found-the-cipher-and-or-key-length-are-invalid/">
+    <meta property="article:published_time" content="2016-12-07T13:44:00.000Z">
+    <meta property="article:modified_time" content="2016-12-07T13:44:00.000Z">
+    <meta property="article:tag" content="laravel">
+    <meta property="article:tag" content="php">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="RuntimeException in EncryptionServiceProvider.php line 29: No supported encrypter found. The cipher and / or key length are invalid">
+    <meta name="twitter:description" content="在浏览器输入：localhost:8000 这时候突然报错信息： RuntimeException in EncryptionServiceProvider.php line 29: No supported encrypter found. The cipher and / or key length are invalid 你能试试命令生成key： php artisan key:generate 参考地址： http://stackoverflow.com/questions/34371551/runtimeexception-in-encryptionserviceprovider-php-line-29-no-supported-encrypte">
+    <meta name="twitter:url" content="http://localhost:2368/runtimeexception-in-encryptionserviceprovider-php-line-29-no-supported-encrypter-found-the-cipher-and-or-key-length-are-invalid/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="laravel, php">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "RuntimeException in EncryptionServiceProvider.php line 29: No supported encrypter found. The cipher and / or key length are invalid",
+    "url": "http://localhost:2368/runtimeexception-in-encryptionserviceprovider-php-line-29-no-supported-encrypter-found-the-cipher-and-or-key-length-are-invalid/",
+    "datePublished": "2016-12-07T13:44:00.000Z",
+    "dateModified": "2016-12-07T13:44:00.000Z",
+    "keywords": "laravel, php",
+    "description": "在浏览器输入：localhost:8000 这时候突然报错信息： RuntimeException in EncryptionServiceProvider.php line 29: No supported encrypter found. The cipher and / or key length are invalid 你能试试命令生成key： php artisan key:generate 参考地址： http://stackoverflow.com/questions/34371551/runtimeexception-in-encryptionserviceprovider-php-line-29-no-supported-encrypte",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-laravel tag-php-2">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="../records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>RuntimeException in EncryptionServiceProvider.php line 29: No supported encrypter found. The cipher and / or key length are invalid</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-12-07</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/laravel/">laravel</a> <a href="../tag/php-2/">php</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><p>在浏览器输入：localhost:8000</p>
+<p>这时候突然报错信息：</p>
+<pre><code>RuntimeException in EncryptionServiceProvider.php line 29: No supported encrypter found. The cipher and / or key length are invalid
+</code></pre>
+<p>你能试试命令生成key：</p>
+<pre><code>php artisan key:generate
+</code></pre>
+<hr>
+<p>参考地址：</p>
+<p><a href="http://stackoverflow.com/questions/34371551/runtimeexception-in-encryptionserviceprovider-php-line-29-no-supported-encrypte">http://stackoverflow.com/questions/34371551/runtimeexception-in-encryptionserviceprovider-php-line-29-no-supported-encrypte</a></p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

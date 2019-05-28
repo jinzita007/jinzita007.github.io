@@ -1,0 +1,239 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="http://localhost:2368/macan-zhuang-gruntde-pei-zhi-ji-shi-yong/amp/">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Mac安装Grunt的配置及使用">
+    <meta property="og:description" content="如果你想要简化你的工作，想办法让自己的时间变得短一些。Grunt是JavaScript世界的构建工具，因为它拥有丰富的插件。你也可以利用Grunt自动完成任何事，并花费最少的代价。是不是很震撼吧？我只能说其实Grunt就是强大的吧。 安装及配置 Grunt插件是通过npm安装并管理，npm是Node.js的包管理器。 安装之前，请确保你是否安装过npm，如果已经安装了npm的话，就可以开始安装Grunt。 安装 CLI npm install -g grunt-cli 例如Mac终端器命令 localhost:~ jinghua$ sudo npm install -g grunt-cli  Password: /usr/local/bin/grunt -&amp;gt; /usr/local/lib/node_modules/grunt-cli/bin/grunt grunt-cli@1.2.0 /usr/">
+    <meta property="og:url" content="http://localhost:2368/macan-zhuang-gruntde-pei-zhi-ji-shi-yong/">
+    <meta property="article:published_time" content="2016-09-28T02:16:00.000Z">
+    <meta property="article:modified_time" content="2016-11-21T06:30:46.000Z">
+    <meta property="article:tag" content="Mac">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Mac安装Grunt的配置及使用">
+    <meta name="twitter:description" content="如果你想要简化你的工作，想办法让自己的时间变得短一些。Grunt是JavaScript世界的构建工具，因为它拥有丰富的插件。">
+    <meta name="twitter:url" content="http://localhost:2368/macan-zhuang-gruntde-pei-zhi-ji-shi-yong/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Mac">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Mac安装Grunt的配置及使用",
+    "url": "http://localhost:2368/macan-zhuang-gruntde-pei-zhi-ji-shi-yong/",
+    "datePublished": "2016-09-28T02:16:00.000Z",
+    "dateModified": "2016-11-21T06:30:46.000Z",
+    "keywords": "Mac",
+    "description": "如果你想要简化你的工作，想办法让自己的时间变得短一些。Grunt是JavaScript世界的构建工具，因为它拥有丰富的插件。你也可以利用Grunt自动完成任何事，并花费最少的代价。是不是很震撼吧？我只能说其实Grunt就是强大的吧。 安装及配置 Grunt插件是通过npm安装并管理，npm是Node.js的包管理器。 安装之前，请确保你是否安装过npm，如果已经安装了npm的话，就可以开始安装Grunt。 安装 CLI npm install -g grunt-cli 例如Mac终端器命令 localhost:~ jinghua$ sudo npm install -g grunt-cli  Password: /usr/local/bin/grunt -&amp;gt; /usr/local/lib/node_modules/grunt-cli/bin/grunt grunt-cli@1.2.0 /usr/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-mac">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Mac安装Grunt的配置及使用</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-09-28</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/mac/">Mac</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>如果你想要简化你的工作，想办法让自己的时间变得短一些。Grunt是JavaScript世界的构建工具，因为它拥有丰富的插件。你也可以利用Grunt自动完成任何事，并花费最少的代价。是不是很震撼吧？我只能说其实Grunt就是强大的吧。</p>
+</blockquote>
+<hr>
+<p><strong>安装及配置</strong></p>
+<p>Grunt插件是通过npm安装并管理，npm是Node.js的包管理器。</p>
+<p>安装之前，请确保你是否安装过npm，如果已经安装了npm的话，就可以开始安装Grunt。</p>
+<p>安装 CLI</p>
+<pre><code>npm install -g grunt-cli
+</code></pre>
+<p>例如Mac终端器命令</p>
+<pre><code>localhost:~ jinghua$ sudo npm install -g grunt-cli 
+Password:
+/usr/local/bin/grunt -&gt; /usr/local/lib/node_modules/grunt-cli/bin/grunt
+grunt-cli@1.2.0 /usr/local/lib/node_modules/grunt-cli
+├── grunt-known-options@1.1.0
+├── resolve@1.1.7
+├── nopt@3.0.6 (abbrev@1.0.9)
+└── findup-sync@0.3.0 (glob@5.0.15)
+localhost:~ jinghua$ mkidr testgrunt
+-bash: mkidr: command not found
+localhost:~ jinghua$ mkdir -p testgrunt
+localhost:~ jinghua$ cd testgrunt
+localhost:testgrunt jinghua$ sudo npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install &lt;pkg&gt; --save` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+name: (testgrunt) 
+version: (1.0.0) 
+description: 测试gurnt
+entry point: (index.js) 
+test command: test
+git repository: 
+keywords: grunt
+author: yuyi
+license: (ISC) 
+About to write to /Users/jinghua/testgrunt/package.json:
+
+{
+  "name": "testgrunt",
+  "version": "1.0.0",
+  "description": "测试gurnt",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "grunt"
+  ],
+  "author": "yuyi",
+  "license": "ISC"
+}
+
+
+Is this ok? (yes) yes
+
+</code></pre>
+<hr>
+<p>接下来Gruntfile.js创建</p>
+<pre><code>localhost:testgrunt jinghua$ touch package.json Gruntfile.js
+touch: package.json: Permission denied
+</code></pre>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

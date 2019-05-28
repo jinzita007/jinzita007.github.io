@@ -1,0 +1,275 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="学习CakePHP第一季">
+    <meta property="og:description" content="我想制作简易的php mvc框架，如果我有完全能力能够制作属于自己的mvc框架，但看着自己的时间也许不够了，只能拿cakephp框架能够快速开发web程序，这要对于来说学习cakephp的第一步吧。 去CakePHP官网：http://cakephp.org/ 一边操作小例如一遍看CakePHP文档 建立之前要写个composer.json，保证安装CakePHP的成功 以 laravel 项目的 composer.json 配置文件为例: {     &amp;quot;name&amp;quot;: &amp;quot;laravel/laravel&amp;quot;,     &amp;quot;description&amp;quot;: &amp;quot;The Laravel Framework.&amp;quot;,     &amp;quot;keywords&amp;quot;: [&amp;quot;framework&amp;quot;, &amp;quot;laravel&amp;quot;],     &amp;quot;license&amp;quot;: &amp;quot;MIT&amp;">
+    <meta property="og:url" content="http://localhost:2368/xue-xi-cakephpdi-yi-ji/">
+    <meta property="article:published_time" content="2016-09-23T03:43:00.000Z">
+    <meta property="article:modified_time" content="2016-11-21T06:26:16.000Z">
+    <meta property="article:tag" content="php">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="学习CakePHP第一季">
+    <meta name="twitter:description" content="cakephp框架能够快速开发web程序，这要对于来说学习cakephp的第一步吧。">
+    <meta name="twitter:url" content="http://localhost:2368/xue-xi-cakephpdi-yi-ji/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="php">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "学习CakePHP第一季",
+    "url": "http://localhost:2368/xue-xi-cakephpdi-yi-ji/",
+    "datePublished": "2016-09-23T03:43:00.000Z",
+    "dateModified": "2016-11-21T06:26:16.000Z",
+    "keywords": "php",
+    "description": "我想制作简易的php mvc框架，如果我有完全能力能够制作属于自己的mvc\b框架，但看着自己的时间也许不够了，只能拿cakephp框架能够快速开发web程序，这要对于来说学习cakephp的第一步吧。 去CakePHP官网：http://cakephp.org/ 一边操作小例如一遍看CakePHP文档 建立之前要写个composer.json，保证安装CakePHP的成功 以 laravel 项目的 composer.json 配置文件为例: {     &amp;quot;name&amp;quot;: &amp;quot;laravel/laravel&amp;quot;,     &amp;quot;description&amp;quot;: &amp;quot;The Laravel Framework.&amp;quot;,     &amp;quot;keywords&amp;quot;: [&amp;quot;framework&amp;quot;, &amp;quot;laravel&amp;quot;],     &amp;quot;license&amp;quot;: &amp;quot;MIT&amp;",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-php-2">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="../records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>学习CakePHP第一季</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-09-23</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/php-2/">php</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>我想制作简易的php mvc框架，如果我有完全能力能够制作属于自己的mvc框架，但看着自己的时间也许不够了，只能拿cakephp框架能够快速开发web程序，这要对于来说学习cakephp的第一步吧。</p>
+</blockquote>
+<hr>
+<ol>
+<li>
+<p>去CakePHP官网：<a href="http://cakephp.org/">http://cakephp.org/</a></p>
+</li>
+<li>
+<p>一边操作小例如一遍看CakePHP文档</p>
+</li>
+<li>
+<p>建立之前要写个composer.json，保证安装CakePHP的成功</p>
+</li>
+</ol>
+<hr>
+<p>以 laravel 项目的 composer.json 配置文件为例:</p>
+<!--lang: json-->
+<pre><code class="language-ruby">{
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": ["framework", "laravel"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": "&gt;=5.5.9",
+        "laravel/framework": "5.2.*"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~4.0",
+        "symfony/css-selector": "2.8.*|3.0.*",
+        "symfony/dom-crawler": "2.8.*|3.0.*"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "php artisan clear-compiled",
+            "php artisan optimize"
+        ],
+        "pre-update-cmd": [
+            "php artisan clear-compiled"
+        ],
+        "post-update-cmd": [
+            "php artisan optimize"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}
+</code></pre>
+<p>你可以参考http://pkg.phpcomposer.com/</p>
+<hr>
+<p>首先安装composer,例如我的操作系统是mac的话，只要全局方式的安装以下：</p>
+<!--lang: shell-->
+<pre><code class="language-ruby">mv composer.phar /usr/local/bin/composer
+</code></pre>
+<hr>
+<p>然后建立cakePHP的项目：</p>
+<!--lang: shell-->
+<pre><code class="language-ruby">php composer.phar create-project --prefer-dist cakephp/app my_app_name
+</code></pre>
+<p>比方说我操作过程的截图：<br>
+<img src="http://bbs.iiiciii.com/data/attachment/forum/201609/23/231554uorerdhih6mmzoc4.png" alt=""></p>
+<hr>
+<p>安装完成了以后，就开启服务器：<br>
+然后开启服务器：</p>
+<!--lang: shell-->
+<pre><code class="language-ruby">bin/cake server
+</code></pre>
+<p><img src="http://bbs.iiiciii.com/data/attachment/forum/201609/23/231933ia4u6pdijpe2yudf.png" alt=""></p>
+<p><em>打开谷歌浏览器输入：localhost:8756</em></p>
+<p>说明恭喜你成功安装了CakePHP,哈哈</p>
+<p><img src="http://bbs.iiiciii.com/data/attachment/forum/201609/23/232121oauzr4r1v0zv6wuu.png" alt=""></p>
+<hr>
+<p><em>别忘了，要注意以下啊！</em></p>
+<p>是否确认安装过的PHP intl的存在，如果有的话容易成功安装cake PHP，因为cakePHP要看intl.so</p>
+<p>Mac安装intl的方法链接地址：</p>
+<p><a href="http://iiiciii.com/index.php/blog/21">http://iiiciii.com/index.php/blog/21</a></p>
+<p>学习CakePHP的过程可能有些不准的地方，慢慢来解决小的问题。</p>
+<p>如果你有不懂的问题，可以联系我电邮jinzita007@yahoo.com，谢谢你！</p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

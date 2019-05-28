@@ -1,0 +1,389 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Node + MySQL 实现分页+模糊查询">
+    <meta property="og:description" content="本教程主要讲关于分页模糊查询的文章，我认为这个功能是需求很大的。如果模糊查询一个商品的时候，可以进行地修改或者删除一个商品。 上次讲的是关于Node+MySQL分页的文章，不过我现在创建一个简单的项目案例是ES6写法，修改部分的代码。 Promise是异步代码实现控制流的一种方式，因为代码干净、可读并且健壮。 包括如何创建 Promise 对象、使用 Promise、处理集合、Promise 实用方法和错误处理等。 安装bluebird npm install bluebird 创建Promise const Promise = require(&amp;quot;bluebird&amp;quot;); 定义queryAsync常量值 const queryAsync = Promise.promisify(connection.query.bind(connection)); then()的rejected回调作用几乎一致,.catch()的作用是捕获Promise的错误。 promise.then(     () =&amp;gt; { console.log('this is">
+    <meta property="og:url" content="http://localhost:2368/node-mysql-shi-xian-fen-ye-mo-hu-cha-xun/">
+    <meta property="article:published_time" content="2018-02-04T13:32:43.000Z">
+    <meta property="article:modified_time" content="2018-02-04T13:19:08.000Z">
+    <meta property="article:tag" content="Node.js">
+    <meta property="article:tag" content="Mysql">
+    <meta property="article:tag" content="pagination">
+    <meta property="article:tag" content="search">
+    <meta property="article:tag" content="express">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Node + MySQL 实现分页+模糊查询">
+    <meta name="twitter:description" content="本教程主要讲关于分页模糊查询的文章，我认为这个功能是需求很大的">
+    <meta name="twitter:url" content="http://localhost:2368/node-mysql-shi-xian-fen-ye-mo-hu-cha-xun/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Node.js, Mysql, pagination, search, express">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Node + MySQL 实现分页+模糊查询",
+    "url": "http://localhost:2368/node-mysql-shi-xian-fen-ye-mo-hu-cha-xun/",
+    "datePublished": "2018-02-04T13:32:43.000Z",
+    "dateModified": "2018-02-04T13:19:08.000Z",
+    "keywords": "Node.js, Mysql, pagination, search, express",
+    "description": "本教程主要讲关于分页模糊查询的文章，我认为这个功能是需求很大的。如果模糊查询一个商品的时候，可以进行地修改或者删除一个商品。 上次讲的是关于Node+MySQL分页的文章，不过我现在创建一个简单的项目案例是ES6写法，修改部分的代码。 Promise是异步代码实现控制流的一种方式，因为代码干净、可读并且健壮。 包括如何创建 Promise 对象、使用 Promise、处理集合、Promise 实用方法和错误处理等。 安装bluebird npm install bluebird 创建Promise const Promise &#x3D; require(&amp;quot;bluebird&amp;quot;); 定义queryAsync常量值 const queryAsync &#x3D; Promise.promisify(connection.query.bind(connection)); then()的rejected回调作用几乎一致,.catch()的作用是捕获Promise的错误。 promise.then(     () &#x3D;&amp;gt; { console.log(&#x27;this is",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-node-js tag-mysql tag-pagination tag-search tag-express">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Node + MySQL 实现分页+模糊查询</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-02-04</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/node-js/">Node.js</a> <a href="../tag/mysql/">Mysql</a> <a href="../tag/pagination/">pagination</a> <a href="../tag/search/">search</a> <a href="../tag/express/">express</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>本教程主要讲关于分页模糊查询的文章，我认为这个功能是需求很大的。如果模糊查询一个商品的时候，可以进行地修改或者删除一个商品。</p>
+</blockquote>
+<blockquote>
+<p>上次讲的是关于Node+MySQL分页的文章，不过我现在创建一个简单的项目案例是ES6写法，修改部分的代码。</p>
+</blockquote>
+<blockquote>
+<p>Promise是异步代码实现控制流的一种方式，因为代码干净、可读并且健壮。<br>
+包括如何创建 Promise 对象、使用 Promise、处理集合、Promise 实用方法和错误处理等。<br>
+安装bluebird</p>
+</blockquote>
+<pre><code>npm install bluebird
+</code></pre>
+<blockquote>
+<p>创建Promise</p>
+</blockquote>
+<pre><code>const Promise = require("bluebird");
+</code></pre>
+<blockquote>
+<p>定义queryAsync常量值</p>
+</blockquote>
+<pre><code>const queryAsync = Promise.promisify(connection.query.bind(connection));
+</code></pre>
+<blockquote>
+<p>then()的rejected回调作用几乎一致,.catch()的作用是捕获Promise的错误。</p>
+</blockquote>
+<pre><code>promise.then(
+    () =&gt; { console.log('this is success callback') }
+).catch(
+    (err) =&gt; { console.log(err) }
+)
+</code></pre>
+<blockquote>
+<p>定义常量</p>
+</blockquote>
+<pre><code>    var total;  //总页数
+    var queryPagination;
+    var pageNum = parseInt(req.query.pageNum, 10) || 1; // 每页码
+    var page = parseInt(req.query.page, 10) || 0; // 默认页数
+    var numPages; 
+    var skip = page * pageNum;
+    var search = req.query.search;  //查询
+  
+  
+    console.log(req.query);
+    console.log(page);
+    console.log(pageNum);
+    console.log(skip);
+    console.log(search);
+
+    var end = pageNum;
+    var limit = skip + ',' + end;
+    console.log(limit);
+    console.log("SELECT * FROM goods LIMIT " + limit);
+</code></pre>
+<blockquote>
+<p>判断是否模糊查询</p>
+</blockquote>
+<pre><code>if (search != null) {
+       queryAsync("select count(*) as total from goods where title like '%" + search + "%'")
+            .then((results) =&gt; {
+                if (results[0]) {
+                    total = results[0].total;
+                }
+            })
+            .then(() =&gt; queryAsync("select * from goods where title like '%" + search + "%' LIMIT " + limit))
+            .then(results =&gt; {
+                if (results.length != 0) {
+                    res.json({
+                        "goods": results,
+                        "total": total
+                    });
+                } else {
+                    res.json({
+                        "message": "无数据..."
+                    });
+                }
+                
+            });
+    } else {
+        queryAsync("select count(*) as total from goods")
+</code></pre>
+<blockquote>
+<p>商品总页数</p>
+</blockquote>
+<pre><code>queryAsync("select count(*) as total from goods")
+            .then(results =&gt; {
+                total = results[0].total;
+                numPages = Math.ceil(total / page);
+                console.log('number of pages:', numPages);
+            })
+</code></pre>
+<blockquote>
+<p>获取商品分页并判断分页</p>
+</blockquote>
+<pre><code>.then(() =&gt; queryAsync("SELECT * FROM goods LIMIT " + limit))
+            .then(results =&gt; {
+                var data = {
+                    results: results,
+                    total: total
+                };
+
+                if (page &gt; numPages) {
+                    data.pagination = {
+                        current: page,        //当前页
+                        perPage: pageNum,  //每页码
+                        prev: page &gt; 0 ? page - 1 : undefined,
+                        next: page &lt; numPages - 1 ? page + 1 : undefined
+                    }
+                } else {
+                    err: "查询页面" + page + "是 &gt;= 最大页数" + numPages
+                }
+
+                res.json(data);
+
+            })
+</code></pre>
+<blockquote>
+<p>统一使用catch()来处理错误</p>
+</blockquote>
+<pre><code>.catch(err =&gt; {
+                console.error(err);
+                res.json({ err: err });
+            });
+</code></pre>
+<blockquote>
+<p>在这个例子中，查询结果显示在设置results响应有效载荷的字段，而分页元数据中所设定的pagination字段。</p>
+</blockquote>
+<pre><code>//获取商品列表分页 + 模糊查询
+app.get('/good', (req, res) =&gt; {
+    var total;  //总页数
+    var queryPagination;
+    var pageNum = parseInt(req.query.pageNum, 10) || 1; // 每页码
+    var page = parseInt(req.query.page, 10) || 0; // 默认页数
+    var numPages;
+    var skip = page * pageNum;
+    var search = req.query.search;  //查询
+
+    //console.log(req.query);
+    //console.log(page);
+    //console.log(pageNum);
+    //console.log(skip);
+    //console.log(search);
+
+    var end = pageNum;
+    var limit = skip + ',' + end;
+    //console.log(limit);
+    //console.log("SELECT * FROM goods LIMIT " + limit);
+
+    if (search != null) {
+        queryAsync("select count(*) as total from goods where title like '%" + search + "%'")
+            .then((results) =&gt; {
+                if (results[0]) {
+                    total = results[0].total;
+                }
+            })
+            .then(() =&gt; queryAsync("select * from goods where title like '%" + search + "%' LIMIT " + limit))
+            .then(results =&gt; {
+                if (results.length != 0) {
+                    res.json({
+                        "goods": results,
+                        "total": total
+                    });
+                } else {
+                    res.json({
+                        "message": "无数据..."
+                    });
+                }
+                
+            });
+    } else {
+        queryAsync("select count(*) as total from goods")
+            .then(results =&gt; {
+                total = results[0].total;
+                numPages = Math.ceil(total / page);
+                console.log('number of pages:', numPages);
+            })
+            .then(() =&gt; queryAsync("SELECT * FROM goods LIMIT " + limit))
+            .then(results =&gt; {
+                var data = {
+                    results: results,
+                    total: total
+                };
+
+                if (page &gt; numPages) {
+                    data.pagination = {
+                        current: page,        //当前页
+                        perPage: pageNum,  //每页码
+                        prev: page &gt; 0 ? page - 1 : undefined,
+                        next: page &lt; numPages - 1 ? page + 1 : undefined
+                    }
+                } else {
+                    err: "查询页面" + page + "是 &gt;= 最大页数" + numPages
+                }
+
+                res.json(data);
+
+            })
+            .catch(err =&gt; {
+                console.error(err);
+                res.json({ err: err });
+            });
+    }
+
+});
+</code></pre>
+<blockquote>
+<p>这是原生MySQL分页+模糊查询</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snipaste_2018-02-04_22-01-11.png" alt="Snipaste_2018-02-04_22-01-11"></p>
+<blockquote>
+<p>使用GET参数（这里page是你想要的结果数，和pageNum是每页结果数），search是你想要模糊查询关键词</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snipaste_2018-02-04_22-00-52.png" alt="Snipaste_2018-02-04_22-00-52"></p>
+<p>我的github地址：<a href="https://github.com/jinzita007/express_demo/tree/dev">完整CRUD+分页模糊查询</a></p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

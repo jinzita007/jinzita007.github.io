@@ -1,0 +1,207 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="开启服务器的防火墙-SSL443端口">
+    <meta property="og:description" content="设置好nginx ssl的配置之后，需要开放443端口才能访问HTTPS的网站。 [root@localhost conf.d]# firewall-cmd --zone=public --add-port=443/tcp --permanent FirewallD is not running 以上提示FirewallD is not running，怎么解决报错呢？我们先查看防火墙的状态情况就能知道在哪里报错。 [root@localhost conf.d]# systemctl status firewalld ● firewalld.service    Loaded: masked (/dev/null; bad)    Active: inactive (dead) 这个说明当前是dead状态，即防火墙未开启。 当我们尝试开启防火墙的时候，提示报错如下： [root@localhost conf.d]# systemctl">
+    <meta property="og:url" content="http://localhost:2368/kai-qi-fu-wu-qi-de-fang-huo-qiang-ssl443duan-kou/">
+    <meta property="article:published_time" content="2018-04-19T12:29:04.000Z">
+    <meta property="article:modified_time" content="2018-04-19T12:19:55.000Z">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="SSL">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="开启服务器的防火墙-SSL443端口">
+    <meta name="twitter:description" content="设置好nginx ssl的配置之后，需要开放443端口才能访问HTTPS的网站。">
+    <meta name="twitter:url" content="http://localhost:2368/kai-qi-fu-wu-qi-de-fang-huo-qiang-ssl443duan-kou/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Linux, SSL">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "开启服务器的防火墙-SSL443端口",
+    "url": "http://localhost:2368/kai-qi-fu-wu-qi-de-fang-huo-qiang-ssl443duan-kou/",
+    "datePublished": "2018-04-19T12:29:04.000Z",
+    "dateModified": "2018-04-19T12:19:55.000Z",
+    "keywords": "Linux, SSL",
+    "description": "设置好nginx ssl的配置之后，需要开放443端口才能访问HTTPS的网站。 [root@localhost conf.d]# firewall-cmd --zone&#x3D;public --add-port&#x3D;443/tcp --permanent FirewallD is not running 以上提示FirewallD is not running，怎么解决报错呢？我们先查看防火墙的状态情况就能知道在哪里报错。 [root@localhost conf.d]# systemctl status firewalld ● firewalld.service    Loaded: masked (/dev/null; bad)    Active: inactive (dead) 这个说明当前是dead状态，即防火墙未开启。 当我们尝试开启防火墙的时候，提示报错如下： [root@localhost conf.d]# systemctl",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-linux tag-ssl">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>开启服务器的防火墙-SSL443端口</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-04-19</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/linux/">Linux</a> <a href="../tag/ssl/">SSL</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>设置好nginx ssl的配置之后，需要开放443端口才能访问HTTPS的网站。</p>
+</blockquote>
+<pre><code>[root@localhost conf.d]# firewall-cmd --zone=public --add-port=443/tcp --permanent
+FirewallD is not running
+</code></pre>
+<p>以上提示FirewallD is not running，怎么解决报错呢？我们先查看防火墙的状态情况就能知道在哪里报错。</p>
+<pre><code>[root@localhost conf.d]# systemctl status firewalld
+● firewalld.service
+   Loaded: masked (/dev/null; bad)
+   Active: inactive (dead)
+</code></pre>
+<p>这个说明当前是dead状态，即防火墙未开启。</p>
+<p>当我们尝试开启防火墙的时候，提示报错如下：</p>
+<pre><code>[root@localhost conf.d]# systemctl start firewalld
+Failed to start firewalld.service: Unit is masked.
+</code></pre>
+<p>这个说明firewalld服务被锁定，不能开启防火墙</p>
+<pre><code>[root@localhost conf.d]# systemctl unmask firewalld
+Removed symlink /etc/systemd/system/firewalld.service.
+</code></pre>
+<p>这样能解决取消锁定防火墙服务，我们可以开启防火墙</p>
+<p>开启防火墙</p>
+<pre><code>[root@localhost conf.d]# systemctl start firewalld
+</code></pre>
+<p>增加443端口</p>
+<pre><code>[root@localhost conf.d]# firewall-cmd --zone=public --add-port=443/tcp --permanent
+success
+</code></pre>
+<p>确认是否开通</p>
+<pre><code>[root@localhost conf.d]# firewall-cmd --list-ports
+</code></pre>
+<p>重新加载下防火墙配置</p>
+<pre><code>[root@localhost conf.d]# firewall-cmd --reload
+success
+</code></pre>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

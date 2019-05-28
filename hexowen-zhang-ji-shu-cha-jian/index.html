@@ -1,0 +1,199 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Hexo文章计数插件">
+    <meta property="og:description" content="本插件只统计中文字数和英文单词次数。适合写文字的爱好者，像我喜欢写作需要看字数。 hexo-wordcount的项目地址： https://www.npmjs.com/package/hexo-wordcount 安装 npm install hexo-wordcount --save 使用 修改Themes模板文件，在Post文章模板区域加入： 即可统计单篇文章的字数。 &amp;lt;span class=&amp;quot;post-count&amp;quot;&amp;gt;{{ wordcount(post.content) }}&amp;lt;/span&amp;gt; 统计总字数的，可以放到Footer或其他位置里。 &amp;lt;span class=&amp;quot;post-count&amp;quot;&amp;gt;{{ totalcount(site) }}&amp;lt;/span&amp;gt; 在footer.swig文件中加入下面代码 &amp;lt;div">
+    <meta property="og:url" content="http://localhost:2368/hexowen-zhang-ji-shu-cha-jian/">
+    <meta property="article:published_time" content="2016-10-02T03:41:00.000Z">
+    <meta property="article:modified_time" content="2016-11-19T18:18:55.000Z">
+    <meta property="article:tag" content="IT">
+    <meta property="article:tag" content="Hexo">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hexo文章计数插件">
+    <meta name="twitter:description" content="本插件只统计中文字数和英文单词次数。">
+    <meta name="twitter:url" content="http://localhost:2368/hexowen-zhang-ji-shu-cha-jian/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="IT, Hexo">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Hexo文章计数插件",
+    "url": "http://localhost:2368/hexowen-zhang-ji-shu-cha-jian/",
+    "datePublished": "2016-10-02T03:41:00.000Z",
+    "dateModified": "2016-11-19T18:18:55.000Z",
+    "keywords": "IT, Hexo",
+    "description": "本插件只统计中文字数和英文单词次数。适合写文字的爱好者，像我喜欢写作需要看字数。 hexo-wordcount的项目地址： https://www.npmjs.com/package/hexo-wordcount 安装 npm install hexo-wordcount --save 使用 修改Themes模板文件，在Post文章模板区域加入： 即可统计单篇文章的字数。 &amp;lt;span class&#x3D;&amp;quot;post-count&amp;quot;&amp;gt;{{ wordcount(post.content) }}&amp;lt;/span&amp;gt; 统计总字数的，可以放到Footer或其他位置里。 &amp;lt;span class&#x3D;&amp;quot;post-count&amp;quot;&amp;gt;{{ totalcount(site) }}&amp;lt;/span&amp;gt; 在footer.swig文件中加入下面代码 &amp;lt;div",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-it tag-hexo">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Hexo文章计数插件</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-10-02</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/it/">IT</a> <a href="../tag/hexo/">Hexo</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>本插件只统计中文字数和英文单词次数。适合写文字的爱好者，像我喜欢写作需要看字数。</p>
+</blockquote>
+<p>hexo-wordcount的项目地址：<br>
+<a href="https://www.npmjs.com/package/hexo-wordcount">https://www.npmjs.com/package/hexo-wordcount</a></p>
+<p><strong>安装</strong></p>
+<pre><code class="language-shell">npm install hexo-wordcount --save
+</code></pre>
+<p><strong>使用</strong></p>
+<p>修改Themes模板文件，在Post文章模板区域加入：</p>
+<p>即可统计单篇文章的字数。</p>
+<pre><code class="language-html">&lt;span class="post-count"&gt;{{ wordcount(post.content) }}&lt;/span&gt;
+</code></pre>
+<p>统计总字数的，可以放到Footer或其他位置里。</p>
+<pre><code class="language-html">&lt;span class="post-count"&gt;{{ totalcount(site) }}&lt;/span&gt;
+</code></pre>
+<p>在footer.swig文件中加入下面代码</p>
+<pre><code class="language-html">&lt;div class="theme-info"&gt;  &lt;div class="powered-by"&gt;&lt;/div&gt;
+  &lt;span class="post-count"&gt;博客全站共{{ totalcount(site) }}字&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<p><strong>参考</strong></p>
+<p>查看更多详细的资料，参考地址：</p>
+<p><a href="https://github.com/willin/hexo-wordcount">https://github.com/willin/hexo-wordcount</a></p>
+<p>hexo-wordcount实现文章标题栏显示更多的文章信息:</p>
+<p><a href="http://joryhe.coding.me/2016-06-06-hexo_wordcount_setting_your_post.html">http://joryhe.coding.me/2016-06-06-hexo_wordcount_setting_your_post.html</a></p>
+<p>hexo使用小记:</p>
+<p><a href="http://aircjm.me/20160417hexo%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/">http://aircjm.me/20160417hexo使用小记/</a></p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

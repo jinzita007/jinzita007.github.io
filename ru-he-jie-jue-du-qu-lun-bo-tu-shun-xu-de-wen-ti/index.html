@@ -1,0 +1,317 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="如何解决读取轮播图顺序的问题">
+    <meta property="og:description" content="选项卡采用owl插件来改造的，适合用平常的浏览器可以看看，但是微信浏览器兼容性方面不太好，还有体验效果不好。如果不是侧滑的话，肯定不会影响用户体验吧。 我花了好几周没解决好，可能是自己的基础远远不够的。不过他用我做过的基础上改的，然后去解决读取顺序的问题。我就来讲一讲前端首页的选项卡问题，ajax获取动态正常的数据，但是用在插件方面，还有存在一个问题就是上面的导航栏品牌和下面显示内容的对应，两者是不一样的，而且顺序乱了。 我就交给小唐去解决这个问题，因为他比我写的js强了不少吧。 后来不到半个天解决好了，说明他有足够掌握js的知识。我问问他怎么解决了这个顺序问题，他说回调函数能够解决了吧。哎，原来我还没这个学过的，好好回家补充学一下哈。 我认真看了他的代码，就知道了他怎么去解决顺序问题。 index.html文件 &amp;lt;!doctype html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; 	&amp;lt;head&amp;gt; 		&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt;">
+    <meta property="og:url" content="http://localhost:2368/ru-he-jie-jue-du-qu-lun-bo-tu-shun-xu-de-wen-ti/">
+    <meta property="article:published_time" content="2016-10-22T04:20:00.000Z">
+    <meta property="article:modified_time" content="2016-11-21T09:48:00.000Z">
+    <meta property="article:tag" content="ajax">
+    <meta property="article:tag" content="Javascript">
+    <meta property="article:tag" content="jquery">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="如何解决读取轮播图顺序的问题">
+    <meta name="twitter:description" content="选项卡采用owl插件来改造的，适合用平常的浏览器可以看看，但是微信浏览器兼容性方面不太好，还有体验效果不好。如果不是侧滑的话，肯定不会影响用户体验吧。">
+    <meta name="twitter:url" content="http://localhost:2368/ru-he-jie-jue-du-qu-lun-bo-tu-shun-xu-de-wen-ti/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="ajax, Javascript, jquery">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "如何解决读取轮播图顺序的问题",
+    "url": "http://localhost:2368/ru-he-jie-jue-du-qu-lun-bo-tu-shun-xu-de-wen-ti/",
+    "datePublished": "2016-10-22T04:20:00.000Z",
+    "dateModified": "2016-11-21T09:48:00.000Z",
+    "keywords": "ajax, Javascript, jquery",
+    "description": "选项卡采用owl插件来改造的，适合用平常的浏览器可以看看，但是微信浏览器兼容性方面不太好，还有体验效果不好。如果不是侧滑的话，肯定不会影响用户体验吧。 我花了好几周没解决好，可能是自己的基础远远不够的。不过他用我做过的基础上改的，然后去解决读取顺序的问题。我就来讲一讲前端首页的选项卡问题，ajax获取动态正常的数据，但是用在插件方面，还有存在一个问题就是上面的导航栏品牌和下面显示内容的对应，两者是不一样的，而且顺序乱了。 我就交给小唐去解决这个问题，因为他比我写的js强了不少吧。 后来不到半个天解决好了，说明他有足够掌握js的知识。我问问他怎么解决了这个顺序问题，他说回调函数能够解决了吧。哎，原来我还没这个学过的，好好回家补充学一下哈。 我认真看了他的代码，就知道了他怎么去解决顺序问题。 index.html文件 &amp;lt;!doctype html&amp;gt; &amp;lt;html lang&#x3D;&amp;quot;en&amp;quot;&amp;gt; \t&amp;lt;head&amp;gt; \t\t&amp;lt;meta charset&#x3D;&amp;quot;UTF-8&amp;quot; /&amp;gt;",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-ajax tag-javascript tag-jquery">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>如何解决读取轮播图顺序的问题</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-10-22</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/ajax/">ajax</a> <a href="../tag/javascript/">Javascript</a> <a href="../tag/jquery/">jquery</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>选项卡采用owl插件来改造的，适合用平常的浏览器可以看看，但是微信浏览器兼容性方面不太好，还有体验效果不好。如果不是侧滑的话，肯定不会影响用户体验吧。</p>
+</blockquote>
+<p>我花了好几周没解决好，可能是自己的基础远远不够的。不过他用我做过的基础上改的，然后去解决读取顺序的问题。我就来讲一讲前端首页的选项卡问题，ajax获取动态正常的数据，但是用在插件方面，还有存在一个问题就是上面的导航栏品牌和下面显示内容的对应，两者是不一样的，而且顺序乱了。</p>
+<p>我就交给小唐去解决这个问题，因为他比我写的js强了不少吧。<br>
+后来不到半个天解决好了，说明他有足够掌握js的知识。我问问他怎么解决了这个顺序问题，他说回调函数能够解决了吧。哎，原来我还没这个学过的，好好回家补充学一下哈。</p>
+<p>我认真看了他的代码，就知道了他怎么去解决顺序问题。</p>
+<p>index.html文件</p>
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8" /&gt;
+		&lt;title&gt;水到家&lt;/title&gt;
+		&lt;meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no"&gt;
+	&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="component"&gt;
+            &lt;!--选项卡导航栏--&gt;
+			&lt;div class="thumbnails-wrapper"&gt;
+				&lt;div id="thumbnails" class="owl-carousel"&gt;
+					
+				&lt;/div&gt;
+			&lt;/div&gt;
+            &lt;!--选项卡显示内容--&gt;
+			&lt;div id="carousel" class="owl-carousel main-carousel"&gt;
+				
+			&lt;/div&gt;
+
+		&lt;/div&gt;
+        
+        &lt;script src="js/jquery-2.1.1.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+		&lt;script src="js/owl.carousel.min.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+        &lt;script src="js/index.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+        
+      &lt;/body&gt;  
+  &lt;/html&gt;
+
+</code></pre>
+<p>index.js文件</p>
+<pre><code class="language-javascript">		  var primary = $("#carousel");
+			var secondary = $("#thumbnails");
+		    function syncPosition(el) {
+					var current = this.currentItem;
+					secondary.find(".owl-item").removeClass("synced").eq(current).addClass("synced");
+					if(secondary.data("owlCarousel") !== undefined) {
+						center(current);
+					}
+					$('.current-item').html(this.owl.currentItem + 1);
+					$('.max-items').html(this.owl.owlItems.length);
+				}
+			secondary.on("click", ".owl-item", function(e) {
+				e.preventDefault();
+				var number = $(this).data("owlItem");
+				primary.trigger("owl.goTo", number);
+			});
+			function center(number) {
+				var sync2visible = secondary.data("owlCarousel").owl.visibleItems;
+				var num = number;
+				var found = false;
+				for(var i in sync2visible) {
+					if(num === sync2visible[i]) {
+						var found = true;
+					}
+				}
+
+				if(found === false) {
+					if(num &gt; sync2visible[sync2visible.length - 1]) {
+						secondary.trigger("owl.goTo", num - sync2visible.length + 2);
+					} else {
+						if(num - 1 === -1) {
+							num = 0;
+						}
+						secondary.trigger("owl.goTo", num);
+					}
+				} else if(num === sync2visible[sync2visible.length - 1]) {
+					secondary.trigger("owl.goTo", sync2visible[1]);
+				} else if(num === sync2visible[0]) {
+					secondary.trigger("owl.goTo", num - 1);
+				}
+			}
+			function call(){
+				    primary.owlCarousel({
+						singleItem: true,
+						slideSpeed: 1000,
+						pagination: false,
+						afterAction: syncPosition,
+						responsiveRefreshRate: 200,
+						navigation: false,
+						navigationText: ["", ""]
+					});
+					secondary.owlCarousel({
+						items: 3,
+						itemsDesktop: [1200, 3],
+						itemsDesktopSmall: [992, 3],
+						itemsTablet: [768, 3],
+						itemsMobile: [480, 3],
+						pagination: false,
+						responsiveRefreshRate: 100,
+						/*navigation: true,
+						navigationText: ["", ""],*/
+						afterInit: function(el) {
+							el.find(".owl-item").eq(0).addClass("synced");
+						}
+					});
+			}
+			$.ajax({
+				url: '',
+				type: 'GET',
+				dataType: 'jsonp',
+				success: function(data) {
+					var pinpai=data.data;
+				    var i=-1;
+				    ajax();
+				    function ajax(){
+				    	i++;
+				    	if(i&gt;=pinpai.length){
+				    		call();
+				    		return;
+				    	}else{
+	                       $.ajax({
+								url: "",
+								async:true,
+								type: 'GET',
+								data: {
+									brand_id:pinpai[i].brand_id,
+								},
+								dataType: 'jsonp',
+								success:function(result) {
+									$('#thumbnails').append('&lt;div class="item"&gt;&lt;a class="image" href="#"&gt;'+pinpai[i].brand_name+'&lt;/a&gt;&lt;/div&gt;');
+									var sP=result.data;
+									var str='&lt;div class="item"&gt;&lt;ul class="mui-table-view" id="mui-table-view"&gt;';
+									for(var j=0;j&lt;sP.length;j++){
+	                                    str+='&lt;li class="mui-table-view-cell mui-media"&gt;&lt;a href="waterticket/buywater_pop.html"&gt;&lt;img class="mui-media-object mui-pull-left" src="images/01.png"&gt;&lt;div class="mui-media-body"&gt;'+sP[j].goods_name+'&lt;p class="mui-ellipsis"&gt;'+sP[j].goods_title+'&lt;/p&gt;&lt;p class="price"&gt;&lt;span class="money colred"&gt;&lt;em class="smallyuan"&gt;&amp;yen;&lt;/em&gt;'+sP[j].goods_price+'&lt;/span&gt;&lt;span class="jiuzhe"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;div class="mui-numbox jiajian mui-pull-right" data-numbox-min="0" data-numbox-max="100000"&gt;&lt;button class="mui-btn mui-numbox-btn-minus" type="button"&gt;-&lt;/button&gt;&lt;input class="mui-numbox-input numBox" type="number" value="0" readonly="readonly" /&gt;&lt;button data-title="农夫矿泉水2" data-price="10" class="mui-btn mui-numbox-btn-plus" type="button"&gt;+&lt;/button&gt;&lt;input type="hidden" value="0" class="goods_totalPrice"&gt;&lt;/div&gt;&lt;/li&gt;'
+	                                };
+	                                str+='&lt;/ul&gt;&lt;/div&gt;';
+	                                $('#carousel').append(str);
+	                                ajax();
+								}
+							});
+                       }
+					};
+				}
+			});
+</code></pre>
+<p>这个不能多说了，因为源码保密性不能随便讲一下哈。我们辛苦了研究很多天哈哈，其实收获了不少的知识，也许是值得了吧。</p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

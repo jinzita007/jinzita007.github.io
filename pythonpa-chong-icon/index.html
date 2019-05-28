@@ -1,0 +1,368 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="python爬取Font Awesome字体库">
+    <meta property="og:description" content="我最近做一个java后台系统，因为新增弹窗的时候要选择icon字体库。如果手工复制这么多个icon图标，这样会浪费了时间。所以我打算要写python抓取Font Awesome官方网站的内容，可以放到数据库。 先获取section标签的ID属性值 from urllib.request import urlopen from bs4 import BeautifulSoup import pymysql # 打开数据库连接 db = pymysql.connect(host='localhost', user='root', password='root', port=3306, db='pydemo') # 使用cursor()方法获取操作游标 cursor = db.cursor() url = &amp;quot;http://www.fontawesome.com.cn/faicons/&amp;quot; # 请求网址 html = urlopen(">
+    <meta property="og:url" content="http://localhost:2368/pythonpa-chong-icon/">
+    <meta property="article:published_time" content="2018-12-29T13:30:39.000Z">
+    <meta property="article:modified_time" content="2018-12-29T13:09:40.000Z">
+    <meta property="article:tag" content="python">
+    <meta property="article:tag" content="beautifulsoup">
+    <meta property="article:tag" content="爬虫">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="python爬取Font Awesome字体库">
+    <meta name="twitter:description" content="最近做一个java后台系统，因为新增弹窗的时候要选择icon字体库">
+    <meta name="twitter:url" content="http://localhost:2368/pythonpa-chong-icon/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="woaitianwen">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="python, beautifulsoup, 爬虫">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "woaitianwen",
+        "url": "http://localhost:2368/author/woaitianwen/",
+        "sameAs": []
+    },
+    "headline": "python爬取Font Awesome字体库",
+    "url": "http://localhost:2368/pythonpa-chong-icon/",
+    "datePublished": "2018-12-29T13:30:39.000Z",
+    "dateModified": "2018-12-29T13:09:40.000Z",
+    "keywords": "python, beautifulsoup, 爬虫",
+    "description": "我最近做一个java后台系统，因为新增弹窗的时候要选择icon字体库。如果手工复制这么多个icon图标，这样会浪费了时间。所以我打算要写python抓取Font Awesome官方网站的内容，可以放到数据库。 先获取section标签的ID属性值 from urllib.request import urlopen from bs4 import BeautifulSoup import pymysql # 打开数据库连接 db &#x3D; pymysql.connect(host&#x3D;&#x27;localhost&#x27;, user&#x3D;&#x27;root&#x27;, password&#x3D;&#x27;root&#x27;, port&#x3D;3306, db&#x3D;&#x27;pydemo&#x27;) # 使用cursor()方法获取操作游标 cursor &#x3D; db.cursor() url &#x3D; &amp;quot;http://www.fontawesome.com.cn/faicons/&amp;quot; # 请求网址 html &#x3D; urlopen(",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-python tag-beautifulsoup tag-pa-chong">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>python爬取Font Awesome字体库</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-12-29</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/python/">python</a> <a href="../tag/beautifulsoup/">beautifulsoup</a> <a href="../tag/pa-chong/">爬虫</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>我最近做一个java后台系统，因为新增弹窗的时候要选择icon字体库。如果手工复制这么多个icon图标，这样会浪费了时间。所以我打算要写python抓取Font Awesome官方网站的内容，可以放到数据库。</p>
+</blockquote>
+<blockquote>
+<p>先获取section标签的ID属性值</p>
+</blockquote>
+<pre><code>from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import pymysql
+
+# 打开数据库连接
+db = pymysql.connect(host='localhost', user='root', password='root', port=3306, db='pydemo')
+# 使用cursor()方法获取操作游标
+cursor = db.cursor()
+
+url = "http://www.fontawesome.com.cn/faicons/"
+# 请求网址
+html = urlopen(url)
+# 解析网页信息
+soup = BeautifulSoup(html, "lxml")
+
+icons = soup.select("#icons section")
+
+arr = []
+for item in zip(icons):
+    arr.append(item[0]['id'])
+    print(item[0]['id'])
+</code></pre>
+<blockquote>
+<p>输出多个ID属性值</p>
+</blockquote>
+<pre><code>new
+web-application
+accessibility
+hand
+transportation
+gender
+file-type
+spinner
+form-control
+payment
+chart
+currency
+text-editor
+directional
+video-player
+brand
+medical
+</code></pre>
+<blockquote>
+<p>元素的 id 属性<code>new</code>和其他id属性有一样的内容，所以要删除第一个元素</p>
+</blockquote>
+<pre><code>arr.pop(0)
+print(arr)
+</code></pre>
+<blockquote>
+<p>打印结果：</p>
+</blockquote>
+<pre><code>['web-application', 'accessibility', 'hand', 'transportation', 'gender', 'file-type', 'spinner', 'form-control', 'payment', 'chart', 'currency', 'text-editor', 'directional', 'video-player', 'brand', 'medical']
+</code></pre>
+<blockquote>
+<p>遍历获取序号和元素的id属性的值</p>
+</blockquote>
+<pre><code>for i,item in zip(arr,icons):
+    print ("序号：%s 值：%s" % (arr.index(i) + 1, i))
+</code></pre>
+<blockquote>
+<p>打印结果：</p>
+</blockquote>
+<pre><code>序号：1 值：web-application
+序号：2 值：accessibility
+序号：3 值：hand
+序号：4 值：transportation
+序号：5 值：gender
+序号：6 值：file-type
+序号：7 值：spinner
+序号：8 值：form-control
+序号：9 值：payment
+序号：10 值：chart
+序号：11 值：currency
+序号：12 值：text-editor
+序号：13 值：directional
+序号：14 值：video-player
+序号：15 值：brand
+序号：16 值：medical
+</code></pre>
+<blockquote>
+<p>遍历获取图标名称信息</p>
+</blockquote>
+<pre><code>    for h2 in soup.find_all(id=i):
+        for a in h2.find_all("a"):
+            try:
+                name = a.span.next_sibling
+                print("[*] 图标名称：", name)
+                icon = ' '.join(a.i['class'])
+                print("[*] 图标icon：", icon)
+              except AttributeError:
+                pass
+</code></pre>
+<blockquote>
+<p>打印结果</p>
+</blockquote>
+<pre><code>[*] 图标名称： address-book
+[*] 图标icon： fa fa-address-book
+[*] 图标名称： address-book-o
+[*] 图标icon： fa fa-address-book-o
+[*] 图标名称： address-card
+[*] 图标icon： fa fa-address-card
+[*] 图标名称： address-card-o
+[*] 图标icon： fa fa-address-card-o
+[*] 图标名称： adjust
+</code></pre>
+<blockquote>
+<p>插入数据库</p>
+</blockquote>
+<pre><code>               # SQL语句
+                sql = 'INSERT INTO sys_icon(name,icon) values(%s,%s)'
+                try:
+                    # 执行SQL语句
+                    cursor.execute(sql, (name, icon))
+                    # 提交到数据库执行
+                    db.commit()
+                except:
+                    # 发生错误时回滚
+                    db.rollback()
+</code></pre>
+<blockquote>
+<p>完整如下:</p>
+</blockquote>
+<pre><code># -*- coding: utf-8 -*-
+#---------------------------------------
+#   程序：爬取Font Awesome字体库
+#   版本：0.0.1
+#   作者：周玉龙
+#   日期：2018-12-29 周六 下午9:35
+#   语言：Python 3.6
+#   操作：输入网址后就获取icon，然后存到mysql数据库
+#---------------------------------------
+
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import pymysql
+
+# 打开数据库连接
+db = pymysql.connect(host='localhost', user='root', password='root', port=3306, db='pydemo')
+# 使用cursor()方法获取操作游标
+cursor = db.cursor()
+
+url = "http://www.fontawesome.com.cn/faicons/"
+# 请求网址
+html = urlopen(url)
+# 解析网页信息
+soup = BeautifulSoup(html, "lxml")
+
+icons = soup.select("#icons section")
+
+arr = []
+for item in zip(icons):
+    arr.append(item[0]['id'])
+    print(item[0]['id'])
+
+#删除第一个元素
+arr.pop(0)
+print(arr)
+
+for i,item in zip(arr,icons):
+
+    print ("序号：%s 值：%s" % (arr.index(i) + 1, i))
+
+    for h2 in soup.find_all(id=i):
+        for a in h2.find_all("a"):
+            try:
+                name = a.span.next_sibling
+                print("[*] 图标名称：", name)
+                icon = ' '.join(a.i['class'])
+                print("[*] 图标icon：", icon)
+
+                # SQL语句
+                sql = 'INSERT INTO sys_icon(name,icon) values(%s,%s)'
+                try:
+                    # 执行SQL语句
+                    cursor.execute(sql, (name, icon))
+                    # 提交到数据库执行
+                    db.commit()
+                except:
+                    # 发生错误时回滚
+                    db.rollback()
+
+            except AttributeError:
+                pass
+
+db.close()
+
+</code></pre>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

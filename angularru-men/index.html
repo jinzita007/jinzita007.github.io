@@ -1,0 +1,210 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="angular学习笔记01">
+    <meta property="og:description" content="Angular的简介 Angular CLI是一个命令行界面工具，它可以创建项目、添加文件以及执行一大堆开发任务，比如测试、打包和发布。我们的目的是构建一个简单的Angular CLI应用程序，更好的快速开发Angular应用，通过开发Angular的过程中一定要多看Angular官方文档。 如果没有node的话，那就去node官网下载：http://nodejs.cn/ Angular-cli安装配置 1、全局安装Angular-cli npm install -g @angular/cli 2、创建新项目 npm new my-app 3、启动开发服务器 cd my-app ng serve --open 然后自动打开浏览器并访问：http://localhost:4200/ 4、编辑我们第一个Angular组件 vsc 5、自动出现vscode编辑器 如果没有vscode编辑器，就去打开https://code.visualstudio.com/">
+    <meta property="og:url" content="http://localhost:2368/angularru-men/">
+    <meta property="article:published_time" content="2017-04-18T11:26:50.000Z">
+    <meta property="article:modified_time" content="2017-04-18T11:42:26.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="angular学习笔记01">
+    <meta name="twitter:description" content="Angular CLI是一个命令行界面工具，它可以创建项目、添加文件以及执行一大堆开发任务，比如测试、打包和发布。我们的目的是构建一个简单的Angular CLI应用程序，更好的快速开发Angular应用，通过开发Angular的过程中一定要多看Angular官方文档。">
+    <meta name="twitter:url" content="http://localhost:2368/angularru-men/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "angular学习笔记01",
+    "url": "http://localhost:2368/angularru-men/",
+    "datePublished": "2017-04-18T11:26:50.000Z",
+    "dateModified": "2017-04-18T11:42:26.000Z",
+    "description": "Angular的简介 Angular CLI是一个命令行界面工具，它可以创建项目、添加文件以及执行一大堆开发任务，比如测试、打包和发布。我们的目的是构建一个简单的Angular CLI应用程序，更好的快速开发Angular应用，通过开发Angular的过程中一定要多看Angular官方文档。 如果没有node的话，那就去node官网下载：http://nodejs.cn/ Angular-cli安装配置 1、全局安装Angular-cli npm install -g @angular/cli 2、创建新项目 npm new my-app 3、启动开发服务器 cd my-app ng serve --open 然后自动打开浏览器并访问：http://localhost:4200/ 4、编辑我们第一个Angular组件 vsc 5、自动出现vscode编辑器 如果没有vscode编辑器，就去打开https://code.visualstudio.com/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="../records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>angular学习笔记01</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2017-04-18</time>
+                        </span>  |   
+                        <span class="tags">
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><h3 id="angular">Angular的简介</h3>
+<p>Angular CLI是一个命令行界面工具，它可以创建项目、添加文件以及执行一大堆开发任务，比如测试、打包和发布。我们的目的是构建一个简单的Angular CLI应用程序，更好的快速开发Angular应用，通过开发Angular的过程中一定要多看Angular官方文档。</p>
+<p>如果没有node的话，那就去node官网下载：<a href="http://nodejs.cn/">http://nodejs.cn/</a></p>
+<h3 id="angularcli">Angular-cli安装配置</h3>
+<p>1、全局安装Angular-cli</p>
+<pre><code>npm install -g @angular/cli
+</code></pre>
+<p>2、创建新项目</p>
+<pre><code>npm new my-app
+</code></pre>
+<p>3、启动开发服务器</p>
+<pre><code>cd my-app
+ng serve --open
+</code></pre>
+<p>然后自动打开浏览器并访问：<a href="http://localhost:4200/">http://localhost:4200/</a></p>
+<p>4、编辑我们第一个Angular组件</p>
+<pre><code>vsc
+</code></pre>
+<p>5、自动出现vscode编辑器</p>
+<p>如果没有vscode编辑器，就去打开https://code.visualstudio.com/</p>
+<p>6、找到src/app/app.component.ts文件</p>
+<pre><code>export class AppComponent {
+  title = 'My First Angular App';
+}
+</code></pre>
+<p>7、打开 src/app/app.component.css 并给这个组件设置一些样式</p>
+<pre><code>h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+</code></pre>
+<h3 id="">学习资料入门：</h3>
+<p><strong>1、NiceFish（美人鱼）是一个微型Blog系统，前端基于Angular 4.0.2</strong></p>
+<p><a href="https://git.oschina.net/mumu-osc/NiceFish">https://git.oschina.net/mumu-osc/NiceFish</a></p>
+<p><strong>2、NiceFish的后台管理界面，纯前端，没有任何后端代码。整体基于Angular2和Bootstrap3.3.7</strong></p>
+<p><a href="https://git.oschina.net/mumu-osc/NiceFish-Admin">https://git.oschina.net/mumu-osc/NiceFish-Admin</a></p>
+<p><strong>3、NiceFish的Java版后台，最简单的SpringMVC+Mybatis</strong></p>
+<p><a href="http://git.oschina.net/mumu-osc/NiceFish-SpringMybatis">http://git.oschina.net/mumu-osc/NiceFish-SpringMybatis</a></p>
+<p><strong>4、Angular2.0视频教程来了！视频和PPT的链接都在底部</strong></p>
+<p><a href="https://my.oschina.net/mumu/blog/834254">https://my.oschina.net/mumu/blog/834254</a></p>
+<p><strong>5、以下是视频对应的PPT</strong></p>
+<p><a href="http://git.oschina.net/mumu-osc/NiceFish/attach_files">http://git.oschina.net/mumu-osc/NiceFish/attach_files</a></p>
+<p><strong>6、REST API的测试和原型设计</strong></p>
+<p>这个可以拿来练习用的，因为angular需要获取api接口</p>
+<p><a href="http://jsonplaceholder.typicode.com/">http://jsonplaceholder.typicode.com/</a></p>
+<p><em><strong>7、Angular官网手册</strong></em></p>
+<p><a href="https://angular.cn/">https://angular.cn/</a></p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

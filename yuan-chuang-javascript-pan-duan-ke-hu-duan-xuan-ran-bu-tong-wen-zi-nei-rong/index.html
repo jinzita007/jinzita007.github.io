@@ -1,0 +1,247 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Javascript 判断客户端-渲染不同文字内容">
+    <meta property="og:description" content="我要实现这样的一个效果：在响应式页面的时候，在手机显示的时候，要有文字显示“长按关注”，在pc上面显示文字为“请扫描关注”，能否适应不同屏幕，渲染不同文字的内容。 需要做两个方面的考虑：1.判断客户端类型main.js var client = {   versions: function() {     var u = navigator.userAgent;     return {       ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端         android: u.indexOf('Android') &amp;gt; -1 || u.indexOf('Linux') &amp;gt; -1, //android终端或者uc浏览器       }   } }  //get value  var btnvalue = document.getElementById(">
+    <meta property="og:url" content="http://localhost:2368/yuan-chuang-javascript-pan-duan-ke-hu-duan-xuan-ran-bu-tong-wen-zi-nei-rong/">
+    <meta property="article:published_time" content="2015-11-04T10:28:00.000Z">
+    <meta property="article:modified_time" content="2016-10-07T03:54:42.000Z">
+    <meta property="article:tag" content="前端">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Javascript 判断客户端-渲染不同文字内容">
+    <meta name="twitter:description" content="在响应式页面的时候，在手机显示的时候，要有文字显示“长按关注”，在pc上面显示文字为“请扫描关注”，能否适应不同屏幕，渲染不同文字的内容">
+    <meta name="twitter:url" content="http://localhost:2368/yuan-chuang-javascript-pan-duan-ke-hu-duan-xuan-ran-bu-tong-wen-zi-nei-rong/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="前端">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Javascript 判断客户端-渲染不同文字内容",
+    "url": "http://localhost:2368/yuan-chuang-javascript-pan-duan-ke-hu-duan-xuan-ran-bu-tong-wen-zi-nei-rong/",
+    "datePublished": "2015-11-04T10:28:00.000Z",
+    "dateModified": "2016-10-07T03:54:42.000Z",
+    "keywords": "前端",
+    "description": "我要实现这样的一个效果：在响应式页面的时候，在手机显示的时候，要有文字显示“长按关注”，在pc上面显示文字为“请扫描关注”，能否适应不同屏幕，渲染不同文字的内容。 需要做两个方面的考虑：1.判断客户端类型main.js var client &#x3D; {   versions: function() {     var u &#x3D; navigator.userAgent;     return {       ios: !!u.match(/\\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端         android: u.indexOf(&#x27;Android&#x27;) &amp;gt; -1 || u.indexOf(&#x27;Linux&#x27;) &amp;gt; -1, //android终端或者uc浏览器       }   } }  //get value  var btnvalue &#x3D; document.getElementById(",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-qian-duan">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Javascript 判断客户端-渲染不同文字内容</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2015-11-04</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/qian-duan/">前端</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>我要实现这样的一个效果：在响应式页面的时候，在手机显示的时候，要有文字显示“长按关注”，在pc上面显示文字为“请扫描关注”，能否适应不同屏幕，渲染不同文字的内容。</p>
+</blockquote>
+<p>需要做两个方面的考虑：1.判断客户端类型main.js</p>
+<pre><code class="language-js">var client = {
+  versions: function() {
+    var u = navigator.userAgent;
+    return {
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端  
+      android: u.indexOf('Android') &gt; -1 || u.indexOf('Linux') &gt; -1, //android终端或者uc浏览器  
+    }
+  }
+} 
+//get value 
+var btnvalue = document.getElementById('btn').innerText;
+var btnvalue = document.getElementById('btn2').innerText;
+var btnvalue = document.getElementById('btn3').innerText;
+var btnvalue = document.getElementById('btn4').innerText;
+var btnvalue = document.getElementById('btn5').innerText;
+var btnvalue = document.getElementById('btn6').innerText;
+var btnvalue = document.getElementById('btn7').innerText;
+var btnvalue = document.getElementById('btn8').innerText;
+console.log(btnvalue);
+if (client.versions.ios) {
+  console.log("ios");
+  document.getElementById('btn').innerHTML = '长按关注';
+  document.getElementById('btn2').innerHTML = '长按关注';
+  document.getElementById('btn3').innerHTML = '长按关注';
+  document.getElementById('btn4').innerHTML = '长按关注';
+  document.getElementById('btn5').innerHTML = '长按关注';
+  document.getElementById('btn6').innerHTML = '长按关注';
+  document.getElementById('btn7').innerHTML = '长按关注';
+  document.getElementById('btn8').innerHTML = '长按关注';
+} else if (client.versions.android) {
+  console.log("andriod");
+  document.getElementById('btn').innerHTML = '长按关注';
+  document.getElementById('btn2').innerHTML = '长按关注';
+  document.getElementById('btn3').innerHTML = '长按关注';
+  document.getElementById('btn4').innerHTML = '长按关注';
+  document.getElementById('btn5').innerHTML = '长按关注';
+  document.getElementById('btn6').innerHTML = '长按关注';
+  document.getElementById('btn7').innerHTML = '长按关注';
+  document.getElementById('btn8').innerHTML = '长按关注';
+} else {
+  document.getElementById('btn').innerHTML = '请扫描关注';
+  document.getElementById('btn2').innerHTML = '请扫描关注';
+  document.getElementById('btn3').innerHTML = '请扫描关注';
+  document.getElementById('btn4').innerHTML = '请扫描关注';
+  document.getElementById('btn5').innerHTML = '请扫描关注';
+  document.getElementById('btn6').innerHTML = '请扫描关注';
+  document.getElementById('btn7').innerHTML = '请扫描关注';
+  document.getElementById('btn8').innerHTML = '请扫描关注';
+  console.log("不是移动设备");
+}
+</code></pre>
+<p>2.显示信息</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script type="text/javascript" src="main.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+                    &lt;!-- 显示信息 --&gt; 
+        &lt;button id="btn"&gt;&lt;/button&gt;&lt;br /&gt;
+        &lt;button id="btn2"&gt;&lt;/button&gt;&lt;br /&gt;
+        &lt;button id="btn3"&gt;&lt;/button&gt;&lt;br /&gt;
+        &lt;button id="btn4"&gt;&lt;/button&gt;&lt;br /&gt;
+        &lt;button id="btn5"&gt;&lt;/button&gt;&lt;br /&gt;
+        &lt;button id="btn6"&gt;&lt;/button&gt;&lt;br /&gt;
+        &lt;button id="btn7"&gt;&lt;/button&gt;&lt;br /&gt;
+        &lt;button id="btn8"&gt;&lt;/button&gt;     
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Javascript 判断客户端是否为 PC 还是手持设备，有时候工作需要用到。</p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

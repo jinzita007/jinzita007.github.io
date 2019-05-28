@@ -1,0 +1,229 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Linux系统MySQL开启远程连接">
+    <meta property="og:description" content="MySQL默认root用户只能本地访问，不能远程连接管理mysql数据库。这篇文章主要介绍了我们如何使用Linux系统下实现远程连接MySQL数据库的方法。 我们命令来登录MySQL数据库 mysql -uroot -p  创建用户用来远程连接 grant all privileges on *.* to 'root'@'%' identified by 'password'; 命令立即生效 flush privileges; 重启服务 service mysql restart 在本地远程连接 mysql -h 服务器ip地址 -P 3306 -u root -p 尝试连接报错信息：Can't connect to MySQL server on 'x.x.x.x' (61) 查找my.cnf配置文件的位置 $ mysql">
+    <meta property="og:url" content="http://localhost:2368/linuxxi-tong-mysqlkai-qi-yuan-cheng-lian-jie/">
+    <meta property="article:published_time" content="2018-12-30T13:53:54.000Z">
+    <meta property="article:modified_time" content="2018-12-30T13:50:19.000Z">
+    <meta property="article:tag" content="Linux">
+    <meta property="article:tag" content="Mysql">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Linux系统MySQL开启远程连接">
+    <meta name="twitter:description" content="这篇文章主要介绍了我们如何使用Linux系统下实现远程连接MySQL数据库的方法">
+    <meta name="twitter:url" content="http://localhost:2368/linuxxi-tong-mysqlkai-qi-yuan-cheng-lian-jie/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="woaitianwen">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Linux, Mysql">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "woaitianwen",
+        "url": "http://localhost:2368/author/woaitianwen/",
+        "sameAs": []
+    },
+    "headline": "Linux系统MySQL开启远程连接",
+    "url": "http://localhost:2368/linuxxi-tong-mysqlkai-qi-yuan-cheng-lian-jie/",
+    "datePublished": "2018-12-30T13:53:54.000Z",
+    "dateModified": "2018-12-30T13:50:19.000Z",
+    "keywords": "Linux, Mysql",
+    "description": "MySQL默认root用户只能本地访问，不能远程连接管理mysql数据库。这篇文章主要介绍了我们如何使用Linux系统下实现远程连接MySQL数据库的方法。 我们命令来登录MySQL数据库 mysql -uroot -p  创建用户用来远程连接 grant all privileges on *.* to &#x27;root&#x27;@&#x27;%&#x27; identified by &#x27;password&#x27;; 命令立即生效 flush privileges; 重启服务 service mysql restart 在本地远程连接 mysql -h 服务器ip地址 -P 3306 -u root -p 尝试连接报错信息：Can&#x27;t connect to MySQL server on &#x27;x.x.x.x&#x27; (61) 查找my.cnf配置文件的位置 $ mysql",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-linux tag-mysql">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Linux系统MySQL开启远程连接</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-12-30</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/linux/">Linux</a> <a href="../tag/mysql/">Mysql</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>MySQL默认root用户只能本地访问，不能远程连接管理mysql数据库。这篇文章主要介绍了我们如何使用Linux系统下实现远程连接MySQL数据库的方法。</p>
+</blockquote>
+<blockquote>
+<p>我们命令来登录MySQL数据库</p>
+</blockquote>
+<pre><code>mysql -uroot -p 
+</code></pre>
+<blockquote>
+<p>创建用户用来远程连接</p>
+</blockquote>
+<pre><code>grant all privileges on *.* to 'root'@'%' identified by 'password';
+</code></pre>
+<blockquote>
+<p>命令立即生效</p>
+</blockquote>
+<pre><code>flush privileges;
+</code></pre>
+<blockquote>
+<p>重启服务</p>
+</blockquote>
+<pre><code>service mysql restart
+</code></pre>
+<blockquote>
+<p>在本地远程连接</p>
+</blockquote>
+<pre><code>mysql -h 服务器ip地址 -P 3306 -u root -p
+</code></pre>
+<blockquote>
+<p>尝试连接报错信息：<code>Can't connect to MySQL server on 'x.x.x.x' (61)</code></p>
+</blockquote>
+<blockquote>
+<p>查找my.cnf配置文件的位置</p>
+</blockquote>
+<pre><code>$ mysql --help|grep my.cnf
+order of preference, my.cnf, $MYSQL_TCP_PORT,
+/etc/mysql/my.cnf /etc/my.cnf ~/.my.cnf 
+</code></pre>
+<blockquote>
+<p>修改my.cnf配置文件</p>
+</blockquote>
+<pre><code>vi /etc/my.cnf
+</code></pre>
+<blockquote>
+<p>增加下一行</p>
+</blockquote>
+<pre><code>bind-address    = 0.0.0.0
+</code></pre>
+<blockquote>
+<p>然后重新启动服务器并再试一次</p>
+</blockquote>
+<pre><code>service mysql restart
+</code></pre>
+<blockquote>
+<p>但是要注意的是给开放3306端口</p>
+</blockquote>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

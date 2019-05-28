@@ -1,0 +1,197 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="文件上传报错：Current request is not a multipart request">
+    <meta property="og:description" content="我使用springboot实现上传文件功能，并将上传好文件保存到指定目录下。当postman测试上传文件接口出现报错了信息，如何解决问题，并正确设置postman配置。 {     &amp;quot;timestamp&amp;quot;: &amp;quot;2018-12-31 12:30:12&amp;quot;,     &amp;quot;status&amp;quot;: 500,     &amp;quot;error&amp;quot;: &amp;quot;Internal Server Error&amp;quot;,     &amp;quot;exception&amp;quot;: &amp;quot;org.springframework.web.multipart.MultipartException&amp;quot;,     &amp;quot;message&amp;quot;: &amp;quot;Current request is not a multipart request&amp;quot;,     &amp;quot;path&amp;">
+    <meta property="og:url" content="http://localhost:2368/wen-jian-shang-chuan/">
+    <meta property="article:published_time" content="2018-12-31T04:39:20.000Z">
+    <meta property="article:modified_time" content="2018-12-31T04:28:55.000Z">
+    <meta property="article:tag" content="java">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="文件上传报错：Current request is not a multipart request">
+    <meta name="twitter:description" content="当postman测试上传文件接口出现报错了信息，如何解决问题，并正确设置postman配置">
+    <meta name="twitter:url" content="http://localhost:2368/wen-jian-shang-chuan/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="woaitianwen">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="java">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "woaitianwen",
+        "url": "http://localhost:2368/author/woaitianwen/",
+        "sameAs": []
+    },
+    "headline": "文件上传报错：Current request is not a multipart request",
+    "url": "http://localhost:2368/wen-jian-shang-chuan/",
+    "datePublished": "2018-12-31T04:39:20.000Z",
+    "dateModified": "2018-12-31T04:28:55.000Z",
+    "keywords": "java",
+    "description": "我使用springboot实现上传文件功能，并将上传好文件保存到指定目录下。当postman测试上传文件接口出现报错了信息，如何解决问题，并正确设置postman配置。 {     &amp;quot;timestamp&amp;quot;: &amp;quot;2018-12-31 12:30:12&amp;quot;,     &amp;quot;status&amp;quot;: 500,     &amp;quot;error&amp;quot;: &amp;quot;Internal Server Error&amp;quot;,     &amp;quot;exception&amp;quot;: &amp;quot;org.springframework.web.multipart.MultipartException&amp;quot;,     &amp;quot;message&amp;quot;: &amp;quot;Current request is not a multipart request&amp;quot;,     &amp;quot;path&amp;",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-java">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>文件上传报错：Current request is not a multipart request</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-12-31</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/java/">java</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>我使用springboot实现上传文件功能，并将上传好文件保存到指定目录下。当postman测试上传文件接口出现报错了信息，如何解决问题，并正确设置postman配置。</p>
+</blockquote>
+<pre><code>{
+    "timestamp": "2018-12-31 12:30:12",
+    "status": 500,
+    "error": "Internal Server Error",
+    "exception": "org.springframework.web.multipart.MultipartException",
+    "message": "Current request is not a multipart request",
+    "path": "/upload"
+}
+</code></pre>
+<blockquote>
+<p>报错信息的是Current request is not a multipart request<br>
+原因是Headers头部勾选Content-Type选错了application/x-www-form-urlencoded，所以要取消勾选，才能上传成功！</p>
+</blockquote>
+<pre><code>{
+    "msg": "上传成功",
+    "result": true,
+    "data": "/Users/zhouyulong/gogs/Spring-Boot-Shiro/src/main/webapp/upload/c18127d2-cd14-435b-8172-1f3f67596208.jpg"
+}
+</code></pre>
+<blockquote>
+<p>以上解决了问题，可以正常上传</p>
+</blockquote>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

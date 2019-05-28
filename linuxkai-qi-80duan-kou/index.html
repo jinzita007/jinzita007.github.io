@@ -1,0 +1,193 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Linux开启80端口">
+    <meta property="og:description" content="我来介绍linux防火墙打开80端口方法和添加防火墙规则。 打开防火墙配置文件 vi /etc/sysconfig/iptables 增加下面一行 -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT （允许80端口通过防火墙）  保存好一下然后重启防火墙 service  iptables restart 注意增加的时候一定要在icmp-host-prohibited之前">
+    <meta property="og:url" content="http://localhost:2368/linuxkai-qi-80duan-kou/">
+    <meta property="article:published_time" content="2018-12-30T12:39:18.000Z">
+    <meta property="article:modified_time" content="2018-12-30T12:33:58.000Z">
+    <meta property="article:tag" content="Linux">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Linux开启80端口">
+    <meta name="twitter:description" content="我来介绍linux防火墙打开80端口方法和添加防火墙规则。">
+    <meta name="twitter:url" content="http://localhost:2368/linuxkai-qi-80duan-kou/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="woaitianwen">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Linux">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "woaitianwen",
+        "url": "http://localhost:2368/author/woaitianwen/",
+        "sameAs": []
+    },
+    "headline": "Linux开启80端口",
+    "url": "http://localhost:2368/linuxkai-qi-80duan-kou/",
+    "datePublished": "2018-12-30T12:39:18.000Z",
+    "dateModified": "2018-12-30T12:33:58.000Z",
+    "keywords": "Linux",
+    "description": "我来介绍linux防火墙打开80端口方法和添加防火墙规则。 打开防火墙配置文件 vi /etc/sysconfig/iptables 增加下面一行 -A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT （允许80端口通过防火墙）  保存好一下然后重启防火墙 service  iptables restart 注意增加的时候一定要在icmp-host-prohibited之前",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-linux">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Linux开启80端口</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-12-30</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/linux/">Linux</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>我来介绍linux防火墙打开80端口方法和添加防火墙规则。</p>
+</blockquote>
+<blockquote>
+<p>打开防火墙配置文件</p>
+</blockquote>
+<pre><code>vi /etc/sysconfig/iptables
+</code></pre>
+<blockquote>
+<p>增加下面一行</p>
+</blockquote>
+<pre><code>-A INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT （允许80端口通过防火墙） 
+</code></pre>
+<blockquote>
+<p>保存好一下然后重启防火墙</p>
+</blockquote>
+<pre><code>service  iptables restart
+</code></pre>
+<blockquote>
+<p>注意增加的时候一定要在icmp-host-prohibited之前</p>
+</blockquote>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

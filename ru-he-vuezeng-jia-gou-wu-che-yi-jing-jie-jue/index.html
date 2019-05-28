@@ -1,0 +1,275 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Vue如何增加购物车(已解决)">
+    <meta property="og:description" content="我尝试添加购物车，但是我不知道如何去做。当count = 0时隐藏 -，当count&amp;gt; 0时显示 -。当我尝试点击+的时候，自动增加1，点击 - 自动减少1，但是显示不了加减的功能。也许我的技术真的太不行了，反正好好研究一下吧。 写代码之前： javascript文件： const goods = [{   id: &amp;quot;1&amp;quot;,   goods_name: &amp;quot;水立方&amp;quot;,   goods_price: &amp;quot;30.00&amp;quot;,   goods_num: &amp;quot;15&amp;quot;,   count:&amp;quot;0&amp;quot; }, {   id: &amp;quot;2&amp;quot;">
+    <meta property="og:url" content="http://localhost:2368/ru-he-vuezeng-jia-gou-wu-che-yi-jing-jie-jue/">
+    <meta property="article:published_time" content="2018-01-22T13:35:04.000Z">
+    <meta property="article:modified_time" content="2018-01-22T13:24:11.000Z">
+    <meta property="article:tag" content="Vue.js">
+    <meta property="article:tag" content="Javascript">
+    <meta property="article:tag" content="前端">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Vue如何增加购物车(已解决)">
+    <meta name="twitter:description" content="我尝试添加购物车，但是我不知道如何去做。当count = 0时隐藏 -，当count&gt; 0时显示 -。当我尝试点击+的时候，自动增加1，点击 - 自动减少1，但是显示不了加减的功能。">
+    <meta name="twitter:url" content="http://localhost:2368/ru-he-vuezeng-jia-gou-wu-che-yi-jing-jie-jue/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Vue.js, Javascript, 前端">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Vue如何增加购物车(已解决)",
+    "url": "http://localhost:2368/ru-he-vuezeng-jia-gou-wu-che-yi-jing-jie-jue/",
+    "datePublished": "2018-01-22T13:35:04.000Z",
+    "dateModified": "2018-01-22T13:24:11.000Z",
+    "keywords": "Vue.js, Javascript, 前端",
+    "description": "我尝试添加购物车，但是我不知道如何去做。当count &#x3D; 0时隐藏 -，当count&amp;gt; 0时显示 -。当我尝试点击+的时候，自动增加1，点击 - 自动减少1，但是显示不了加减的功能。也许我的技术真的太不行了，反正好好研究一下吧。 写代码之前： javascript文件： const goods &#x3D; [{   id: &amp;quot;1&amp;quot;,   goods_name: &amp;quot;水立方&amp;quot;,   goods_price: &amp;quot;30.00&amp;quot;,   goods_num: &amp;quot;15&amp;quot;,   count:&amp;quot;0&amp;quot; }, {   id: &amp;quot;2&amp;quot;",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-vue-js tag-javascript tag-qian-duan">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Vue如何增加购物车(已解决)</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-01-22</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/vue-js/">Vue.js</a> <a href="../tag/javascript/">Javascript</a> <a href="../tag/qian-duan/">前端</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>我尝试添加购物车，但是我不知道如何去做。当count = 0时隐藏 -，当count&gt; 0时显示 -。当我尝试点击+的时候，自动增加1，点击 - 自动减少1，但是显示不了加减的功能。也许我的技术真的太不行了，反正好好研究一下吧。</p>
+</blockquote>
+<p>写代码之前：<br>
+javascript文件：</p>
+<pre><code>const goods = [{
+  id: "1",
+  goods_name: "水立方",
+  goods_price: "30.00",
+  goods_num: "15",
+  count:"0"
+}, {
+  id: "2",
+  goods_name: "农夫山泉",
+  goods_price: "28.00",
+  goods_num: "10",
+  count:"0"
+}]
+
+var app = new Vue({
+  el: "#app",
+  data: {
+    list: goods,
+  },
+  methods: {
+  addCart(item,event) {
+        if (!this.item.count) {
+          Vue.set(this.item, 'count', 1);
+        } else {
+          this.item.count++;
+        }
+      },
+    lessCart(event) {
+        this.item.count--;
+      }
+     
+  }
+})
+</code></pre>
+<p>HTML文件：</p>
+<pre><code>&lt;div id="app"&gt;
+  &lt;ul&gt;
+    &lt;li v-for="item in list"&gt;
+      &lt;p&gt;{{item.goods_name}}&lt;/p&gt;
+      &lt;p&gt;{{item.goods_price}}&lt;/p&gt;
+      &lt;a v-show="item.count &gt; 0" @click.stop.prevent="lessCart(item,$event)"&gt;-&lt;/a&gt;
+      &lt;input v-show="item.count &gt; 0" v-model="item.count"&gt;
+      &lt;a @click.stop.prevent="addCart(item,$event)"&gt;+&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+</code></pre>
+<p>这种代码无法实现加减功能，应该修改之后：<br>
+javascript：</p>
+<pre><code>const goods = [{
+  id: "1",
+  goods_name: "水立方",
+  goods_price: "30.00",
+  goods_num: "15",
+  count: "0"
+}, {
+  id: "2",
+  goods_name: "农夫山泉",
+  goods_price: "28.00",
+  goods_num: "10",
+  count: "0"
+}]
+
+var app = new Vue({
+  el: "#app",
+  data: {
+    list: goods,
+  },
+  methods: {
+    addCart(item) {
+        item.count++;
+      },
+      lessCart(item) {
+        item.count--;
+      }
+  }
+})
+</code></pre>
+<p>HTML文件：</p>
+<pre><code>&lt;div id="app"&gt;
+  &lt;ul&gt;
+    &lt;li v-for="item in list"&gt;
+      &lt;p&gt;{{item.goods_name}}&lt;/p&gt;
+      &lt;p&gt;{{item.goods_price}}&lt;/p&gt;
+      &lt;a v-show="item.count &gt; 0" @click.stop.prevent="lessCart(item)"&gt;-&lt;/a&gt;
+      &lt;input v-show="item.count &gt; 0" v-model="item.count"&gt;
+      &lt;a @click.stop.prevent="addCart(item)"&gt;+&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+
+</code></pre>
+<p>好了，这样可以实现加减功能</p>
+<blockquote>
+<p>因为国外程序员说：“你每次都在变相同的状态，而不是从列表中的状态。请注意，您不需要方法中的事件参数。”</p>
+</blockquote>
+<iframe width="100%" height="300" src="http://jsfiddle.net/zhouyulong/L1x1u2tm/6/embedded/js,html,result/" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

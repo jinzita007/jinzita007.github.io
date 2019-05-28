@@ -1,0 +1,286 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <meta name="description" content="这篇文章主要介绍Jquery实现Ajax加载图片轮播，以及用判断方法（主图和多图），比方说如果没有多图的时候，要考虑主图的优先来显示.....">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Ajax加载图片轮播">
+    <meta property="og:description" content="这篇文章主要介绍Jquery实现Ajax加载图片轮播，以及用判断方法（主图和多图），比方说如果没有多图的时候，要考虑主图的优先来显示.....">
+    <meta property="og:url" content="http://localhost:2368/ajaxjia-zai-tu-pian-lun-bo-11yue-fen-zong-jie/">
+    <meta property="article:published_time" content="2016-11-15T16:29:00.000Z">
+    <meta property="article:modified_time" content="2016-11-20T08:40:42.000Z">
+    <meta property="article:tag" content="前端">
+    <meta property="article:tag" content="Javascript">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Ajax加载图片轮播">
+    <meta name="twitter:description" content="这篇文章主要介绍Jquery实现Ajax加载图片轮播，以及用判断方法（主图和多图），比方说如果没有多图的时候，要考虑主图的优先来显示。客户要求商品详情页的轮播图必须是主图为显示的。我想了用if..else方法可以解决轮播图的主图来显示。">
+    <meta name="twitter:url" content="http://localhost:2368/ajaxjia-zai-tu-pian-lun-bo-11yue-fen-zong-jie/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="前端, Javascript">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Ajax加载图片轮播",
+    "url": "http://localhost:2368/ajaxjia-zai-tu-pian-lun-bo-11yue-fen-zong-jie/",
+    "datePublished": "2016-11-15T16:29:00.000Z",
+    "dateModified": "2016-11-20T08:40:42.000Z",
+    "keywords": "前端, Javascript",
+    "description": "这篇文章主要介绍Jquery实现Ajax加载图片轮播，以及用判断方法（主图和多图），比方说如果没有多图的时候，要考虑主图的优先来显示.....",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-qian-duan tag-javascript">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Ajax加载图片轮播(11月份总结)</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-11-15</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/qian-duan/">前端</a> <a href="../tag/javascript/">Javascript</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>这篇文章主要介绍Jquery实现Ajax加载图片轮播，以及用判断方法（主图和多图），比方说如果没有多图的时候，要考虑主图的优先来显示。客户要求商品详情页的轮播图必须是主图为显示的。我想了用if..else方法可以解决轮播图的主图来显示。</p>
+</blockquote>
+<p><strong>一、先去看看php图片接口地址，有两个分为主图和多图</strong></p>
+<p><img src="http://localhost:2368/ajaxjia-zai-tu-pian-lun-bo-11yue-fen-zong-jie/storage/Snip20161116_8.png" alt="Snip20161116 8"></p>
+<p><strong>二、轮播图开始：</strong></p>
+<ul>
+<li>用var变量，创建四个名，分为str、strs、firstFlash和secondFlash。</li>
+<li>str表示为商品主图</li>
+<li>strs表示为商品多图</li>
+<li>firstFlash表示为额外增加的一个节点（第一个节点是最后一张轮播）</li>
+<li>secondFlash表示为额外增加的一个节点（最后一个节点是第一张轮播）</li>
+</ul>
+<pre><code class="language-javascript">var str = '';
+var strs = '';
+var firstFlash = '';
+var secondFlash = '';
+</code></pre>
+<p><strong>三、商品主图的HTML拼接</strong></p>
+<p>Ajax获取goods_img作为商品主图，是单图的。因为后台上传商品主图是一个的，没有两个吧。</p>
+<pre><code class="language-javascript">strs+='&lt;div class="mui-slider-item lunbo"&gt;'+
+	  '&lt;a href="#" style="text-align:center"&gt;&lt;img class="goods_img" style="width:50%;height:50%;" src="'+data.data.goods_img+'" /&gt;&lt;/a&gt;'+
+	  '&lt;/div&gt;';
+</code></pre>
+<p><strong>四、商品多图的拼接</strong></p>
+<p>如果后台上传多个图片，应该用for遍历来方法显示的，Ajax获取data.data.goods_img_list作为商品多图。</p>
+<pre><code class="language-javascript">for (var i = 0; i &lt; data.data.goods_img_list.length; i++) {
+		str+='&lt;div class="mui-slider-item lunbo"&gt;'+
+			 '&lt;a href="#" style="text-align:center"&gt;&lt;img class="goods_img" style="width:50%;height:50%;" src="'+data.data.goods_img_list[i]+'" /&gt;&lt;/a&gt;'+
+			 '&lt;/div&gt;';
+			     }
+</code></pre>
+<p>五、额外增加的第一个节点</p>
+<pre><code class="language-javascript"> firstFlash+= '&lt;div class="mui-slider-item mui-slider-item-duplicate"&gt;'+
+			  '&lt;a href="###"&gt;'+
+			  '&lt;img src="'+data.data.goods_img+'" style="width:50%;height:50%;"&gt;'+
+			  '&lt;/a&gt;'+
+		      '&lt;/div&gt;';
+</code></pre>
+<p>六、额外增加的最后一个节点</p>
+<pre><code class="language-javascript">secondFlash+= '&lt;div class="mui-slider-item mui-slider-item-duplicate" id="secondFlash"&gt;&lt;a href="###"&gt;&lt;img src="'+data.data.goods_img+'" style="width:50%;height:50%;"&gt;&lt;/a&gt;&lt;/div&gt;';
+</code></pre>
+<p>七、用if...else判断并显示为：</p>
+<ul>
+<li>如果商品多图是不存在的，获取商品主图的goods_img不等于null的时候就显示；</li>
+<li>获取data.data.goods_img_list，当数组的长度是1，就表示data.data.goods_img_list.length，如果商品主图不存在的，商品多图等同1的时候只显示只第一个图片；</li>
+<li>如果商品多图有很多图片，应该是data.data.goods_img_list.length大于1；如果商品主图不等于null，就显示；</li>
+<li>如果商品主图不存在，data.data.goods_img_list.length大于1的时候商品多图就显示；</li>
+<li>如果商品主图存在，商品多图是一个图片</li>
+</ul>
+<pre><code class="language-javascript">  if (data.data.goods_img != null &amp;&amp; data.data.goods_img_list.length  == 1) {
+			$('#slider').addClass('mui-slider');
+			$('#slider').css('text-align','center');
+			$('.mui-slider-loop').append(firstFlash+strs+str+secondFlash);
+		} else if (data.data.goods_img_list.length == 1) {
+			$('#slider').css('text-align','center');
+			$('.mui-slider-loop').append(str);
+		} else if (data.data.goods_img_list.length &gt; 1) {
+			$('#slider').addClass('mui-slider');
+		  $('.mui-slider-loop').append(str);
+		} else if (data.data.goods_img != null &amp;&amp; data.data.goods_img_list.length  &gt; 1) {
+			$('#slider').addClass('mui-slider');
+			$('#slider').css('text-align','center');
+			$('.mui-slider-loop').append(firstFlash+strs+str+secondFlash);
+		} else if (data.data.goods_img != null) {
+			$('#slider').css('text-align','center');
+			$('.mui-slider-loop').append(strs);
+		}
+
+				var gallery = mui('.mui-slider');
+				gallery.slider({
+					interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+				});
+</code></pre>
+<p><strong>九、基本轮播图是采用MUI框架，对了我忘了要补写简单的代码：</strong></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" /&gt;
+    &lt;title&gt;商品详情&lt;/title&gt;
+    &lt;link rel="stylesheet" href="css/mui.min.css" /&gt;
+    &lt;script src="js/mui.min.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!--轮播图开始--&gt;
+		&lt;div class="mui-content"&gt;
+			&lt;div id="slider" class="mui-lunbo"&gt;
+				&lt;div class="mui-slider-group mui-slider-loop"&gt;
+
+				&lt;/div&gt;
+				&lt;!--&lt;div class="mui-slider-indicator"&gt;
+					&lt;div class="mui-indicator mui-active"&gt;&lt;/div&gt;
+					&lt;div class="mui-indicator"&gt;&lt;/div&gt;
+				&lt;/div&gt;--&gt;
+
+		&lt;/div&gt;
+  &lt;/div&gt;
+&lt;!--轮播图结束--&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>十、轮播图怎么放在Ajax代码里面</p>
+<pre><code class="language-javascript">$.ajax({
+	url: "http://weixin.weipe360.com/water_shuidaojia/napi.php?s=/shop/goods_detail&amp;token=99000554006372&amp;ajax=1",
+	type: 'GET',
+	dataType: 'jsonp', //here
+	success: function(data) {
+     //写轮播图代码
+    }
+    });
+</code></pre>
+<p><strong>小总结：</strong></p>
+<p>MUI轮播图插件有时候不流畅的，反正这个不重要的。不过我主要怎么写Ajax获取轮播图，如果遇到新的项目，遇到什么困难，怎么去解决问题，把这个问题的过程写在博客，这对于我来说是重要的。说实话这个工作笔记有帮助我提高水平。</p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

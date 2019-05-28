@@ -1,0 +1,279 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Mongoose如何实现分页和总计？">
+    <meta property="og:description" content="我还没有找到如何返回结果集中包含的总数据。有什么方法可以返回总数据吗？我需要确认返回了正确的JSON数据。 我想要的是有这样的结果： {     &amp;quot;total&amp;quot;:40,     &amp;quot;page&amp;quot;:1,     &amp;quot;pageSize&amp;quot;:3,     &amp;quot;books&amp;quot;:[         {             &amp;quot;_id&amp;quot;:1,             &amp;quot;title&amp;quot;:&amp;quot;达·芬奇密码&amp;quot;,             &amp;quot;author&amp;quot;:&amp;quot;[美] 丹·布朗&amp;quot;         },         {             &amp;quot;_id&amp;quot;:2,             &amp;quot;title&amp;quot;:&amp;quot;梦里花落知多少&amp;quot;,             &amp;quot;author&amp;">
+    <meta property="og:url" content="http://localhost:2368/ru-he-shi-xian-fen-ye-he-zong-ji/">
+    <meta property="article:published_time" content="2018-01-30T13:54:39.000Z">
+    <meta property="article:modified_time" content="2018-01-30T13:42:19.000Z">
+    <meta property="article:tag" content="Node.js">
+    <meta property="article:tag" content="mongodb">
+    <meta property="article:tag" content="mongoose">
+    <meta property="article:tag" content="mongodb-query">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Mongoose如何实现分页和总计？">
+    <meta name="twitter:description" content="我还没有找到如何返回结果集中包含的总数据。有什么方法可以返回总数据吗？我需要确认返回了正确的JSON数据。">
+    <meta name="twitter:url" content="http://localhost:2368/ru-he-shi-xian-fen-ye-he-zong-ji/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Node.js, mongodb, mongoose, mongodb-query">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Mongoose如何实现分页和总计？",
+    "url": "http://localhost:2368/ru-he-shi-xian-fen-ye-he-zong-ji/",
+    "datePublished": "2018-01-30T13:54:39.000Z",
+    "dateModified": "2018-01-30T13:42:19.000Z",
+    "keywords": "Node.js, mongodb, mongoose, mongodb-query",
+    "description": "我还没有找到如何返回结果集中包含的总数据。有什么方法可以返回总数据吗？我需要确认返回了正确的JSON数据。 我想要的是有这样的结果： {     &amp;quot;total&amp;quot;:40,     &amp;quot;page&amp;quot;:1,     &amp;quot;pageSize&amp;quot;:3,     &amp;quot;books&amp;quot;:[         {             &amp;quot;_id&amp;quot;:1,             &amp;quot;title&amp;quot;:&amp;quot;达·芬奇密码&amp;quot;,             &amp;quot;author&amp;quot;:&amp;quot;[美] 丹·布朗&amp;quot;         },         {             &amp;quot;_id&amp;quot;:2,             &amp;quot;title&amp;quot;:&amp;quot;梦里花落知多少&amp;quot;,             &amp;quot;author&amp;",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-node-js tag-mongodb tag-mongoose tag-mongodb-query">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Mongoose如何实现分页和总计？</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-01-30</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/node-js/">Node.js</a> <a href="../tag/mongodb/">mongodb</a> <a href="../tag/mongoose/">mongoose</a> <a href="../tag/mongodb-query/">mongodb-query</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>我还没有找到如何返回结果集中包含的总数据。有什么方法可以返回总数据吗？我需要确认返回了正确的JSON数据。</p>
+</blockquote>
+<h3 id="">我想要的是有这样的结果：</h3>
+<pre><code>{
+    "total":40,
+    "page":1,
+    "pageSize":3,
+    "books":[
+        {
+            "_id":1,
+            "title":"达·芬奇密码",
+            "author":"[美] 丹·布朗"
+        },
+        {
+            "_id":2,
+            "title":"梦里花落知多少",
+            "author":"郭敬明"
+        },
+        {
+            "_id":3,
+            "title":"红楼梦",
+            "author":"[清] 曹雪芹"
+        }
+    ]
+}
+</code></pre>
+<h3 id="">当前代码：</h3>
+<pre><code>router.get('/booksquery', (req, res) =&gt; {
+
+var page = parseInt(req.query.page) || 1;
+var limit = parseInt(req.query.limit) || 3;
+
+Book.find({})
+    .sort({ update_at: -1 })
+    .skip((page-1) * limit)
+    .limit(limit)
+    .exec((err, doc) =&gt; {
+        if (err) {
+            res.json(err)
+        } else {
+            res.json({
+                total: doc.total,
+                page: page,
+                pageSize: limit,
+                books:doc,
+            });
+        }
+    })
+})
+</code></pre>
+<h3 id="">网友帮我解决好了如下：</h3>
+<h3 id="">也许你可以这样做：</h3>
+<blockquote>
+<p>只有当前页面索引是0默认和分页开始下一页,即1,你可以做<code>.skip(page * limit)</code>确保<code>.skip()</code>和<code>.limit()</code>获取数字。</p>
+</blockquote>
+<pre><code>  router.get("/booksquery", (req, res) =&gt; {
+  var page = parseInt(req.query.page) || 0; //for next page pass 1 here
+  var limit = parseInt(req.query.limit) || 3;
+  var query = {};
+  Book.find(query)
+    .sort({ update_at: -1 })
+    .skip(page * limit) //Notice here
+    .limit(limit)
+    .exec((err, doc) =&gt; {
+      if (err) {
+        return res.json(err);
+      }
+      Book.count(query).exec((count_error, count) =&gt; {
+        if (err) {
+          return res.json(count_error);
+        }
+        return res.json({
+          total: count,
+          page: page,
+          pageSize: doc.length,
+          books: doc
+        });
+      });
+    });
+});
+</code></pre>
+<h3 id="">从上面你会得到如下回应：</h3>
+<pre><code>{
+  books: [
+    {
+      _id: 1,
+      title: "达·芬奇密码 ",
+      author: "[美] 丹·布朗"
+    },
+    {
+      _id: 2,
+      title: "梦里花落知多少",
+      author: "郭敬明"
+    },
+    {
+      _id: 3,
+      title: "红楼梦",
+      author: "[清] 曹雪芹"
+    }
+  ],
+  total: 3,
+  page: 0,
+  pageSize: 3
+}
+</code></pre>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

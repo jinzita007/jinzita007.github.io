@@ -1,0 +1,332 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Node + MySQL实现模糊查询带分页">
+    <meta property="og:description" content="从网上找不到关于模糊查询和分页在一起的文章，我只能研究模糊查询和分页。我希望本教程也许能帮到大家哈！但是我写的教程文章不能简单再简单了，因为适合新手或者入门来学习的。 在phpMyAdmin数据库管理工具操作模糊查询 我们开始创建一个简单的REST API的分页接口 // 引入重要的包 var express = require(&amp;quot;express&amp;quot;); var mysql = require(&amp;quot;mysql&amp;quot;); var bodyParser = require(&amp;quot;body-parser&amp;quot;); var app = express(); 你想要设置指定端口 // 设置指定端口 var port = process.env.PORT || 8080; 监听端口配置 app.listen(8080, function() {     console.log(&amp;quot;✔ Express server listening on">
+    <meta property="og:url" content="http://localhost:2368/node-mysqlshi-xian-mo-hu-cha-xun-dai-fen-ye/">
+    <meta property="article:published_time" content="2018-02-05T07:05:21.000Z">
+    <meta property="article:modified_time" content="2018-02-05T06:39:04.000Z">
+    <meta property="article:tag" content="Node.js">
+    <meta property="article:tag" content="Mysql">
+    <meta property="article:tag" content="search">
+    <meta property="article:tag" content="express">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Node + MySQL实现模糊查询带分页">
+    <meta name="twitter:description" content="从网上找不到关于模糊查询和分页在一起的文章，我只能研究模糊查询和分页。">
+    <meta name="twitter:url" content="http://localhost:2368/node-mysqlshi-xian-mo-hu-cha-xun-dai-fen-ye/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Node.js, Mysql, search, express">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Node + MySQL实现模糊查询带分页",
+    "url": "http://localhost:2368/node-mysqlshi-xian-mo-hu-cha-xun-dai-fen-ye/",
+    "datePublished": "2018-02-05T07:05:21.000Z",
+    "dateModified": "2018-02-05T06:39:04.000Z",
+    "keywords": "Node.js, Mysql, search, express",
+    "description": "从网上找不到关于模糊查询和分页在一起的文章，我只能研究模糊查询和分页。我希望本教程也许能帮到大家哈！但是我写的教程文章不能简单再简单了，因为适合新手或者入门来学习的。 在phpMyAdmin数据库管理工具操作模糊查询 我们开始创建一个简单的REST API的分页接口 // 引入重要的包 var express &#x3D; require(&amp;quot;express&amp;quot;); var mysql &#x3D; require(&amp;quot;mysql&amp;quot;); var bodyParser &#x3D; require(&amp;quot;body-parser&amp;quot;); var app &#x3D; express(); 你想要设置指定端口 // 设置指定端口 var port &#x3D; process.env.PORT || 8080; 监听端口配置 app.listen(8080, function() {     console.log(&amp;quot;✔ Express server listening on",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-node-js tag-mysql tag-search tag-express">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Node + MySQL实现模糊查询带分页</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-02-05</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/node-js/">Node.js</a> <a href="../tag/mysql/">Mysql</a> <a href="../tag/search/">search</a> <a href="../tag/express/">express</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>从网上找不到关于模糊查询和分页在一起的文章，我只能研究模糊查询和分页。我希望本教程也许能帮到大家哈！但是我写的教程文章不能简单再简单了，因为适合新手或者入门来学习的。</p>
+</blockquote>
+<blockquote>
+<p>在phpMyAdmin数据库管理工具操作模糊查询</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snipaste_2018-02-05_14-47-05.png" alt="Snipaste_2018-02-05_14-47-05"></p>
+<blockquote>
+<p>我们开始创建一个简单的REST API的分页接口</p>
+</blockquote>
+<pre><code>// 引入重要的包
+var express = require("express");
+var mysql = require("mysql");
+var bodyParser = require("body-parser");
+var app = express();
+</code></pre>
+<blockquote>
+<p>你想要设置指定端口</p>
+</blockquote>
+<pre><code>// 设置指定端口
+var port = process.env.PORT || 8080;
+</code></pre>
+<blockquote>
+<p>监听端口配置</p>
+</blockquote>
+<pre><code>app.listen(8080, function() {
+    console.log("✔ Express server listening on port " + port);
+});
+</code></pre>
+<blockquote>
+<p>设置连接mysql配置</p>
+</blockquote>
+<pre><code>// 连接数据库
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    database: 'mynode'
+});
+connection.connect();
+</code></pre>
+<pre><code class="language-使用body-parser解析请求体">// 使用body-parser解析请求体
+app.use(bodyParser.urlencoded({ extended: false })); 
+app.use(bodyParser.json()); //解析JSON格式
+</code></pre>
+<blockquote>
+<p>在请求GET中，当我们查询商品名称，可以看到查询结果的总数量。</p>
+</blockquote>
+<pre><code>// 查询分页+模糊查询
+app.get('/good', function(req, res) {
+...
+})
+</code></pre>
+<blockquote>
+<p>设置常量定义</p>
+</blockquote>
+<pre><code>    var total;  //总数量    
+    var search = req.query.search; //查询
+    var param = req.query || req.params;  
+    var pageNum = parseInt(param.pageNum || 1);// 页码
+    var end = parseInt(param.pageSize || 3); // 默认页数
+    var start = (pageNum - 1) * end;      // 每页码
+    var limit = start + ',' + end;  // 页码 + 限制条数
+</code></pre>
+<blockquote>
+<p>本例返回商品表中的行数：</p>
+</blockquote>
+<pre><code>// COUNT(*) 函数返回表中的记录数
+connection.query("select count(*) as total from goods where title like '%" + search + "%'", function (err, results) {
+            if (!err) {
+                if (results[0]) {
+                    total = results[0].total;
+                   
+                }
+            }
+        });
+</code></pre>
+<blockquote>
+<p>本例商品表中获取商品名称字段中<code>全脂牛奶</code>为的所有记录</p>
+</blockquote>
+<pre><code> // 以下是我们将 goods 表中获取 title 字段中以 全脂牛奶 为结尾的的所有记录
+        connection.query("select * from goods where title like '%" + search + "%' LIMIT " + limit, function (err, results, fields) {
+            if (err) throw err;
+            res.json({
+                "goods": results,
+                "total": total
+            });
+        });
+</code></pre>
+<blockquote>
+<p>当我们查询关键词"全脂牛奶"为例，默认第一页的数据</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snipaste_2018-02-05_15-12-20.png" alt="Snipaste_2018-02-05_15-12-20"></p>
+<blockquote>
+<p>当我们翻第二页的数据</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snipaste_2018-02-05_15-13-38.png" alt="Snipaste_2018-02-05_15-13-38"></p>
+<blockquote>
+<p>完整项目</p>
+</blockquote>
+<pre><code>// 引入重要的包
+var express = require("express");
+var mysql = require("mysql");
+var bodyParser = require("body-parser");
+var app = express();
+
+// 设置指定端口
+var port = process.env.PORT || 8080;
+
+// 连接数据库
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    database: 'mynode'
+});
+
+connection.connect();
+
+// 使用body-parser解析请求体
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); //解析JSON格式
+
+// 商品分页 + 模糊查询
+app.get('/good', function(req, res) {
+    var total;                                   // 总数量
+    var search = req.query.search;               // 查询
+    var param = req.query || req.params;         
+    var pageNum = parseInt(param.pageNum || 1); // 页码
+    var end = parseInt(param.pageSize || 3);    // 默认页数
+    var start = (pageNum - 1) * end;            // 每页码
+    var limit = start + ',' + end;              // 表示第几页 + 限制第几条数
+
+    if(search) {
+        // COUNT(*) 函数返回表中的记录数
+        connection.query("select count(*) as total from goods where title like '%" + search + "%'", function (err, results) {
+            if (!err) {
+                if (results[0]) {
+                    total = results[0].total;
+                   
+                }
+            }
+        });
+        // 以下是我们将 goods 表中获取 title 字段中以 全脂牛奶 为结尾的的所有记录
+        connection.query("select * from goods where title like '%" + search + "%' LIMIT " + limit, function (err, results, fields) {
+            if (err) throw err;
+            res.json({
+                "goods": results,
+                "total": total
+            });
+        });
+    }
+    
+});
+// 监听端口
+app.listen(8080, function() {
+    console.log("✔ Express server listening on port " + port);
+});
+</code></pre>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

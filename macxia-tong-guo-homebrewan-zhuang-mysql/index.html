@@ -1,0 +1,204 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Mac下通过Homebrew安装MySQL">
+    <meta property="og:description" content="学习cakephp的时候，不能连接mysql服务器的报错，好像是Mac没有自带的mysql，我就只好通过homebrew安装mysql。 我觉得brew安装什么东西真的方便了，如果没有brew的话，建议你去http://brew.sh/index_zh-cn.html 安装mysql：  brew install mysql 安装的时候下载需要时间，这个不用着急吧。你也可以利用等待的时间去喝咖啡或者消磨一些你想要做的事情吧。 Mac2终端器安装成功mysql服务器 ==&amp;gt; Downloading https://homebrew.bintray.com/bottles/mysql-5.7.13.el_capitan.bot ######################################################################## 100.0% ==&amp;gt; Pouring mysql-5.7.13.el_capitan.bottle.tar.gz ==&amp;gt; /usr/local/Cellar/mysql/">
+    <meta property="og:url" content="http://localhost:2368/macxia-tong-guo-homebrewan-zhuang-mysql/">
+    <meta property="article:published_time" content="2016-10-21T03:58:00.000Z">
+    <meta property="article:modified_time" content="2016-11-19T18:18:21.000Z">
+    <meta property="article:tag" content="IT">
+    <meta property="article:tag" content="Mac">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Mac下通过Homebrew安装MySQL">
+    <meta name="twitter:description" content="学习cakephp的时候，不能连接mysql服务器的报错，好像是Mac没有自带的mysql，我就只好通过homebrew安装mysql。">
+    <meta name="twitter:url" content="http://localhost:2368/macxia-tong-guo-homebrewan-zhuang-mysql/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="IT, Mac">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Mac下通过Homebrew安装MySQL",
+    "url": "http://localhost:2368/macxia-tong-guo-homebrewan-zhuang-mysql/",
+    "datePublished": "2016-10-21T03:58:00.000Z",
+    "dateModified": "2016-11-19T18:18:21.000Z",
+    "keywords": "IT, Mac",
+    "description": "学习cakephp的时候，不能连接mysql服务器的报错，好像是Mac没有自带的mysql，我就只好通过homebrew安装mysql。 我觉得brew安装什么东西真的方便了，如果没有brew的话，建议你去http://brew.sh/index_zh-cn.html 安装mysql：  brew install mysql 安装的时候下载需要时间，这个不用着急吧。你也可以利用等待的时间去喝咖啡或者消磨一些你想要做的事情吧。 Mac2终端器安装成功mysql服务器 &#x3D;&#x3D;&amp;gt; Downloading https://homebrew.bintray.com/bottles/mysql-5.7.13.el_capitan.bot ######################################################################## 100.0% &#x3D;&#x3D;&amp;gt; Pouring mysql-5.7.13.el_capitan.bottle.tar.gz &#x3D;&#x3D;&amp;gt; /usr/local/Cellar/mysql/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-it tag-mac">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Mac下通过Homebrew安装MySQL</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-10-21</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/it/">IT</a> <a href="../tag/mac/">Mac</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>学习cakephp的时候，不能连接mysql服务器的报错，好像是Mac没有自带的mysql，我就只好通过homebrew安装mysql。</p>
+</blockquote>
+<p>我觉得brew安装什么东西真的方便了，如果没有brew的话，建议你去http://brew.sh/index_zh-cn.html</p>
+<p>安装mysql：</p>
+<pre><code> brew install mysql
+</code></pre>
+<p>安装的时候下载需要时间，这个不用着急吧。你也可以利用等待的时间去喝咖啡或者消磨一些你想要做的事情吧。</p>
+<p>Mac2终端器安装成功mysql服务器</p>
+<pre><code>==&gt; Downloading https://homebrew.bintray.com/bottles/mysql-5.7.13.el_capitan.bot
+######################################################################## 100.0%
+==&gt; Pouring mysql-5.7.13.el_capitan.bottle.tar.gz
+==&gt; /usr/local/Cellar/mysql/5.7.13/bin/mysqld --initialize-insecure --user=zhouy
+==&gt; Caveats
+We've installed your MySQL database without a root password. To secure it run:
+    mysql_secure_installation
+
+To connect run:
+    mysql -uroot
+
+To have launchd start mysql now and restart at login:
+  brew services start mysql
+Or, if you don't want/need a background service you can just run:
+  mysql.server start
+==&gt; Summary
+</code></pre>
+<p>设置 MySQL 用户以及数据存放地址:</p>
+<pre><code>$ unset TMPDIR
+$ mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)" --datadir=/usr/local/var/mysql --tmpdir=/tmp
+</code></pre>
+<p>启动mysql服务:</p>
+<pre><code>$ mysql.server start
+</code></pre>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

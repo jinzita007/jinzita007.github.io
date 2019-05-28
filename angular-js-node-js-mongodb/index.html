@@ -1,0 +1,297 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Angular.js+Node.js + MongoDB">
+    <meta property="og:description" content="Angular.js用于客户端开发，用一个页面作为案例 工具： Node.js用于服务器端开发 Express.js创建REST服务 数据库MongoDb 架构图： 安装express sudo npm install -g express --registry=https://registry.npm.taobao.org 成功安装信息： 、express@4.14.0 /usr/local/lib/node_modules/express ├── escape-html@1.0.3 ├── content-type@1.0.2 ├── vary@1.1.0 ├── etag@1.7.0 ├── parseurl@">
+    <meta property="og:url" content="http://localhost:2368/angular-js-node-js-mongodb/">
+    <meta property="article:published_time" content="2016-11-25T08:31:53.000Z">
+    <meta property="article:modified_time" content="2016-11-25T13:05:47.000Z">
+    <meta property="article:tag" content="Node.js">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Angular.js+Node.js + MongoDB">
+    <meta name="twitter:description" content="Angular.js用于客户端开发，用一个页面作为案例。">
+    <meta name="twitter:url" content="http://localhost:2368/angular-js-node-js-mongodb/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Node.js">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Angular.js+Node.js + MongoDB",
+    "url": "http://localhost:2368/angular-js-node-js-mongodb/",
+    "datePublished": "2016-11-25T08:31:53.000Z",
+    "dateModified": "2016-11-25T13:05:47.000Z",
+    "keywords": "Node.js",
+    "description": "Angular.js用于客户端开发，用一个页面作为案例 工具： Node.js用于服务器端开发 Express.js创建REST服务 数据库MongoDb 架构图： 安装express sudo npm install -g express --registry&#x3D;https://registry.npm.taobao.org 成功安装信息： 、express@4.14.0 /usr/local/lib/node_modules/express ├── escape-html@1.0.3 ├── content-type@1.0.2 ├── vary@1.1.0 ├── etag@1.7.0 ├── parseurl@",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-node-js">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Angular.js+Node.js + MongoDB</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-11-25</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/node-js/">Node.js</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>Angular.js用于客户端开发，用一个页面作为案例</p>
+</blockquote>
+<p><strong>工具：</strong></p>
+<ul>
+<li>
+<p>Node.js用于服务器端开发</p>
+</li>
+<li>
+<p>Express.js创建REST服务</p>
+</li>
+<li>
+<p>数据库MongoDb</p>
+</li>
+</ul>
+<hr>
+<p><strong>架构图：</strong></p>
+<p><img src="http://img.jdon.com/32595/23142991" alt="alt"></p>
+<hr>
+<p><strong>安装express</strong></p>
+<pre><code>sudo npm install -g express --registry=https://registry.npm.taobao.org
+
+</code></pre>
+<p>成功安装信息：</p>
+<pre><code>、express@4.14.0 /usr/local/lib/node_modules/express
+├── escape-html@1.0.3
+├── content-type@1.0.2
+├── vary@1.1.0
+├── etag@1.7.0
+├── parseurl@1.3.1
+├── methods@1.1.2
+├── array-flatten@1.1.1
+├── utils-merge@1.0.0
+├── cookie-signature@1.0.6
+├── merge-descriptors@1.0.1
+├── encodeurl@1.0.1
+├── content-disposition@0.5.1
+├── cookie@0.3.1
+├── fresh@0.3.0
+├── range-parser@1.2.0
+├── serve-static@1.11.1
+├── path-to-regexp@0.1.7
+├── depd@1.1.0
+├── qs@6.2.0
+├── debug@2.2.0 (ms@0.7.1)
+├── finalhandler@0.5.0 (unpipe@1.0.0, statuses@1.3.1)
+├── proxy-addr@1.1.2 (forwarded@0.1.0, ipaddr.js@1.1.1)
+├── on-finished@2.3.0 (ee-first@1.1.1)
+├── accepts@1.3.3 (negotiator@0.6.1, mime-types@2.1.13)
+├── type-is@1.6.14 (media-typer@0.3.0, mime-types@2.1.13)
+└── send@0.14.1 (destroy@1.0.4, statuses@1.3.1, ms@0.7.1, mime@1.3.4, http-errors@1.5.1)
+
+</code></pre>
+<p><strong>生成express</strong></p>
+<pre><code>//-e 是ejs，如果不写-e的话就默认jade 
+express yuyi -e
+</code></pre>
+<pre><code>warning: option `--ejs' has been renamed to `--view=ejs'
+
+
+   create : yuyi
+   create : yuyi/package.json
+   create : yuyi/app.js
+   create : yuyi/public
+   create : yuyi/routes
+   create : yuyi/routes/index.js
+   create : yuyi/routes/users.js
+   create : yuyi/public/images
+   create : yuyi/views
+   create : yuyi/views/index.ejs
+   create : yuyi/views/error.ejs
+   create : yuyi/public/stylesheets
+   create : yuyi/public/stylesheets/style.css
+   create : yuyi/bin
+   create : yuyi/bin/www
+
+   install dependencies:
+     $ cd yuyi &amp;&amp; npm install
+
+   run the app:
+     $ DEBUG=yuyi:* npm start
+
+   create : yuyi/public/javascripts
+</code></pre>
+<p>进入yuyi文件：</p>
+<pre><code>cd yuyi/
+</code></pre>
+<p>然后开始安装组件：</p>
+<pre><code>npm install
+</code></pre>
+<p>再启动express：</p>
+<pre><code>npm start
+</code></pre>
+<p>在浏览器输入：<a href="http://localhost:3000/%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%BA%86">http://localhost:3000/就可以了</a></p>
+<p>但是每次改完了代码，需要重启node，真麻烦了吧。不过有偷懒神器就是npm install supervisor，它可以帮你自动重启，真的很好。</p>
+<p><strong>安装MongoDb:</strong></p>
+<pre><code>sudo npm install mongojs --registry=https://registry.npm.taobao.org
+</code></pre>
+<p>安装信息：</p>
+<pre><code>ongojs@2.4.0 ../node_modules/mongojs
+├── thunky@0.1.0
+├── parse-mongo-url@1.1.1
+├── each-series@1.0.0
+├── to-mongodb-core@2.0.0
+├── xtend@4.0.1
+├── once@1.4.0 (wrappy@1.0.2)
+├── readable-stream@2.2.2 (buffer-shims@1.0.0, string_decoder@0.10.31, inherits@2.0.3, util-deprecate@1.0.2, process-nextick-args@1.0.7, core-util-is@1.0.2, isarray@1.0.0)
+└── mongodb@2.2.11 (es6-promise@3.2.1, readable-stream@2.1.5, mongodb-core@2.0.13)
+
+</code></pre>
+<p>如果我不会写jade或者Ejs，就选择html。</p>
+<p>以 Ejs 模板为例</p>
+<p>让ejs模板文件 支持 html 格式</p>
+<p>1.修改app.js</p>
+<pre><code>//让Ejs支持 html
+app.engine('.html', ejs.__express);
+app.set('view engine', 'html');
+//app.set('view engine', 'ejs');
+</code></pre>
+<p>2.引入 ejs 模块</p>
+<pre><code>//手动添加 ejs 以便支持 .html
+ejs = require('ejs');
+</code></pre>
+<p>3.修改 /views 目录下的入口文件后缀为 index.html</p>
+<p>再重启node行了</p>
+<p>参考地址：<a href="http://www.jdon.com/45599">http://www.jdon.com/45599</a></p>
+<p><a href="http://www.cnblogs.com/highsea90/p/4308794.html">http://www.cnblogs.com/highsea90/p/4308794.html</a></p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

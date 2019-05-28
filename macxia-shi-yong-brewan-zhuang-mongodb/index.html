@@ -1,0 +1,262 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Mac下使用brew安装mongodb">
+    <meta property="og:description" content="MongoDB 是一个基于分布式文件存储的数据库。由 C++ 语言编写。旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。 使用brew安装mongodb brew install mongodb 如果不能开启服务 Failed to connect to 127.0.0.1:27017, reason: errno:61 Connection refused Error: couldn't connect to server 127.0.0.1:27017 (127.0.0.1), connection attempt failed at src/mongo/shell/mongo.js:">
+    <meta property="og:url" content="http://localhost:2368/macxia-shi-yong-brewan-zhuang-mongodb/">
+    <meta property="article:published_time" content="2016-11-25T10:01:55.000Z">
+    <meta property="article:modified_time" content="2016-11-25T12:37:31.000Z">
+    <meta property="article:tag" content="Mac">
+    <meta property="article:tag" content="mongodb">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Mac下使用brew安装mongodb">
+    <meta name="twitter:description" content="MongoDB 是一个基于分布式文件存储的数据库。由 C++ 语言编写。旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。">
+    <meta name="twitter:url" content="http://localhost:2368/macxia-shi-yong-brewan-zhuang-mongodb/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Mac, mongodb">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Mac下使用brew安装mongodb",
+    "url": "http://localhost:2368/macxia-shi-yong-brewan-zhuang-mongodb/",
+    "datePublished": "2016-11-25T10:01:55.000Z",
+    "dateModified": "2016-11-25T12:37:31.000Z",
+    "keywords": "Mac, mongodb",
+    "description": "MongoDB 是一个基于分布式文件存储的数据库。由 C++ 语言编写。旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。 使用brew安装mongodb brew install mongodb 如果不能开启服务 Failed to connect to 127.0.0.1:27017, reason: errno:61 Connection refused Error: couldn&#x27;t connect to server 127.0.0.1:27017 (127.0.0.1), connection attempt failed at src/mongo/shell/mongo.js:",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-mac tag-mongodb">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Mac下使用brew安装mongodb</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-11-25</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/mac/">Mac</a> <a href="../tag/mongodb/">mongodb</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>MongoDB 是一个基于分布式文件存储的数据库。由 C++ 语言编写。旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。</p>
+</blockquote>
+<p><strong>使用brew安装mongodb</strong></p>
+<pre><code>brew install mongodb
+</code></pre>
+<p>如果不能开启服务</p>
+<pre><code>Failed to connect to 127.0.0.1:27017, reason: errno:61 Connection refused
+
+Error: couldn't connect to server 127.0.0.1:27017 (127.0.0.1), connection attempt failed at src/mongo/shell/mongo.js:146
+
+exception: connect failed
+</code></pre>
+<p>在启动mongo之前,需要创建一个目录，为mongo默认的数据写入目录</p>
+<pre><code>kyouhuamatoMac-mini:nodewebapp jinghua$ mkdir -p /Users/jinghua/demo/nodewebapp/data/db
+</code></pre>
+<p>刚刚创建的目录以可读可写的权限</p>
+<pre><code>kyouhuamatoMac-mini:nodewebapp jinghua$ chown `id -u` /Users/jinghua/demo/nodewebapp/data/db 
+</code></pre>
+<p>可以放心启动mongod</p>
+<pre><code>mongod
+</code></pre>
+<p>出现报错信息：</p>
+<pre><code>2016-11-25T19:45:25.284+0800 I CONTROL  [initandlisten] MongoDB starting : pid=4588 port=27017 dbpath=/data/db 64-bit host=bogon
+2016-11-25T19:45:25.285+0800 I CONTROL  [initandlisten] db version v3.2.8
+2016-11-25T19:45:25.285+0800 I CONTROL  [initandlisten] git version: ed70e33130c977bda0024c125b56d159573dbaf0
+2016-11-25T19:45:25.285+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2h  3 May 2016
+2016-11-25T19:45:25.285+0800 I CONTROL  [initandlisten] allocator: system
+2016-11-25T19:45:25.285+0800 I CONTROL  [initandlisten] modules: none
+2016-11-25T19:45:25.285+0800 I CONTROL  [initandlisten] build environment:
+2016-11-25T19:45:25.285+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2016-11-25T19:45:25.285+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-11-25T19:45:25.285+0800 I CONTROL  [initandlisten] options: {}
+2016-11-25T19:45:25.286+0800 I STORAGE  [initandlisten] exception in initAndListen: 29 Data directory /data/db not found., terminating
+2016-11-25T19:45:25.286+0800 I CONTROL  [initandlisten] dbexit:  rc: 100
+</code></pre>
+<p>在上面11行出现有报错信息：</p>
+<p>意思是找不到<code>/data/db</code>文件位置</p>
+<pre><code>2016-11-25T19:45:25.286+0800 I STORAGE  [initandlisten] exception in initAndListen: 29 Data directory /data/db not found., terminating
+</code></pre>
+<p>需要创建新的文件，最好用<code>sudo</code>给它权限：</p>
+<pre><code>sudo mkdir -p /data/db
+</code></pre>
+<p>再执行运行：</p>
+<pre><code>mongod
+</code></pre>
+<p>又来了报错信息：</p>
+<pre><code>2016-11-25T20:11:22.125+0800 I CONTROL  [initandlisten] MongoDB starting : pid=4720 port=27017 dbpath=/data/db 64-bit host=bogon
+2016-11-25T20:11:22.126+0800 I CONTROL  [initandlisten] db version v3.2.8
+2016-11-25T20:11:22.126+0800 I CONTROL  [initandlisten] git version: ed70e33130c977bda0024c125b56d159573dbaf0
+2016-11-25T20:11:22.126+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2h  3 May 2016
+2016-11-25T20:11:22.126+0800 I CONTROL  [initandlisten] allocator: system
+2016-11-25T20:11:22.126+0800 I CONTROL  [initandlisten] modules: none
+2016-11-25T20:11:22.126+0800 I CONTROL  [initandlisten] build environment:
+2016-11-25T20:11:22.126+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2016-11-25T20:11:22.126+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-11-25T20:11:22.126+0800 I CONTROL  [initandlisten] options: {}
+2016-11-25T20:11:22.128+0800 I STORAGE  [initandlisten] exception in initAndListen: 98 Unable to create/open lock file: /data/db/mongod.lock errno:13 Permission denied Is a mongod instance already running?, terminating
+2016-11-25T20:11:22.128+0800 I CONTROL  [initandlisten] dbexit:  rc: 100
+</code></pre>
+<p>在上面第11行出现报错：</p>
+<pre><code>2016-11-25T20:11:22.128+0800 I STORAGE  [initandlisten] exception in initAndListen: 98 Unable to create/open lock file: /data/db/mongod.lock errno:13 Permission denied Is a mongod instance already running?, terminating
+</code></pre>
+<p>意思是不创建和打开/data/db/mongod.lock这个文件，原因是Permission denied（权限拒绝），需要给它操作目录权限</p>
+<p>如下命令：</p>
+<pre><code>sudo chown -R  当前登录的用户名 /data
+</code></pre>
+<p>再执行运行启动：</p>
+<pre><code>mongod
+</code></pre>
+<pre><code>2016-11-25T20:16:04.565+0800 I CONTROL  [initandlisten] MongoDB starting : pid=4727 port=27017 dbpath=/data/db 64-bit host=bogon
+2016-11-25T20:16:04.566+0800 I CONTROL  [initandlisten] db version v3.2.8
+2016-11-25T20:16:04.566+0800 I CONTROL  [initandlisten] git version: ed70e33130c977bda0024c125b56d159573dbaf0
+2016-11-25T20:16:04.566+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2h  3 May 2016
+2016-11-25T20:16:04.566+0800 I CONTROL  [initandlisten] allocator: system
+2016-11-25T20:16:04.566+0800 I CONTROL  [initandlisten] modules: none
+2016-11-25T20:16:04.566+0800 I CONTROL  [initandlisten] build environment:
+2016-11-25T20:16:04.566+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2016-11-25T20:16:04.566+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-11-25T20:16:04.566+0800 I CONTROL  [initandlisten] options: {}
+2016-11-25T20:16:04.567+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=4G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-11-25T20:16:05.217+0800 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2016-11-25T20:16:05.221+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+2016-11-25T20:16:05.446+0800 I NETWORK  [initandlisten] waiting for connections on port 27017
+
+</code></pre>
+<p>然后在浏览器输入：<a href="http://localhost:27017/">http://localhost:27017/</a></p>
+<p>在浏览器出现"It looks like you are trying to access MongoDB over HTTP on the native driver port."说明成功启动mongodb吧！</p>
+<p>参考地址：</p>
+<p><a href="http://www.tuicool.com/articles/aqyIBfQ">http://www.tuicool.com/articles/aqyIBfQ</a></p>
+<p><a href="http://www.inferjay.com/blog/2014/07/18/use-homebrew-install-mongodb-at-the-mac-osx-10.9.4/">http://www.inferjay.com/blog/2014/07/18/use-homebrew-install-mongodb-at-the-mac-osx-10.9.4/</a></p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

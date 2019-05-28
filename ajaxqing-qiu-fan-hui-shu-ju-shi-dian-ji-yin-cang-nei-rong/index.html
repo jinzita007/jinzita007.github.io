@@ -1,0 +1,249 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ajax请求返回数据时点击隐藏内容">
+    <meta property="og:description" content="当你点击按钮的时候显示一个内容，点击按钮的时候隐藏内容，然后点击按钮的时候显示重复，不知如何解决这个问题？后来网友帮我解决好了一个问题，我十分感谢他。 HTML文件： &amp;lt;button id=&amp;quot;liuyan&amp;quot; type=&amp;quot;button&amp;quot; class=&amp;quot;btn btn-primary btn-lg&amp;quot;&amp;gt;my click&amp;lt;/button&amp;gt;&amp;lt;div id=&amp;quot;mydiv2&amp;quot;&amp;gt; JavaScript 文件：    $(&amp;quot;button#liuyan&amp;quot;).on(&amp;quot;click&amp;quot;, function(e) {         e.preventDefault(">
+    <meta property="og:url" content="http://localhost:2368/ajaxqing-qiu-fan-hui-shu-ju-shi-dian-ji-yin-cang-nei-rong/">
+    <meta property="article:published_time" content="2018-01-18T17:40:10.000Z">
+    <meta property="article:modified_time" content="2018-01-18T17:32:17.000Z">
+    <meta property="article:tag" content="ajax">
+    <meta property="article:tag" content="Javascript">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ajax请求返回数据时点击隐藏内容">
+    <meta name="twitter:description" content="当你点击按钮的时候显示一个内容，点击按钮的时候隐藏内容，然后点击按钮的时候显示重复，不知如何解决这个问题？后来网友帮我解决好了一个问题，我十分感谢他。">
+    <meta name="twitter:url" content="http://localhost:2368/ajaxqing-qiu-fan-hui-shu-ju-shi-dian-ji-yin-cang-nei-rong/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="ajax, Javascript">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "ajax请求返回数据时点击隐藏内容",
+    "url": "http://localhost:2368/ajaxqing-qiu-fan-hui-shu-ju-shi-dian-ji-yin-cang-nei-rong/",
+    "datePublished": "2018-01-18T17:40:10.000Z",
+    "dateModified": "2018-01-18T17:32:17.000Z",
+    "keywords": "ajax, Javascript",
+    "description": "当你点击按钮的时候显示一个内容，点击按钮的时候隐藏内容，然后点击按钮的时候显示重复，不知如何解决这个问题？后来网友帮我解决好了一个问题，我十分感谢他。 HTML文件： &amp;lt;button id&#x3D;&amp;quot;liuyan&amp;quot; type&#x3D;&amp;quot;button&amp;quot; class&#x3D;&amp;quot;btn btn-primary btn-lg&amp;quot;&amp;gt;my click&amp;lt;/button&amp;gt;&amp;lt;div id&#x3D;&amp;quot;mydiv2&amp;quot;&amp;gt; JavaScript 文件：    $(&amp;quot;button#liuyan&amp;quot;).on(&amp;quot;click&amp;quot;, function(e) {         e.preventDefault(",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-ajax tag-javascript">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>ajax请求返回数据时点击隐藏内容</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-01-18</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/ajax/">ajax</a> <a href="../tag/javascript/">Javascript</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>当你点击按钮的时候显示一个内容，点击按钮的时候隐藏内容，然后点击按钮的时候显示重复，不知如何解决这个问题？后来网友帮我解决好了一个问题，我十分感谢他。</p>
+</blockquote>
+<p>HTML文件：</p>
+<pre><code>&lt;button id="liuyan" type="button" class="btn btn-primary btn-lg"&gt;my click&lt;/button&gt;&lt;div id="mydiv2"&gt;
+</code></pre>
+<p>JavaScript 文件：</p>
+<pre><code>   $("button#liuyan").on("click", function(e) {
+
+        e.preventDefault();
+
+        $.ajax({
+            url: 'http://localhost:3000/api/comment',
+            method: 'GET',
+            dataType: "jsonp",
+            async: false, 
+        }).done(function(data, textStatus, jqXHR) {
+
+            var mydiv2 = $("#mydiv2");
+
+            if (mydiv2.css("display") === "none") {
+                mydiv2.show();
+                var mycode = document.createElement('div');
+                mycode.innerHTML = '&lt;pre&gt;&lt;code data-language="json"&gt;' + JSON.stringify(data, undefined, 2) + '&lt;/code&gt;&lt;/pre&gt;';
+                Rainbow.color(mycode, function() {
+                    document.getElementById('mydiv2').appendChild(mycode)
+                });
+            } else {
+                mydiv2.hide();
+
+            }
+
+            console.log(data);
+            console.log(jqXHR.responseText);
+        });
+
+    });
+</code></pre>
+<p>我在stackoverflow网站提问一个难题，不到几分钟网友帮我解决好了。</p>
+<p>网友说：“我没有AJAX网址。我给了虚拟数据。它应该工作。 每一次，当显示你附加内容与现有的内容。所以它会重复。所以你必须删除div中现有的内容，并将其附加到div。”</p>
+<p>追加之前添加此行：</p>
+<pre><code>document.getElementById('mydiv2').innerHTML = '';
+</code></pre>
+<p>然后现有的内容将被清除:</p>
+<pre><code>$("button#liuyan").on("click", function(e) {
+
+        e.preventDefault();
+
+           data = {
+           "name":"hello"
+           }
+
+            var mydiv2 = $("#mydiv2");
+
+            if (mydiv2.css("display") === "none") {
+                mydiv2.show();
+                var mycode = document.createElement('div');
+                mycode.innerHTML = '&lt;pre&gt;&lt;code data-language="json"&gt;' + JSON.stringify(data, undefined, 2) + '&lt;/code&gt;&lt;/pre&gt;';
+                //Rainbow.color(mycode, function() {
+                 document.getElementById('mydiv2').innerHTML = '';    
+                 document.getElementById('mydiv2').appendChild(mycode)
+                //});
+            } else {
+                mydiv2.hide();
+
+            }
+
+         //   console.log(data);
+        //    console.log(jqXHR.responseText);
+       // });
+
+    });
+</code></pre>
+<pre><code>&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;button id="liuyan"&gt;Click&lt;/button&gt;
+&lt;div id="mydiv2"&gt;&lt;/div&gt;
+</code></pre>
+<p>其他方式： 可以请求返回响应功能，并单击按钮时显示和隐藏</p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

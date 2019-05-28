@@ -1,0 +1,201 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Angular模板">
+    <meta property="og:description" content="模板是一种自定义的标准化页面，通过模版和模版中的数据结合，可以生成各种各样的网页。 几乎所有HTML语法在模版中都是适用的，除了script标签。另外html body base等元素并不起什么作用。 &amp;lt;!--    数据绑定根据流向可分为以下三种：  1. 单向绑定：从数据源到视图目标（属性绑定）：[]  2. 单向绑定：从视图目标到数据源（事件绑定）：()  3. 双向绑定：数据源至视图是[ ]，视图至数据源是()，所以双向绑定就是他们的结合[( )]。 --&amp;gt; &amp;lt;!-- DOM元素属性绑定 --&amp;gt; &amp;lt;div [title]=&amp;quot;titleText&amp;quot;&amp;gt;hello world&amp;lt;/div&amp;gt; &amp;lt;!-- DOM对象属性title就是绑定目标 --&amp;gt; &amp;lt;div">
+    <meta property="og:url" content="http://localhost:2368/angularmo-ban/">
+    <meta property="article:published_time" content="2017-04-18T13:20:37.000Z">
+    <meta property="article:modified_time" content="2017-04-18T13:26:44.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Angular模板">
+    <meta name="twitter:description" content="模板是一种自定义的标准化页面，通过模版和模版中的数据结合，可以生成各种各样的网页。
+几乎所有HTML语法在模版中都是适用的。">
+    <meta name="twitter:url" content="http://localhost:2368/angularmo-ban/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Angular模板",
+    "url": "http://localhost:2368/angularmo-ban/",
+    "datePublished": "2017-04-18T13:20:37.000Z",
+    "dateModified": "2017-04-18T13:26:44.000Z",
+    "description": "模板是一种自定义的标准化页面，通过模版和模版中的数据结合，可以生成各种各样的网页。 几乎所有HTML语法在模版中都是适用的，除了script标签。另外html body base等元素并不起什么作用。 &amp;lt;!--    数据绑定根据流向可分为以下三种：  1. 单向绑定：从数据源到视图目标（属性绑定）：[]  2. 单向绑定：从视图目标到数据源（事件绑定）：()  3. 双向绑定：数据源至视图是[ ]，视图至数据源是()，所以双向绑定就是他们的结合[( )]。 --&amp;gt; &amp;lt;!-- DOM元素属性绑定 --&amp;gt; &amp;lt;div [title]&#x3D;&amp;quot;titleText&amp;quot;&amp;gt;hello world&amp;lt;/div&amp;gt; &amp;lt;!-- DOM对象属性title就是绑定目标 --&amp;gt; &amp;lt;div",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="../records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Angular模板</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2017-04-18</time>
+                        </span>  |   
+                        <span class="tags">
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>模板是一种自定义的标准化页面，通过模版和模版中的数据结合，可以生成各种各样的网页。<br>
+几乎所有HTML语法在模版中都是适用的，除了script标签。另外html body base等元素并不起什么作用。</p>
+</blockquote>
+<pre><code>&lt;!--
+   数据绑定根据流向可分为以下三种： 
+1. 单向绑定：从数据源到视图目标（属性绑定）：[] 
+2. 单向绑定：从视图目标到数据源（事件绑定）：() 
+3. 双向绑定：数据源至视图是[ ]，视图至数据源是()，所以双向绑定就是他们的结合[( )]。
+--&gt;
+
+&lt;!-- DOM元素属性绑定 --&gt;
+&lt;div [title]="titleText"&gt;hello world&lt;/div&gt; &lt;!-- DOM对象属性title就是绑定目标 --&gt;
+&lt;div bind-title="titleText"&gt;hello world&lt;/div&gt; &lt;!-- 也可以选择bind-前缀的形式来实现，这种方式又成为标准形式 --&gt;
+&lt;div [ngStyle]="styles"&gt;xxx&lt;/div&gt; &lt;!-- 用来设置Angular指令的属性 --&gt;
+&lt;user-detail [user]="currentUser"&gt;&lt;/user-detail&gt; &lt;!-- 可以使用属性绑定设置自定义标签的输入属性(这是父子组件间通讯的重要途径) --&gt;
+
+&lt;!-- 中括号 --&gt;
+&lt;div [title]="titleText"&gt;hello world&lt;/div&gt; &lt;!-- 中括号的作用是执行=右侧的模版表达式，然后将执行结果赋值给DOM的title属性。 --&gt;
+&lt;div title="titleText"&gt;hello world&lt;/div&gt;&lt;!-- 没有中括号则直接将双引号内的内容当作文本赋值给title属性。 --&gt;
+
+&lt;!-- CSS类绑定 --&gt;
+&lt;div class="font"&gt;&lt;/div&gt;
+&lt;div class="red" [class]="tessssssst"&gt;&lt;/div&gt; &lt;!-- 当使用DOM对象属性绑定 给 [class]绑定值时，tessssssst对象会重写这个div元素的全部class。 --&gt;
+&lt;div [class.red]="true"&gt;&lt;/div&gt; &lt;!-- 根据模版表达式的boolean型结果，决定是否将red属性绑定在标签上。 --&gt;
+
+&lt;!-- style样式绑定 --&gt;
+&lt;!--
+[style.style-name.单位]=”模版表达式” 
+样式属性名可以使用烤肉串命名法background-color，也可以使用驼峰命名法backgroundColor。
+--&gt;
+
+&lt;!-- 属性绑定与插值的关系 --&gt;
+&lt;div&gt;{{userName}}&lt;/div&gt;
+&lt;div [innerText]="userName"&gt;&lt;/div&gt;
+
+
+</code></pre>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

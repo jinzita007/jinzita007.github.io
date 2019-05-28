@@ -1,0 +1,336 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="一个简单Spring Boot+MyBatis整合详解(2)">
+    <meta property="og:description" content="本页总结了使用MyBatis的基本设置和示例代码.在示例代码中，我会选择MySQL。因为MySQL是比较成熟的开源数据库，互联网公司都在用的这个。我算是对MyBatis有一个初步的入门了，可以开始写一个简单的CRUD功能。 修改之后示例项目配置 基本工程文件： . |-- .indea |-- .mvn |-- src     |-- main         |-- java         |   |-- com.zyl.demo         |   |   |-- controller                  //控制层         |   |   |   |-- Usercontroller.java         |   |   |-- domain                      //模型层         |   |   |   |-- User.java                        |   |   |-- mapper                      //持久层         |   |   |   |-- UserMapper.java         //持久层接口类         |   |   |   |-- UserMapper.xml          //持久层实现类         |   |   |-- service                     //业务层         |   |   |   |--">
+    <meta property="og:url" content="http://localhost:2368/spring-boot-mybatis/">
+    <meta property="article:published_time" content="2018-02-01T12:37:13.000Z">
+    <meta property="article:modified_time" content="2018-02-01T12:21:58.000Z">
+    <meta property="article:tag" content="Spring Boot">
+    <meta property="article:tag" content="MyBatis">
+    <meta property="article:tag" content="Mysql">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="一个简单Spring Boot+MyBatis整合详解(2)">
+    <meta name="twitter:description" content="本页总结了使用MyBatis的基本设置和示例代码.在示例代码中，我会选择MySQL。">
+    <meta name="twitter:url" content="http://localhost:2368/spring-boot-mybatis/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Spring Boot, MyBatis, Mysql">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "一个简单Spring Boot+MyBatis整合详解(2)",
+    "url": "http://localhost:2368/spring-boot-mybatis/",
+    "datePublished": "2018-02-01T12:37:13.000Z",
+    "dateModified": "2018-02-01T12:21:58.000Z",
+    "keywords": "Spring Boot, MyBatis, Mysql",
+    "description": "本页总结了使用MyBatis的基本设置和示例代码.在示例代码中，我会选择MySQL。因为MySQL是比较成熟的开源数据库，互联网公司都在用的这个。我算是对MyBatis有一个初步的入门了，可以开始写一个简单的CRUD功能。 修改之后示例项目配置 基本工程文件： . |-- .indea |-- .mvn |-- src     |-- main         |-- java         |   |-- com.zyl.demo         |   |   |-- controller                  //控制层         |   |   |   |-- Usercontroller.java         |   |   |-- domain                      //模型层         |   |   |   |-- User.java                        |   |   |-- mapper                      //持久层         |   |   |   |-- UserMapper.java         //持久层接口类         |   |   |   |-- UserMapper.xml          //持久层实现类         |   |   |-- service                     //业务层         |   |   |   |--",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-spring-boot tag-mybatis tag-mysql">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>一个简单Spring Boot+MyBatis整合详解(2)</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-02-01</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/spring-boot/">Spring Boot</a> <a href="../tag/mybatis/">MyBatis</a> <a href="../tag/mysql/">Mysql</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>本页总结了使用MyBatis的基本设置和示例代码.在示例代码中，我会选择MySQL。因为MySQL是比较成熟的开源数据库，互联网公司都在用的这个。我算是对MyBatis有一个初步的入门了，可以开始写一个简单的CRUD功能。</p>
+</blockquote>
+<h4 id="">修改之后示例项目配置</h4>
+<p>基本工程文件：</p>
+<pre><code>.
+|-- .indea
+|-- .mvn
+|-- src
+    |-- main
+        |-- java
+        |   |-- com.zyl.demo
+        |   |   |-- controller                  //控制层
+        |   |   |   |-- Usercontroller.java
+        |   |   |-- domain                      //模型层
+        |   |   |   |-- User.java               
+        |   |   |-- mapper                      //持久层
+        |   |   |   |-- UserMapper.java         //持久层接口类
+        |   |   |   |-- UserMapper.xml          //持久层实现类
+        |   |   |-- service                     //业务层
+        |   |   |   |-- Userservice.java
+        |   |   |-- DemoApplication.java
+        |-- resources
+            |-- application.yml                  //配置
+            |-- data.sql                         //SQL文件
+</code></pre>
+<blockquote>
+<p>src/main/resources/application.yml</p>
+</blockquote>
+<pre><code>spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydb
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+</code></pre>
+<blockquote>
+<p>src/main/com.zyl.demo/domain/User.java</p>
+</blockquote>
+<p><em><strong>User实体类</strong></em></p>
+<pre><code>package com.zyl.demo.domain;
+
+public class User {
+
+    private Long id;          //用户名ID
+    private String username;  //用户名
+    private String email;     //电子邮箱
+    private String password;  //密码
+    private String status;    //活动状态
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
+
+}
+
+</code></pre>
+<blockquote>
+<p>src/main/com.zyl.demo/mapper/UserMapper.java</p>
+</blockquote>
+<p>如果像这个时候只有一个参数，就不需要指定@Param注解，但是如果有多个参数，则必须指定参数在SQL查询和方法参数之间的对应关系有。另外，在这里我们设置在@Select注释的SQL，但是为了做一个更灵活的配置使得使用XML文件将在以后描述。</p>
+<p>User持久层接口类</p>
+<pre><code>package com.zyl.demo.mapper;
+
+import com.zyl.demo.domain.User;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
+
+@Mapper
+public interface UserMapper {
+    @Select("SELECT * FROM users WHERE status = #{status}")
+    User findByStatus(@Param("status") String status);
+}
+</code></pre>
+<blockquote>
+<p>src/main/com.zyl.demo/controller/UserController.java</p>
+</blockquote>
+<p>UserMapper.findById（）和如何充分sqlSession.selectOne优势的例子（）。实际上，而不是在控制器直接使用，并且设置@服务和@Repository类内使用。</p>
+<p>User控制层类</p>
+<pre><code>package com.zyl.demo.controller;
+
+import com.zyl.demo.domain.User;
+import com.zyl.demo.mapper.UserMapper;
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserController {
+
+    @Autowired
+    private UserMapper userMapper;
+
+    @Autowired
+    private SqlSession sqlSession;
+
+    @RequestMapping("/")
+    public String index() {
+        User user1 = userMapper.findByStatus("0");
+        User user2 = sqlSession.selectOne("findByStatus","0");
+        System.out.println(user1);
+        System.out.println(user2);
+
+        return "Greetings from Spring Boot!";
+
+    }
+
+}
+
+</code></pre>
+<blockquote>
+<p>以下效果：</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snip20180202_13.png" alt="Snip20180202_13"></p>
+<p>Github项目地址：<a href="https://github.com/jinzita007/SpringCrud">一个简单Spring Boot+ MyBatis应用CRUD</a></p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

@@ -1,0 +1,221 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="JavaScript笔记（四）">
+    <meta property="og:description" content="3.1.5 Dates and Times Core JavaScript includes a Date() constructor for creating objects that represent dates and times. These Date objects have methods that provide an API for simple date com- putations. Date objects are not a fundamental type like numbers are. This section presents a quick tutorial">
+    <meta property="og:url" content="http://localhost:2368/javascriptbi-ji-si/">
+    <meta property="article:published_time" content="2016-11-23T08:17:46.000Z">
+    <meta property="article:modified_time" content="2016-11-23T08:36:13.000Z">
+    <meta property="article:tag" content="Javascript">
+    <meta property="article:tag" content="前端">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="JavaScript笔记（四）">
+    <meta name="twitter:description" content="JavaScript语言核心包括Data()的构造数，用来创建表示日期和时间的对象。">
+    <meta name="twitter:url" content="http://localhost:2368/javascriptbi-ji-si/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Javascript, 前端">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "JavaScript笔记（四）",
+    "url": "http://localhost:2368/javascriptbi-ji-si/",
+    "datePublished": "2016-11-23T08:17:46.000Z",
+    "dateModified": "2016-11-23T08:36:13.000Z",
+    "keywords": "Javascript, 前端",
+    "description": "3.1.5 Dates and Times Core JavaScript includes a Date() constructor for creating objects that represent dates and times. These Date objects have methods that provide an API for simple date com- putations. Date objects are not a fundamental type like numbers are. This section presents a quick tutorial",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-javascript tag-qian-duan">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>JavaScript笔记（四）</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-11-23</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/javascript/">Javascript</a> <a href="../tag/qian-duan/">前端</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><p><strong>3.1.5 Dates and Times</strong></p>
+<blockquote>
+<p>Core JavaScript includes a Date() constructor for creating objects that represent dates and times. These Date objects have methods that provide an API for simple date com- putations. Date objects are not a fundamental type like numbers are. This section presents a quick tutorial on working with dates. Full details can be found in the refer- ence section:</p>
+</blockquote>
+<pre><code>var then = new Date(2010, 0, 1);  // The 1st day of the 1st month of 2010
+var later = new Date(2010, 0, 1, 17, 10, 30);  // Same day, at 5:10:30pm, local time
+var now = new Date();             // The current date and time
+var elapsed = now - then;         // Date subtraction: interval in milliseconds
+
+
+later.getFullYear()               // =&gt; 2010
+later.getMonth()                  // =&gt; 0: zero-based months
+later.getDate()                   // =&gt; 1: one-based days
+later.getDay()                    // =&gt; 5: day of week. 0 is Sunday 5 is Friday.
+later.getHours()                  // =&gt; 17: 5pm, local time
+later.getUTCHours()               // hours in UTC time; depends on timezone
+
+later.toString()                  // =&gt; "Fri Jan 01 2010 17:10:30 GMT-0800 (PST)"
+later.toUTCString()               // =&gt; "Sat, 02 Jan 2010 01:10:30 GMT"
+later.toLocaleDateString()        // =&gt; "01/01/2010"
+later.toLocaleTimeString()        // =&gt; "05:10:30 PM"
+later.toISOString()               // =&gt; "2010-01-02T01:10:30.000Z"; ES5 only
+
+</code></pre>
+<hr>
+<p><strong>3.1.5 日期和时间</strong></p>
+<blockquote>
+<p>JavaScript语言核心包括Data()的构造数，用来创建表示日期和时间的对象。这些日期对象的方法为日期计算提供了简单的API。日期对象不像数字那样是基本数据类型。本书给出了使用日期对象的一个简单教程。在第三部分可以查阅更多细节。</p>
+</blockquote>
+<pre><code>var then = new Date(2010, 0, 1);  // 2010年1月1日
+var later = new Date(2010, 0, 1, 17, 10, 30);  // 同一天，当地时间5:10:30pm
+var now = new Date();             // 当前日期和时间
+var elapsed = now - then;         // 日期减法：计算时间间隔的毫秒数
+
+
+later.getFullYear()               // =&gt; 2010
+later.getMonth()                  // =&gt; 0: 从0开始计数的月份
+later.getDate()                   // =&gt; 1: 从1开始计数的天数
+later.getDay()                    // =&gt; 5: 得到星期几，a代表星期日,5代表星期五
+later.getHours()                  // =&gt; 当地时间17:5pm
+later.getUTCHours()               // 使用UTC表示小时的时间，基于时区
+
+later.toString()                  // =&gt; "Fri Jan 01 2010 17:10:30 GMT-0800 (PST)"
+later.toUTCString()               // =&gt; "Sat, 02 Jan 2010 01:10:30 GMT"
+later.toLocaleDateString()        // =&gt; "01/01/2010"
+later.toLocaleTimeString()        // =&gt; "05:10:30 PM"
+later.toISOString()               // =&gt; "2010-01-02T01:10:30.000Z"; ES5 only
+
+</code></pre>
+<p>来源：《JavaScript权威指南》--3.1.5 日期和时间 38页</p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

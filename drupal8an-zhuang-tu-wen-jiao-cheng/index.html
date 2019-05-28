@@ -1,0 +1,192 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Drupal8安装图文教程">
+    <meta property="og:description" content="今天在公司上班，随便给同学一些惊喜吧。本文将描述如何在Mac操作系统上一步步安装和运行Drupal8所需的软件及数据库。首先把Drupal8的官网下载到mamp路径并打开php和mysql的服务。 工具/原料 1.MAMP PRO环境本地服务器（Mac操作系统） 方法/步骤 Drupal官网下载https://www.drupal.org/download 2.解压到MAMP PRO路径 3.通过浏览器访问安装地址，会看到Drupal安装界面的默认选择语言（中文），点击Save and continue,保存并继续下一步 4.检查根据你的PHP环境配置，不过配置有问题，因为我的MAMP PRO自带php.ini文件里面要加上OPcache模块 5.设置php.ini文件查找OPcache，zend_extension前面去掉逗号，然后保存一下 6.打开MAMP PRO软件，选择Opcache并重启 7.Standard是标准安装模式，Minimal是最小化安装。选择默认安装就行了，保存并继续下一步 8.">
+    <meta property="og:url" content="http://localhost:2368/drupal8an-zhuang-tu-wen-jiao-cheng/">
+    <meta property="article:published_time" content="2016-09-27T03:36:00.000Z">
+    <meta property="article:modified_time" content="2016-11-21T09:45:09.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Drupal8安装图文教程">
+    <meta name="twitter:description" content="本文将描述如何在Mac操作系统上一步步安装和运行Drupal8所需的软件及数据库。">
+    <meta name="twitter:url" content="http://localhost:2368/drupal8an-zhuang-tu-wen-jiao-cheng/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Drupal8安装图文教程",
+    "url": "http://localhost:2368/drupal8an-zhuang-tu-wen-jiao-cheng/",
+    "datePublished": "2016-09-27T03:36:00.000Z",
+    "dateModified": "2016-11-21T09:45:09.000Z",
+    "description": "今天在公司上班，随便给同学一些惊喜吧。本文将描述如何在Mac操作系统上一步步安装和运行Drupal8所需的软件及数据库。首先把Drupal8的官网下载到mamp路径并打开php和mysql的服务。 工具/原料 1.MAMP PRO环境本地服务器（Mac操作系统） 方法/步骤 Drupal官网下载https://www.drupal.org/download 2.解压到MAMP PRO路径 3.通过浏览器访问安装地址，会看到Drupal安装界面的默认选择语言（中文），点击Save and continue,保存并继续下一步 4.检查根据你的PHP环境配置，不过配置有问题，因为我的MAMP PRO自带php.ini文件里面要加上OPcache模块 5.设置php.ini文件查找OPcache，zend_extension前面去掉逗号，然后保存一下 6.打开MAMP PRO软件，选择Opcache并重启 7.Standard是标准安装模式，Minimal是最小化安装。选择默认安装就行了，保存并继续下一步 8.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="../records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Drupal8安装图文教程</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-09-27</time>
+                        </span>  |   
+                        <span class="tags">
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>今天在公司上班，随便给同学一些惊喜吧。本文将描述如何在Mac操作系统上一步步安装和运行Drupal8所需的软件及数据库。首先把Drupal8的官网下载到mamp路径并打开php和mysql的服务。</p>
+</blockquote>
+<p><strong>工具/原料</strong></p>
+<p>1.MAMP PRO环境本地服务器（Mac操作系统）</p>
+<p><strong>方法/步骤</strong></p>
+<ol>
+<li>Drupal官网下载https://www.drupal.org/download</li>
+</ol>
+<p><img src="http://bbs.iiiciii.com/data/attachment/forum/201609/27/112208nunrthwnvuqbbpnw.png" alt=""></p>
+<p>2.解压到MAMP PRO路径</p>
+<p><img src="http://bbs.iiiciii.com/data/attachment/forum/201609/27/112256esofaqhw8hws1hs4.png" alt=""></p>
+<p>3.通过浏览器访问安装地址，会看到Drupal安装界面的默认选择语言（中文），点击Save and continue,保存并继续下一步</p>
+<p><img src="http://bbs.iiiciii.com/data/attachment/forum/201609/27/112319am3ut3ymdru4c2ug.png" alt=""></p>
+<p>4.检查根据你的PHP环境配置，不过配置有问题，因为我的MAMP PRO自带php.ini文件里面要加上OPcache模块</p>
+<p><img src="http://bbs.iiiciii.com/data/attachment/forum/201609/27/112412rde3g3fif7lf7loo.png" alt=""></p>
+<p>5.设置php.ini文件查找OPcache，zend_extension前面去掉逗号，然后保存一下</p>
+<p><img src="http://bbs.iiiciii.com/data/attachment/forum/201609/27/112457ztxz1y0vxkt5tdnx.png" alt=""></p>
+<p>6.打开MAMP PRO软件，选择Opcache并重启</p>
+<p><img src="http://bbs.iiiciii.com/data/attachment/forum/201609/27/112841siannn5pfno54cb1.png" alt=""></p>
+<p>7.Standard是标准安装模式，Minimal是最小化安装。选择默认安装就行了，保存并继续下一步</p>
+<p><img src="http://bbs.iiiciii.com/data/attachment/forum/201609/27/112935wbq8kmsjq8bvyxv8.png" alt=""></p>
+<p>8.默认使用MySQL数据库，创建一个数据库，然后再输入数据库的用户名和密码，保存并继续下一步</p>
+<p><img src="http://bbs.iiiciii.com/data/attachment/forum/201609/27/113008a2w8izoiw6fu18of.png" alt=""></p>
+<p>9.接下来Drupal自动安装，继续下一步</p>
+<p><img src="http://bbs.iiiciii.com/data/attachment/forum/201609/27/113106lsg7hcsl2fczzshg.png" alt=""></p>
+<p>10.再设置站点信息，站点维护账号等，也可以不要勾选更新和邮箱订阅等</p>
+<p><img src="http://bbs.iiiciii.com/data/attachment/forum/201609/27/113127hpxpqrpw9u1s89dz.png" alt=""></p>
+<p>11.打开Drupal首页，说明成功安装Drupal</p>
+<p><img src="http://bbs.iiiciii.com/data/attachment/forum/201609/27/113159g5xh0x2ynn02pp50.png" alt=""></p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

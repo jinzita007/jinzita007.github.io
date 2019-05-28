@@ -1,0 +1,302 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="jquery跳转到对应详情页的方法">
+    <meta property="og:description" content="很多移动电商一般是商品列表页就进入详情页，这是我们知道怎么去写。点击跳转到对应的水票详情页，这我没学过的，其实是我只能尝试能不能写出来的。我花了一天写好了，成功跳转到对应的详情页，心里有一种成功的感觉，真的很爽吧！ 思路： 先用ajax获取数据之后，再用localStorage中存储对象数组并读取的方法。 index.js文件 $(function(){ 	$.ajax({ 			url: &amp;quot;http://weixin.weipe360.com/water_shuidaojia/napi.php?s=/shop/goods_detail&amp;amp;token=99000554006372&amp;amp;ajax=1&amp;quot;, 			type: 'GET', 			data:{ 				uid:window.localStorage.getItem(&amp;quot;uid&amp;quot;), 				goods_id:GetQueryString(">
+    <meta property="og:url" content="http://localhost:2368/jquerytiao-zhuan-dao-dui-ying-xiang-qing-ye-de-fang-fa/">
+    <meta property="article:published_time" content="2016-10-29T01:48:00.000Z">
+    <meta property="article:modified_time" content="2016-11-21T07:12:01.000Z">
+    <meta property="article:tag" content="Javascript">
+    <meta property="article:tag" content="ajax">
+    <meta property="article:tag" content="前端">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="jquery跳转到对应详情页的方法">
+    <meta name="twitter:description" content="很多移动电商一般是商品列表页就进入详情页，这是我们知道怎么去写。">
+    <meta name="twitter:url" content="http://localhost:2368/jquerytiao-zhuan-dao-dui-ying-xiang-qing-ye-de-fang-fa/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Javascript, ajax, 前端">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "jquery跳转到对应详情页的方法",
+    "url": "http://localhost:2368/jquerytiao-zhuan-dao-dui-ying-xiang-qing-ye-de-fang-fa/",
+    "datePublished": "2016-10-29T01:48:00.000Z",
+    "dateModified": "2016-11-21T07:12:01.000Z",
+    "keywords": "Javascript, ajax, 前端",
+    "description": "很多移动电商一般是商品列表页就进入详情页，这是我们知道怎么去写。点击跳转到对应的水票详情页，这我没学过的，其实是我只能尝试能不能写出来的。我花了一天写好了，成功跳转到对应的详情页，心里有一种成功的感觉，真的很爽吧！ 思路： 先用ajax获取数据之后，再用localStorage中存储对象数组并读取的方法。 index.js文件 $(function(){ \t$.ajax({ \t\t\turl: &amp;quot;http://weixin.weipe360.com/water_shuidaojia/napi.php?s&#x3D;/shop/goods_detail&amp;amp;token&#x3D;99000554006372&amp;amp;ajax&#x3D;1&amp;quot;, \t\t\ttype: &#x27;GET&#x27;, \t\t\tdata:{ \t\t\t\tuid:window.localStorage.getItem(&amp;quot;uid&amp;quot;), \t\t\t\tgoods_id:GetQueryString(",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-javascript tag-ajax tag-qian-duan">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>jquery跳转到对应详情页的方法</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-10-29</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/javascript/">Javascript</a> <a href="../tag/ajax/">ajax</a> <a href="../tag/qian-duan/">前端</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>很多移动电商一般是商品列表页就进入详情页，这是我们知道怎么去写。点击跳转到对应的水票详情页，这我没学过的，其实是我只能尝试能不能写出来的。我花了一天写好了，成功跳转到对应的详情页，心里有一种成功的感觉，真的很爽吧！</p>
+</blockquote>
+<p><strong>思路：</strong><br>
+先用ajax获取数据之后，再用localStorage中存储对象数组并读取的方法。</p>
+<p>index.js文件</p>
+<pre><code class="language-javascript">$(function(){
+	$.ajax({
+			url: "http://weixin.weipe360.com/water_shuidaojia/napi.php?s=/shop/goods_detail&amp;token=99000554006372&amp;ajax=1",
+			type: 'GET',
+			data:{
+				uid:window.localStorage.getItem("uid"),
+				goods_id:GetQueryString("goods_id")
+				},
+			dataType: 'jsonp', //here
+			success: function(data) {
+				var product_sale = data.data.goods_num;//产品销量
+				var img_url = window.localStorage.getItem('img_url');//轮播内容图片
+				$('.mui-slider-item').find('img').attr('src',img_url);
+				var id = data.data.id;
+				var goods_price_list = data.data.goods_price_list;
+				var goods_title = data.data.goods_title;
+				var goods_price_list = data.data.goods_price_list;
+				var goods_water_price = data.data.goods_water_price;
+				var goods_water_set = data.data.goods_water_set;
+				var goods_rebate = data.data.goods_rebate;
+				var goods_num = data.data.goods_num;
+				var goods_detail = data.data.goods_detail;
+				var goods_type = data.data.goods_type;
+				var goods_time = data.data.goods_time;
+				var goods_img = data.data.goods_img;
+				var goods_img_list = data.data.goods_img_li;
+				var goods_gift_id = data.data.goods_gift_id;
+				var goods_tickets = data.data.goods_tickets;
+				var goods_deposit = data.data.goods_deposit;
+				var goods_status = data.data.goods_status;
+				var goods_px = data.data.goods_px;
+				var goods_xl = data.data.goods_xl;
+				var goods_brand_name = data.data.goods_brand_name;
+				var goods_monthly_sales = data.data.goods_monthly_sales;
+
+				$('.goods_detail_title').attr('goods_id',id);
+				$("#goods_name").text(data.data.goods_name);//商品名称
+				$(".theGoodsPrice").text(data.data.goods_price);//商品价格
+				$(".goods_detail_con p").html(data.data.goods_detail);//商品介绍
+				//window.localStorage["goods_deposit"] = data.data.goods_deposit;//判断是否是桶装水
+				if (data.data.goods_deposit != 1) {
+					$("#anniou").css("display:none;");
+				};
+				goods_id = data.data.id;//产品id
+
+				var ShoppingCart = utils.getParam("ShoppingCart");
+				if(ShoppingCart != null){
+					var jsonstr = JSON.parse(ShoppingCart.substr(1, ShoppingCart.length));
+					var productlist = jsonstr.productlist;
+					//遍历购物车列表
+					for (var i in productlist) {
+						//如果有该商品
+						if (productlist[i].id == goods_id) {
+							goods_nums=productlist[i].num
+						}
+					}
+				}
+				$('.count').text(goods_nums)
+				$('.addition_list').show()
+
+				if(cart.getCart().totalNumber == 0){
+ 				  	$("#bottomCartNum").hide();
+ 				}else if (cart.getCart().totalNumber &gt; 0) {
+ 						$("#bottomCartNum").show();
+ 						$("#bottomCartNum").addClass('mui-badge-success');
+ 						$("#bottomCartNum").addClass('mui-badge');
+						$("#bottomCartNum").css({'background':'#D44444','color':'#fff'});
+ 				}
+
+				n=goods_nums;
+
+				if(cart.getCart() != undefined) {
+					$('#bottomCartTotalPrice').html(cart.getCart().totalAmount);
+					$('#bottomCartNum').html(cart.getCart().totalNumber);
+				}
+        //刷新结算按钮的显示与隐藏
+			   if(goods_nums == 0){
+					 $(".gwc").find(".buttons").css('display','none');
+				 } else if (goods_nums&gt;0) {
+				 	$(".gwc").find(".buttons").css('display','block');
+				 }
+
+				$('.goods_detail_title').on( 'click' , 'a' , function(){
+					var goods_name = $('.goods_detail_title').find("#goods_name").text();
+					var goods_id = $('.goods_detail_title').attr("goods_id");
+					var w_ticked_img = $('.mui-slider-item').find('img').attr('src');
+					var product =
+					{
+						'id': goods_id,        //属性名用引号括起来，属性间由逗号隔开
+						'goods_name': goods_name,
+						'goods_title': goods_title,
+						'goods_price_list': goods_price_list,
+						'goods_water_price': goods_water_price,
+						'goods_water_set': goods_water_set,
+						'goods_rebate': goods_rebate,
+						'goods_num': goods_num,
+						'goods_detail': goods_detail,
+						'goods_type': goods_type,
+						'goods_time': goods_time,
+						'goods_img': goods_img,
+						'goods_img_list': goods_img_list,
+						'goods_gift_id': goods_gift_id,
+						'goods_tickets': goods_tickets,
+						'goods_deposit': goods_deposit,
+						'goods_status': goods_status,
+						'goods_px': goods_px,
+						'goods_xl': goods_xl,
+						'goods_brand_name': goods_brand_name,
+						'goods_monthly_sales': goods_monthly_sales
+					}
+					product = JSON.stringify(product);
+					localStorage.setItem("product",product);
+					localStorage.setItem("w_ticked_img",w_ticked_img);
+				  window.location.href="http://localhost/water_shuidaojia/water_1/html/user/tickcts/buy_ticket.html?goods_id="+goods_id;
+				})
+
+				}
+		});
+
+})
+
+</code></pre>
+<p><strong>效果图：</strong></p>
+<p><img src="http://ofk69lr9k.bkt.clouddn.com/20161026_999.gif" alt=""></p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

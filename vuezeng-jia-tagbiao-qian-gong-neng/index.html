@@ -1,0 +1,231 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Vue增加tag标签功能">
+    <meta property="og:description" content="最近开发一个羽翼图书后台系统的组件化开发，参考网上搜索关于vue标签功能，然后自己研究一下，如果做好了tag标签组件化的话，以后要开发一个项目的时候，可以就用这个小组件化功能。">
+    <meta property="og:url" content="http://localhost:2368/vuezeng-jia-tagbiao-qian-gong-neng/">
+    <meta property="article:published_time" content="2018-01-17T07:21:34.000Z">
+    <meta property="article:modified_time" content="2018-01-17T07:14:19.000Z">
+    <meta property="article:tag" content="Vue.js">
+    <meta property="article:tag" content="Node.js">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Vue增加tag标签功能">
+    <meta name="twitter:description" content="最近开发一个羽翼图书后台系统的组件化开发，参考网上搜索关于vue标签功能，然后自己研究一下，如果做好了tag标签组件化的话，以后要开发一个项目的时候，可以就用这个小组件化功能。">
+    <meta name="twitter:url" content="http://localhost:2368/vuezeng-jia-tagbiao-qian-gong-neng/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Vue.js, Node.js">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Vue增加tag标签功能",
+    "url": "http://localhost:2368/vuezeng-jia-tagbiao-qian-gong-neng/",
+    "datePublished": "2018-01-17T07:21:34.000Z",
+    "dateModified": "2018-01-17T07:14:19.000Z",
+    "keywords": "Vue.js, Node.js",
+    "description": "最近开发一个羽翼图书后台系统的组件化开发，参考网上搜索关于vue标签功能，然后自己研究一下，如果做好了tag标签组件化的话，以后要开发一个项目的时候，可以就用这个小组件化功能。",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-vue-js tag-node-js">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Vue增加tag标签功能</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-01-17</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/vue-js/">Vue.js</a> <a href="../tag/node-js/">Node.js</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><p><strong>前言</strong></p>
+<blockquote>
+<p>最近开发一个羽翼图书后台系统的组件化开发，参考网上搜索关于vue标签功能，然后自己研究一下，如果做好了tag标签组件化的话，以后要开发一个项目的时候，可以就用这个小组件化功能。</p>
+</blockquote>
+<p><strong>实现</strong></p>
+<p>css:</p>
+<pre><code>.tags-wrap {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  padding-left: 4px;
+  padding-top: 4px;
+  cursor: text;
+  text-align: left;
+  -webkit-appearance: textfield;
+}
+
+.tags-wrap::after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.tags-input {
+  background: transparent;
+  border: 0;
+  color: #777;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 6px;
+  margin-top: 1px;
+  outline: none;
+  padding: 4px;
+  padding-left: 0;
+  width: 80px
+}
+
+.content {
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  color: rgba(0, 0, 0, .87);
+  line-height: 25px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 4px;
+  margin-right: 4px;
+  padding: 6px;
+}
+
+.del {
+  cursor: pointer;
+  font-weight: 700;
+  color: #1F1F1F;
+}
+
+</code></pre>
+<p>可以查看展示效果：</p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/zhouyulong/tcawzjd1/embedded/" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

@@ -1,0 +1,200 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="MyBatis的sql语句中表名order报错">
+    <meta property="og:description" content="比方说订单表的时候查询表名是order,如果是sql语句中不加的符号，会出现报错的，因为是order是sql进行排序,不能出现sql关键词，所以需要加上的符号，这样不会出现报错。 在查询订单表： SELECT * FROM order; 如果写上面的话，可能这样会报错 所以需要加上``的符号 SELECT * FROM `order`; 上面能够查询出来你想要订单表，是正确写法的 如果想用MyBatis的时候，不能写如下： &amp;lt;!-- 查询未支付订单 --&amp;gt;   &amp;lt;select id=&amp;quot;findByPage&amp;quot; resultMap=&amp;quot;BaseResultMap&amp;quot;&amp;gt;     SELECT id, order_num, pay_price     FROM order     WHERE order_status=1">
+    <meta property="og:url" content="http://localhost:2368/mybatisde-sqlyu-ju-zhong-biao-ming-orderbao-cuo/">
+    <meta property="article:published_time" content="2018-03-19T10:43:17.000Z">
+    <meta property="article:modified_time" content="2018-03-19T10:36:40.000Z">
+    <meta property="article:tag" content="MyBatis">
+    <meta property="article:tag" content="Mysql">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="MyBatis的sql语句中表名order报错">
+    <meta name="twitter:description" content="比方说订单表的时候查询表名是order,如果是sql语句中不加``的符号，会出现报错的，因为是order是sql进行排序,不能出现sql关键词，所以需要加上``的符号，这样不会出现报错。">
+    <meta name="twitter:url" content="http://localhost:2368/mybatisde-sqlyu-ju-zhong-biao-ming-orderbao-cuo/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="MyBatis, Mysql">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "MyBatis的sql语句中表名order报错",
+    "url": "http://localhost:2368/mybatisde-sqlyu-ju-zhong-biao-ming-orderbao-cuo/",
+    "datePublished": "2018-03-19T10:43:17.000Z",
+    "dateModified": "2018-03-19T10:36:40.000Z",
+    "keywords": "MyBatis, Mysql",
+    "description": "比方说订单表的时候查询表名是order,如果是sql语句中不加的符号，会出现报错的，因为是order是sql进行排序,不能出现sql关键词，所以需要加上的符号，这样不会出现报错。 在查询订单表： SELECT * FROM order; 如果写上面的话，可能这样会报错 所以需要加上&#x60;&#x60;的符号 SELECT * FROM &#x60;order&#x60;; 上面能够查询出来你想要订单表，是正确写法的 如果想用MyBatis的时候，不能写如下： &amp;lt;!-- 查询未支付订单 --&amp;gt;   &amp;lt;select id&#x3D;&amp;quot;findByPage&amp;quot; resultMap&#x3D;&amp;quot;BaseResultMap&amp;quot;&amp;gt;     SELECT id, order_num, pay_price     FROM order     WHERE order_status&#x3D;1",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-mybatis tag-mysql">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>MyBatis的sql语句中表名order报错</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-03-19</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/mybatis/">MyBatis</a> <a href="../tag/mysql/">Mysql</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>比方说订单表的时候查询表名是order,如果是sql语句中不加<code>的符号，会出现报错的，因为是order是sql进行排序,不能出现sql关键词，所以需要加上</code>的符号，这样不会出现报错。</p>
+</blockquote>
+<p>在查询订单表：</p>
+<pre><code>SELECT * FROM order;
+</code></pre>
+<p>如果写上面的话，可能这样会报错</p>
+<p>所以需要加上``的符号</p>
+<pre><code>SELECT * FROM `order`;
+</code></pre>
+<p>上面能够查询出来你想要订单表，是正确写法的</p>
+<p>如果想用MyBatis的时候，不能写如下：</p>
+<pre><code>&lt;!-- 查询未支付订单 --&gt;
+  &lt;select id="findByPage" resultMap="BaseResultMap"&gt;
+    SELECT id, order_num, pay_price
+    FROM order
+    WHERE order_status=1
+  &lt;/select&gt;
+</code></pre>
+<p>要改成正确的写法如下：</p>
+<pre><code>  &lt;sql id="order"&gt;`order`&lt;/sql&gt;
+
+  &lt;!-- 查询未支付订单 --&gt;
+  &lt;select id="findByPage" resultMap="BaseResultMap"&gt;
+    SELECT id, order_num, pay_price
+    FROM &lt;include refid="order" /&gt;
+    WHERE order_status=1
+  &lt;/select&gt;
+</code></pre>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

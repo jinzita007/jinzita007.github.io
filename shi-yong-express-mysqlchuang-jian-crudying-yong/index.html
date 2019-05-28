@@ -1,0 +1,603 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Express + MySQL实现REST API的web应用">
+    <meta property="og:description" content="我将分享教程，使用MySQL，node.js，express创建CRUD。请先阅读，因为这篇文章是文章的延续。在本教程中，我将创建一个简单的REST API的Web应用程序来创建，读取，更新和删除数据。重要的是要注意，本教程适合初学者。 在初始化时，创建名称为mynode 商品表的数据库 输入名字、长度等 创建成功了商品表 插入表 成功插入表页面 查看商品表 注意的是刚才我从phpMyAdmin面板来操作数据库，如果你没有phpMyAdmin面板，可以用mysql命令运行创建与插入等。 商品表数据库 -- -- 表的结构 `goods` -- CREATE TABLE `goods` (   `id` int(11) NOT NULL COMMENT '商品ID',   `title` varchar(50) NOT NULL COMMENT '商品名称',   `price`">
+    <meta property="og:url" content="http://localhost:2368/shi-yong-express-mysqlchuang-jian-crudying-yong/">
+    <meta property="article:published_time" content="2018-02-03T06:09:44.000Z">
+    <meta property="article:modified_time" content="2018-02-03T06:06:17.000Z">
+    <meta property="article:tag" content="Node.js">
+    <meta property="article:tag" content="express">
+    <meta property="article:tag" content="Mysql">
+    <meta property="article:tag" content="CRUD">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Express + MySQL实现REST API的web应用">
+    <meta name="twitter:description" content="我将分享教程，使用MySQL，node.js，express创建CRUD。">
+    <meta name="twitter:url" content="http://localhost:2368/shi-yong-express-mysqlchuang-jian-crudying-yong/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Node.js, express, Mysql, CRUD">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Express + MySQL实现REST API的web应用",
+    "url": "http://localhost:2368/shi-yong-express-mysqlchuang-jian-crudying-yong/",
+    "datePublished": "2018-02-03T06:09:44.000Z",
+    "dateModified": "2018-02-03T06:06:17.000Z",
+    "keywords": "Node.js, express, Mysql, CRUD",
+    "description": "我将分享教程，使用MySQL，node.js，express创建CRUD。请先阅读，因为这篇文章是文章的延续。在本教程中，我将创建一个简单的REST API的Web应用程序来创建，读取，更新和删除数据。重要的是要注意，本教程适合初学者。 在初始化时，创建名称为mynode 商品表的数据库 输入名字、长度等 创建成功了商品表 插入表 成功插入表页面 查看商品表 注意的是刚才我从phpMyAdmin面板来操作数据库，如果你没有phpMyAdmin面板，可以用mysql命令运行创建与插入等。 商品表数据库 -- -- 表的结构 &#x60;goods&#x60; -- CREATE TABLE &#x60;goods&#x60; (   &#x60;id&#x60; int(11) NOT NULL COMMENT &#x27;商品ID&#x27;,   &#x60;title&#x60; varchar(50) NOT NULL COMMENT &#x27;商品名称&#x27;,   &#x60;price&#x60;",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-node-js tag-express tag-mysql tag-crud">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Express + MySQL实现REST API的web应用</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-02-03</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/node-js/">Node.js</a> <a href="../tag/express/">express</a> <a href="../tag/mysql/">Mysql</a> <a href="../tag/crud/">CRUD</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>我将分享教程，使用MySQL，node.js，express创建CRUD。请先阅读，因为这篇文章是文章的延续。在本教程中，我将创建一个简单的REST API的Web应用程序来创建，读取，更新和删除数据。重要的是要注意，本教程适合初学者。</p>
+</blockquote>
+<h3 id="mynode">在初始化时，创建名称为mynode</h3>
+<p><img src="../content/images/2018/02/Snip20180203_3.png" alt="Snip20180203_3"></p>
+<blockquote>
+<p>商品表的数据库</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snip20180203_4.png" alt="Snip20180203_4"></p>
+<blockquote>
+<p>输入名字、长度等</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snip20180203_5.png" alt="Snip20180203_5"></p>
+<blockquote>
+<p>创建成功了商品表</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snip20180203_6.png" alt="Snip20180203_6"></p>
+<blockquote>
+<p>插入表</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snip20180203_9.png" alt="Snip20180203_9"></p>
+<blockquote>
+<p>成功插入表页面</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snip20180203_10.png" alt="Snip20180203_10"></p>
+<blockquote>
+<p>查看商品表</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snip20180203_11.png" alt="Snip20180203_11"></p>
+<blockquote>
+<p>注意的是刚才我从phpMyAdmin面板来操作数据库，如果你没有phpMyAdmin面板，可以用mysql命令运行创建与插入等。</p>
+</blockquote>
+<blockquote>
+<p>商品表数据库</p>
+</blockquote>
+<pre><code class="language-sql">--
+-- 表的结构 `goods`
+--
+
+CREATE TABLE `goods` (
+  `id` int(11) NOT NULL COMMENT '商品ID',
+  `title` varchar(50) NOT NULL COMMENT '商品名称',
+  `price` float NOT NULL COMMENT '商品价格',
+  PRIMARY KEY (`id`)) ENGINE = InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `goods`
+--
+
+INSERT INTO `goods` (`id`, `title`, `price`) VALUES
+(1, '山药片', 25.9),
+(2, '丹麦曲奇饼干', 29.9);
+</code></pre>
+<h3 id="restful">设置Restful项目</h3>
+<blockquote>
+<p>终端或命令行，创建一个项目文件夹</p>
+</blockquote>
+<pre><code>$ mkdir express_demo
+$ cd express_demo
+</code></pre>
+<blockquote>
+<p>初始化你的项目，这将创建一个package.json文件</p>
+</blockquote>
+<pre><code>$ npm init
+This utility will walk you through creating a package.json file.
+It only covers the most common items, and tries to guess sensible defaults.
+
+See `npm help json` for definitive documentation on these fields
+and exactly what they do.
+
+Use `npm install &lt;pkg&gt;` afterwards to install a package and
+save it as a dependency in the package.json file.
+
+Press ^C at any time to quit.
+package name: (express_demo) 
+version: (1.0.0) 
+description: 
+entry point: (index.js) app.js
+test command: 
+git repository: 
+keywords: 
+author: 
+license: (ISC) 
+About to write to /Users/zhouyulong/code/express_demo/package.json:
+
+{
+  "name": "express_demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+
+Is this ok? (yes) 
+</code></pre>
+<blockquote>
+<p>第一种方案：首先让我们安装我们需要的依赖关系,package.json文件增加依赖包</p>
+</blockquote>
+<pre><code> {
+   "name": "express_demo",
+   "version": "1.0.0",
+   "description": "",
+   "main": "app.js",
+   "scripts": {
+     "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
+   },
+   "author": "",
+-  "license": "ISC"
++  "license": "ISC",
++  "dependencies": {
++    "express": "~4.12.2",
++    "mysql": "~2.5.5",
++    "body-parser": "~1.12.0"
++  }
+ }
+</code></pre>
+<blockquote>
+<p>通过终端器命令，可以安装依赖项</p>
+</blockquote>
+<pre><code>$ npm install
+</code></pre>
+<blockquote>
+<p>第二种方案：通过NPM安装依赖包</p>
+</blockquote>
+<pre><code>$ npm install express &amp;&amp; mysql &amp;&amp; body-parser --save
+</code></pre>
+<blockquote>
+<p>创建app.js文件</p>
+</blockquote>
+<pre><code>$ touch app.js
+</code></pre>
+<h3 id="express">创建一个express服务器</h3>
+<blockquote>
+<p>打开文本编辑器，复制下面的代码。</p>
+</blockquote>
+<pre><code>var express = require("express");
+var mysql = require("mysql");
+var bodyParser = require("body-parser");
+var app = express();
+
+var port = process.env.PORT || 8080; 
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); // Body解析器使用JSON数据
+
+app.get('/', function(req, res) {
+    res.json({message:"欢迎来到API接口"});
+})
+
+app.listen(3000, function () {
+    console.log("✔ Express server listening on port " + port);
+});
+</code></pre>
+<blockquote>
+<p>运行项目</p>
+</blockquote>
+<pre><code>$ node app.js
+✔ Express server listening on 3000
+</code></pre>
+<blockquote>
+<p>如果要保持运行node app.js。我们可以通过npm来安装PM2如下：</p>
+</blockquote>
+<pre><code>$ npm install -g pm2
+</code></pre>
+<blockquote>
+<p>然后启动项目</p>
+</blockquote>
+<pre><code>$ pm2 start app.js --name="app"
+[PM2] Spawning PM2 daemon with pm2_home=/Users/zhouyulong/.pm2
+[PM2] PM2 Successfully daemonized
+[PM2] Starting /Users/zhouyulong/code/express_demo/app.js in fork_mode (1 instance)
+[PM2] Done.
+┌──────────┬────┬──────┬───────┬────────┬─────────┬────────┬─────┬───────────┬────────────┬──────────┐
+│ App name │ id │ mode │ pid   │ status │ restart │ uptime │ cpu │ mem       │ user       │ watching │
+├──────────┼────┼──────┼───────┼────────┼─────────┼────────┼─────┼───────────┼────────────┼──────────┤
+│ app      │ 0  │ fork │ 22448 │ online │ 0       │ 0s     │ 0%  │ 13.3 MB   │ zhouyulong │ disabled │
+└──────────┴────┴──────┴───────┴────────┴─────────┴────────┴─────┴───────────┴────────────┴──────────┘
+ Use `pm2 show &lt;id|name&gt;` to get more details about an app
+</code></pre>
+<blockquote>
+<p>如果经常改动代码，通过安装node-dev可以实现热部署。</p>
+</blockquote>
+<pre><code>$ sudo npm install -g node-dev
+</code></pre>
+<blockquote>
+<p>启动项目</p>
+</blockquote>
+<pre><code>$ node-dev app.js
+✔ Express server listening on port 8080
+</code></pre>
+<h3 id="">数据库连接</h3>
+<blockquote>
+<p>修改server.js并包含MySQL连接代码。在这里你必须修改MySQL数据库名称，主机，用户名和密码</p>
+</blockquote>
+<pre><code>var conn = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    database: 'mynode'
+});
+</code></pre>
+<blockquote>
+<p>获取商品详情 这里是商品数据的路线。下载Chrome浏览器的poster扩展，这将帮助您测试这些Restful API。</p>
+</blockquote>
+<pre><code>// 获取商品列表
+app.get('/goods', function(req,res) {
+    var data = {
+        "data": ""
+    }
+    conn.query("select * from goods", function(err, rows, fields){
+        if(rows.length !=0) {
+            data["data"] = rows;
+            res.json(data);
+        } else {
+            data["data"] = "无数据...";
+            res.json(data);
+        }
+    });
+});
+</code></pre>
+<blockquote>
+<p>请求GET:<a href="http://localhost:3000/goods">http://localhost:3000/goods</a></p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snip20180203_12.png" alt="Snip20180203_12"></p>
+<blockquote>
+<p>在POST请求中,我们正在创建一个商品数据，并JSON形式发送响应。 我已经创建了一个用于演示目的商品API。看下面的代码</p>
+</blockquote>
+<pre><code>//创建一个商品
+app.post('/good', function(req, res) {
+    var title = req.body.title;
+    var price = req.body.price;
+    var query = "insert into ??(??, ??) values(?,?)";
+    var table = ["goods", "title", "price", title, price];
+    query = mysql.format(query,table);
+    conn.query(query,function(err, rows) {
+        if (err) {
+            res.json({ error: true, message: "执行MySQL查询时出错"});
+        } else {
+            res.json({ error: false, message: "成功创建商品" });
+        }
+    });
+});
+</code></pre>
+<blockquote>
+<p>创建一个商品的时候，请求POST:<a href="http://localhost:3000/good">http://localhost:3000/good</a></p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snip20180203_14.png" alt="Snip20180203_14"></p>
+<blockquote>
+<p>在GET请求的时候，我们查询一个商品ID。</p>
+</blockquote>
+<pre><code>//查询商品ID
+app.get('/good/:id',function(req, res) {
+    var query = "select * from ?? where ?? = ?";
+    var table = ["goods","id",req.params.id];
+    query = mysql.format(query,table);
+    conn.query(query, function(err, rows) {
+        if(err) {
+            res.json({ error: true, message: "执行MySQL查询时出错" });
+        } else if(rows.length != 0){
+            res.json({ error: false, message: "成功", "data": rows });
+        } else {
+            res.json({ error: false, message: "无数据..."});
+        }
+    })
+})
+</code></pre>
+<blockquote>
+<p>当我们查询商品ID为1的时候</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snip20180203_15.png" alt="Snip20180203_15"></p>
+<blockquote>
+<p>在PUT请求中，我们需要修改一个商品数据。我已经更新一个商品ID的API，如下代码</p>
+</blockquote>
+<pre><code>//更新一个商品
+app.put('/good/:id', function (req, res) {
+    var id = req.params.id;
+    var title = req.body.title;
+    var price = req.body.price;
+    var query = "update ?? set ?? = ?,?? = ? where ?? = ?";
+    var table = ["goods", "title", title, "price", price, "id", id];
+    query = mysql.format(query, table);
+    conn.query(query, function (err, rows) {
+        if (err) {
+            res.json({ error: true, message: "执行MySQL查询时出错" });
+        } else {
+            res.json({ error: false, message: "更新一个商品ID：" + id });
+        }
+    });
+});
+</code></pre>
+<blockquote>
+<p>当我们更新商品ID的时候</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snip20180203_16.png" alt="Snip20180203_16"></p>
+<blockquote>
+<p>最后，我们希望能够从集合中删除记录。为此，我们将使用DELETE动词。</p>
+</blockquote>
+<pre><code>//删除一个商品
+app.delete("/good/:id", function (req, res) {
+    var id = req.params.id;
+    var query = "delete from ?? where ?? = ?";
+    var table = ["goods", "id", id];
+    query = mysql.format(query, table);
+    conn.query(query, function (err, rows) {
+        if (err) {
+            res.json({ error: true, message: "执行MySQL查询时出错" });
+        } else {
+            res.json({ error: false, message: "成功删除一个商品ID：" + id });
+        }
+    });
+});
+</code></pre>
+<blockquote>
+<p>当我们删除一个商品ID为4的时候</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snip20180203_17.png" alt="Snip20180203_17"></p>
+<h3 id="">完整项目如下代码：</h3>
+<pre><code>var express = require("express");
+var mysql = require("mysql");
+var bodyParser = require("body-parser");
+var app = express();
+
+var port = process.env.PORT || 8080; 
+
+//连接mysql数据库
+var conn = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    database: 'mynode'
+});
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); // Body解析器使用JSON数据
+
+app.get('/', function(req, res) {
+    res.json({message:"欢迎来到API接口"});
+})
+//获取商品列表
+app.get('/goods', function(req,res) {
+    var data = {
+        "data": ""
+    }
+    conn.query("select * from goods", function(err, rows, fields){
+        if(rows.length !=0) {
+            data["data"] = rows;
+            res.json(data);
+        } else {
+            data["data"] = "无数据...";
+            res.json(data);
+        }
+    });
+});
+
+//查询商品ID
+app.get('/good/:id',function(req, res) {
+    var query = "select * from ?? where ?? = ?";
+    var table = ["goods","id",req.params.id];
+    query = mysql.format(query,table);
+    conn.query(query, function(err, rows) {
+        if(err) {
+            res.json({ error: true, message: "执行MySQL查询时出错" });
+        } else if(rows.length != 0){
+            res.json({ error: false, message: "成功", "data": rows });
+        } else {
+            res.json({ error: false, message: "无数据...."});
+        }
+    })
+});
+
+//创建一个商品
+app.post('/good', function(req, res) {
+    var title = req.body.title;
+    var price = req.body.price;
+    var query = "insert into ??(??, ??) values(?,?)";
+    var table = ["goods", "title", "price", title, price];
+    query = mysql.format(query,table);
+    conn.query(query,function(err, rows) {
+        if (err) {
+            res.json({ error: true, message: "执行MySQL查询时出错"});
+        } else {
+            res.json({ error: false, message: "成功创建商品" });
+        }
+    });
+});
+
+//更新一个商品
+app.put('/good/:id', function (req, res) {
+    var id = req.params.id;
+    var title = req.body.title;
+    var price = req.body.price;
+    var query = "update ?? set ?? = ?,?? = ? where ?? = ?";
+    var table = ["goods", "title", title, "price", price, "id", id];
+    query = mysql.format(query, table);
+    conn.query(query, function (err, rows) {
+        if (err) {
+            res.json({ error: true, message: "执行MySQL查询时出错" });
+        } else {
+            res.json({ error: false, message: "更新一个商品ID：" + id });
+        }
+    });
+});
+
+//删除一个商品
+app.delete("/good/:id", function (req, res) {
+    var id = req.params.id;
+    var query = "delete from ?? where ?? = ?";
+    var table = ["goods", "id", id];
+    query = mysql.format(query, table);
+    conn.query(query, function (err, rows) {
+        if (err) {
+            res.json({ error: true, message: "执行MySQL查询时出错" });
+        } else {
+            res.json({ error: false, message: "成功删除一个商品ID：" + id });
+        }
+    });
+});
+
+app.listen(3000, function () {
+    console.log("✔ Express server listening on port " + port);
+});
+</code></pre>
+<blockquote>
+<p>我的GITHUB项目地址：<a href="https://github.com/jinzita007/express_demo">express_demo</a></p>
+</blockquote>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

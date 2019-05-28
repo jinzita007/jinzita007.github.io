@@ -1,0 +1,206 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Hexo安装和配置">
+    <meta property="og:description" content="Hexo是一个简单地、轻量地、基于Node的一个静态博客框架，可以方便的生成静态网页托管在github和Heroku上。 安装 1.Hexo是基于Node,必须要安装Node和npm。你可以自行去安装Node和npm！ 2.如果安装成功了的话，就开始安装Hexo吧。 npm install hexo-cli -g  #-g表示全局安装, npm默认为当前项目安装 注意：如果是Mac操作系统安装Hexo，按照上面的命令去安装时候可能会报错，需要加上sudo就不会有报错 sudo npm install hexo-cli -g  3.执行init命令初始化到你指定的blog目录 hexo init blog 4.进入blog目录 cd blog 5.npm安装 npm isntall #install before start blogging 6.运行本地服务 hexo server 7.Mac终端运行本地服务:">
+    <meta property="og:url" content="http://localhost:2368/hexoan-zhuang-he-pei-zhi/">
+    <meta property="article:published_time" content="2016-10-02T06:14:00.000Z">
+    <meta property="article:modified_time" content="2016-11-21T10:09:51.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hexo安装和配置">
+    <meta name="twitter:description" content="Hexo是一个简单地、轻量地、基于Node的一个静态博客框架。">
+    <meta name="twitter:url" content="http://localhost:2368/hexoan-zhuang-he-pei-zhi/">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Hexo安装和配置",
+    "url": "http://localhost:2368/hexoan-zhuang-he-pei-zhi/",
+    "datePublished": "2016-10-02T06:14:00.000Z",
+    "dateModified": "2016-11-21T10:09:51.000Z",
+    "description": "Hexo是一个简单地、轻量地、基于Node的一个静态博客框架，可以方便的生成静态网页托管在github和Heroku上。 安装 1.Hexo是基于Node,必须要安装Node和npm。你可以自行去安装Node和npm！ 2.如果安装成功了的话，就开始安装Hexo吧。 npm install hexo-cli -g  #-g表示全局安装, npm默认为当前项目安装 注意：如果是Mac操作系统安装Hexo，按照上面的命令去安装时候可能会报错，需要加上sudo就不会有报错 sudo npm install hexo-cli -g  3.执行init命令初始化到你指定的blog目录 hexo init blog 4.进入blog目录 cd blog 5.npm安装 npm isntall #install before start blogging 6.运行本地服务 hexo server 7.Mac终端运行本地服务:",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="../records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Hexo安装和配置</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-10-02</time>
+                        </span>  |   
+                        <span class="tags">
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><p><img src="https://hexo.io/logo.svg" alt=""></p>
+<blockquote>
+<p>Hexo是一个简单地、轻量地、基于Node的一个静态博客框架，可以方便的生成静态网页托管在github和Heroku上。</p>
+</blockquote>
+<p><strong>安装</strong></p>
+<p>1.Hexo是基于Node,必须要安装Node和npm。你可以自行去安装Node和npm！</p>
+<p>2.如果安装成功了的话，就开始安装Hexo吧。</p>
+<pre><code class="language-shell">npm install hexo-cli -g  #-g表示全局安装, npm默认为当前项目安装
+</code></pre>
+<p><code>注意</code>：如果是Mac操作系统安装Hexo，按照上面的命令去安装时候可能会报错，需要加上sudo就不会有报错</p>
+<pre><code>sudo npm install hexo-cli -g 
+</code></pre>
+<p>3.执行init命令初始化到你指定的blog目录</p>
+<pre><code>hexo init blog
+</code></pre>
+<p>4.进入blog目录</p>
+<pre><code>cd blog
+</code></pre>
+<p>5.npm安装</p>
+<pre><code>npm isntall #install before start blogging
+</code></pre>
+<p>6.运行本地服务</p>
+<pre><code>hexo server
+</code></pre>
+<p>7.Mac终端运行本地服务:</p>
+<pre><code>bogon:blog zhu$ hexo server
+INFO  Start processing
+INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
+</code></pre>
+<p>8.浏览器输入http://localhost:4000就可以看到效果。</p>
+<p><strong>目录结构</strong></p>
+<pre><code>.
+├── .deploy       #需要部署的文件
+├── node_modules  #Hexo插件
+├── public        #生成的静态网页文件
+├── scaffolds     #模板
+├── source        #博客正文和其他源文件, 404 favicon CNAME 等都应该放在这里
+|   ├── _drafts   #草稿
+|   └── _posts    #文章
+├── themes        #主题
+├── _config.yml   #全局配置文件
+└── package.json
+</code></pre>
+<p>下一步需要写添加博文，别忘了请关注更新吧！</p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

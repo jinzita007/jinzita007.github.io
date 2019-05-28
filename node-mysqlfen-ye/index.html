@@ -1,0 +1,265 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="node + mysql分页">
+    <meta property="og:description" content="本篇文章主要介绍了nodejs+mysql实现分页的方法,这个比较适合新手学习。我们平常看到后台或者前台常用的分页，是比较重要的功能。 用limit方法查询，取前5条数据 select * from goods limit 0,5 或者 select * from goods limit 5 取前5条数据的图片 查询第12到第16条数据 select * from goods limit 10,5 查询第12到第16条数据的图片 我们开始写REST API的分页接口 //获取商品列表分页 app.get('/good', function(req, res) {     var param = req.query || req.params;     var pageNum = parseInt(param.pageNum || 1)">
+    <meta property="og:url" content="http://localhost:2368/node-mysqlfen-ye/">
+    <meta property="article:published_time" content="2018-02-04T07:11:05.000Z">
+    <meta property="article:modified_time" content="2018-02-04T06:48:35.000Z">
+    <meta property="article:tag" content="Node.js">
+    <meta property="article:tag" content="express">
+    <meta property="article:tag" content="Mysql">
+    <meta property="article:tag" content="pagination">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="node + mysql分页">
+    <meta name="twitter:description" content="本篇文章主要介绍了nodejs+mysql实现分页的方法,这个比较适合新手学习。">
+    <meta name="twitter:url" content="http://localhost:2368/node-mysqlfen-ye/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Node.js, express, Mysql, pagination">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "node + mysql分页",
+    "url": "http://localhost:2368/node-mysqlfen-ye/",
+    "datePublished": "2018-02-04T07:11:05.000Z",
+    "dateModified": "2018-02-04T06:48:35.000Z",
+    "keywords": "Node.js, express, Mysql, pagination",
+    "description": "本篇文章主要介绍了nodejs+mysql实现分页的方法,这个比较适合新手学习。我们平常看到后台或者前台常用的分页，是比较重要的功能。 用limit方法查询，取前5条数据 select * from goods limit 0,5 或者 select * from goods limit 5 取前5条数据的图片 查询第12到第16条数据 select * from goods limit 10,5 查询第12到第16条数据的图片 我们开始写REST API的分页接口 //获取商品列表分页 app.get(&#x27;/good&#x27;, function(req, res) {     var param &#x3D; req.query || req.params;     var pageNum &#x3D; parseInt(param.pageNum || 1)",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-node-js tag-express tag-mysql tag-pagination">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>node + mysql分页</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-02-04</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/node-js/">Node.js</a> <a href="../tag/express/">express</a> <a href="../tag/mysql/">Mysql</a> <a href="../tag/pagination/">pagination</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>本篇文章主要介绍了nodejs+mysql实现分页的方法,这个比较适合新手学习。我们平常看到后台或者前台常用的分页，是比较重要的功能。</p>
+</blockquote>
+<blockquote>
+<p>用limit方法查询，取前5条数据</p>
+</blockquote>
+<pre><code>select * from goods limit 0,5
+</code></pre>
+<blockquote>
+<p>或者</p>
+</blockquote>
+<pre><code>select * from goods limit 5
+</code></pre>
+<blockquote>
+<p>取前5条数据的图片</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snip20180204_6.png" alt="Snip20180204_6"></p>
+<blockquote>
+<p>查询第12到第16条数据</p>
+</blockquote>
+<pre><code>select * from goods limit 10,5
+</code></pre>
+<blockquote>
+<p>查询第12到第16条数据的图片</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snip20180204_7.png" alt="Snip20180204_7"></p>
+<blockquote>
+<p>我们开始写REST API的分页接口</p>
+</blockquote>
+<pre><code>//获取商品列表分页
+app.get('/good', function(req, res) {
+    var param = req.query || req.params;
+    var pageNum = parseInt(param.pageNum || 1);// 页码
+    var end = parseInt(param.pageSize || 5); // 默认页数
+    var start = (pageNum - 1) * end;
+    //page = (page-1) * limit
+    var query = "select * from ?? limit ?,?";
+    var table = ["goods", start, end];
+    query = mysql.format(query, table);
+    conn.query(query, function (err, rows, fields) {
+        if (err)
+        throw err;
+        res.json(rows)
+    });   
+});
+</code></pre>
+<blockquote>
+<p>查询分页图片</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snip20180204_8.png" alt="Snip20180204_8"></p>
+<blockquote>
+<p>增加商品总数量</p>
+</blockquote>
+<pre><code>var sql = "SELECT count(*) as total FROM goods";
+    conn.query(sql, function (err,results) {
+        total = results[0].total;
+        console.log('number of pages:', total);
+    })
+</code></pre>
+<blockquote>
+<p>完整项目：</p>
+</blockquote>
+<pre><code>//获取商品列表分页
+app.get('/good', function(req, res) {
+    var param = req.query || req.params;
+    var pageNum = parseInt(param.pageNum || 1);// 页码
+    var end = parseInt(param.pageSize || 3); // 默认页数
+    var start = (pageNum - 1) * end;
+    var sql = "SELECT count(*) as total FROM goods";
+    conn.query(sql, function (err,results) {
+        total = results[0].total;
+        console.log('number of pages:', total);
+    })
+    var query = "select * from ?? limit ?,?";
+    var table = ["goods", start, end];
+    query = mysql.format(query, table);
+    conn.query(query, function (err, rows, fields) {
+        if (err)
+        throw err;
+        res.json({ 
+            pageNum: pageNum,
+            pageSize: end, 
+            total: total,
+            good:rows
+        })
+    });   
+});
+</code></pre>
+<blockquote>
+<p>请求GET中，商品分页效果</p>
+</blockquote>
+<p><img src="../content/images/2018/02/Snip20180204_9.png" alt="Snip20180204_9"></p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

@@ -1,0 +1,250 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Axios返回数据时加载不了vue列表(已解决)">
+    <meta property="og:description" content="使用Axios请求豆瓣API接口，然后返回响应数据之后，接着vue遍历列表渲染在页面，其实写的不难的。如果想测试vue简单的例子的话，建议用JSFiddle在线调试工具，可以看看测试是否OK，要是测试完毕OK就可以把代码复制到项目文件里面的。 HTML文件： + &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; +        &amp;lt;ul&amp;gt; +          &amp;lt;li v-for=&amp;quot;item in movies&amp;quot;&amp;gt; +             {{item.title}} +          &amp;lt;/li&amp;gt; +        &amp;lt;/ul&amp;gt; + &amp;lt;/div&amp;gt; 引入vue和axios文件  &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;       &amp;lt;ul&amp;gt;">
+    <meta property="og:url" content="http://localhost:2368/axiosfan-hui-shu-ju-shi-jia-zai-bu-liao-vuelie-biao-yi-jie-jue/">
+    <meta property="article:published_time" content="2018-01-19T12:28:20.000Z">
+    <meta property="article:modified_time" content="2018-01-19T12:11:35.000Z">
+    <meta property="article:tag" content="Vue.js">
+    <meta property="article:tag" content="Javascript">
+    <meta property="article:tag" content="Axios">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Axios返回数据时加载不了vue列表(已解决)">
+    <meta name="twitter:description" content="使用Axios请求豆瓣API接口，然后返回响应数据之后，接着vue遍历列表渲染在页面，其实写的不难的。如果想测试vue简单的例子的话，建议用JSFiddle在线调试工具，可以看看测试是否OK，要是测试完毕OK就可以把代码复制到项目文件里面的。">
+    <meta name="twitter:url" content="http://localhost:2368/axiosfan-hui-shu-ju-shi-jia-zai-bu-liao-vuelie-biao-yi-jie-jue/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Vue.js, Javascript, Axios">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Axios返回数据时加载不了vue列表(已解决)",
+    "url": "http://localhost:2368/axiosfan-hui-shu-ju-shi-jia-zai-bu-liao-vuelie-biao-yi-jie-jue/",
+    "datePublished": "2018-01-19T12:28:20.000Z",
+    "dateModified": "2018-01-19T12:11:35.000Z",
+    "keywords": "Vue.js, Javascript, Axios",
+    "description": "使用Axios请求豆瓣API接口，然后返回响应数据之后，接着vue遍历列表渲染在页面，其实写的不难的。如果想测试vue简单的例子的话，建议用JSFiddle在线调试工具，可以看看测试是否OK，要是测试完毕OK就可以把代码复制到项目文件里面的。 HTML文件： + &amp;lt;div id&#x3D;&amp;quot;app&amp;quot;&amp;gt; +        &amp;lt;ul&amp;gt; +          &amp;lt;li v-for&#x3D;&amp;quot;item in movies&amp;quot;&amp;gt; +             {{item.title}} +          &amp;lt;/li&amp;gt; +        &amp;lt;/ul&amp;gt; + &amp;lt;/div&amp;gt; 引入vue和axios文件  &amp;lt;div id&#x3D;&amp;quot;app&amp;quot;&amp;gt;       &amp;lt;ul&amp;gt;",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-vue-js tag-javascript tag-axios">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Axios返回数据时加载不了vue列表(已解决)</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-01-19</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/vue-js/">Vue.js</a> <a href="../tag/javascript/">Javascript</a> <a href="../tag/axios/">Axios</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>使用Axios请求豆瓣API接口，然后返回响应数据之后，接着vue遍历列表渲染在页面，其实写的不难的。如果想测试vue简单的例子的话，建议用JSFiddle在线调试工具，可以看看测试是否OK，要是测试完毕OK就可以把代码复制到项目文件里面的。</p>
+</blockquote>
+<h3 id="html">HTML文件：</h3>
+<pre><code>+ &lt;div id="app"&gt;
++        &lt;ul&gt;
++          &lt;li v-for="item in movies"&gt;
++             {{item.title}}
++          &lt;/li&gt;
++        &lt;/ul&gt;
++ &lt;/div&gt;
+</code></pre>
+<h3 id="vueaxios">引入vue和axios文件</h3>
+<pre><code> &lt;div id="app"&gt;
+      &lt;ul&gt;
+        &lt;li v-for="item in movies"&gt;
+           {{item.title}}
+        &lt;/li&gt;
+      &lt;/ul&gt;
+  &lt;/div&gt;
++ &lt;script src="https://cdn.jsdelivr.net/npm/vue"&gt;&lt;/script&gt;
++ &lt;script src="https://unpkg.com/axios/dist/axios.min.js"&gt;&lt;/script&gt;
+</code></pre>
+<h3 id="javascript">javascript文件</h3>
+<pre><code>+ var vm = new Vue({
++        el: '#app',
++        data: {
++            movies: []
++        },
++        created() {
++            this.getMovie();
++        },
++        methods: {
++            getMovie: function () {
++                axios.get("https://api.douban.com/v2/movie/top250")
++                    .then(function (res) {
++                        console.log(res.data.subjects);
++                        this.movies = res.data.subjects;
++                    })
++                   .catch(function (error) {
++                        console.log(error);
++                    });
++            }
++        }
++    })     
+</code></pre>
+<p>但是我发现加载不了列表页面的问题，我不知道继续怎么修改一下呢？</p>
+<p>后来在Stack Overflow技术回答网站终于得到了一个答案：</p>
+<blockquote>
+<p>现在把函数改成es6箭头符号()=&gt; {...}。这样，可以分配this.movi​​es时保留此上下文</p>
+</blockquote>
+<p>改成最终效果是：</p>
+<pre><code>+ var vm = new Vue({
++        el: '#app',
++        data: {
++            movies: []
++        },
++        created() {
++            this.getMovie();
++        },
++        methods: {
++            getMovie: function () {
++                axios.get("https://api.douban.com/v2/movie/top250")
+-                    .then(function (res) {
++                    .then(res =&gt; {
++                        console.log(res.data.subjects);
++                        this.movies = res.data.subjects;
++                    })
+-                   .catch(function (error) {
++                   .catch(error =&gt; {
++                        console.log(error);
++                    });
++            }
++        }
++    })     
+</code></pre>
+<h3 id="jsfiddle">JSFiddle效果一下：</h3>
+<iframe width="100%" height="300" src="http://jsfiddle.net/zhouyulong/c6b6osnx/embedded/" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

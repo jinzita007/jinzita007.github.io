@@ -1,0 +1,245 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="如何使用beautifulsoup提取内容">
+    <meta property="og:description" content="我遇到了一个问题就是我想尝试从使用网站提取产品名称和价格。但我不知道如何提取内容。后来两位网有解决了我的问题，我十分感谢他们。 请看我的代码： index.html &amp;lt;div pagetype=&amp;quot;simple_table_nonFashion&amp;quot; class=&amp;quot;itemBox&amp;quot; id=&amp;quot;itemSearchResultCon_679026&amp;quot;&amp;gt;     &amp;lt;p class=&amp;quot;proPrice&amp;quot;&amp;gt;         &amp;lt;em class=&amp;quot;num&amp;quot; id=&amp;quot;price0_679026&amp;quot; productid=&amp;quot;679026&amp;quot; adproductflag=&amp;quot;0&amp;">
+    <meta property="og:url" content="http://localhost:2368/pythonpa-chong-jing-dong-shang-pin-lie-biao/">
+    <meta property="article:published_time" content="2018-02-04T04:27:01.000Z">
+    <meta property="article:modified_time" content="2018-02-04T04:05:49.000Z">
+    <meta property="article:tag" content="python">
+    <meta property="article:tag" content="html">
+    <meta property="article:tag" content="beautifulsoup">
+    <meta property="article:tag" content="extract">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="如何使用beautifulsoup提取内容">
+    <meta name="twitter:description" content="我遇到了一个问题就是我想尝试从使用网站提取产品名称和价格">
+    <meta name="twitter:url" content="http://localhost:2368/pythonpa-chong-jing-dong-shang-pin-lie-biao/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="python, html, beautifulsoup, extract">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "如何使用beautifulsoup提取内容",
+    "url": "http://localhost:2368/pythonpa-chong-jing-dong-shang-pin-lie-biao/",
+    "datePublished": "2018-02-04T04:27:01.000Z",
+    "dateModified": "2018-02-04T04:05:49.000Z",
+    "keywords": "python, html, beautifulsoup, extract",
+    "description": "我遇到了一个问题就是我想尝试从使用网站提取产品名称和价格。但我不知道如何提取内容。后来两位网有解决了我的问题，我十分感谢他们。 请看我的代码： index.html &amp;lt;div pagetype&#x3D;&amp;quot;simple_table_nonFashion&amp;quot; class&#x3D;&amp;quot;itemBox&amp;quot; id&#x3D;&amp;quot;itemSearchResultCon_679026&amp;quot;&amp;gt;     &amp;lt;p class&#x3D;&amp;quot;proPrice&amp;quot;&amp;gt;         &amp;lt;em class&#x3D;&amp;quot;num&amp;quot; id&#x3D;&amp;quot;price0_679026&amp;quot; productid&#x3D;&amp;quot;679026&amp;quot; adproductflag&#x3D;&amp;quot;0&amp;",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-python tag-html tag-beautifulsoup tag-extract">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>如何使用beautifulsoup提取内容</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-02-04</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/python/">python</a> <a href="../tag/html/">html</a> <a href="../tag/beautifulsoup/">beautifulsoup</a> <a href="../tag/extract/">extract</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>我遇到了一个问题就是我想尝试从使用网站提取产品名称和价格。但我不知道如何提取内容。后来两位网有解决了我的问题，我十分感谢他们。</p>
+</blockquote>
+<h3 id="">请看我的代码：</h3>
+<blockquote>
+<p>index.html</p>
+</blockquote>
+<pre><code>&lt;div pagetype="simple_table_nonFashion" class="itemBox" id="itemSearchResultCon_679026"&gt;
+    &lt;p class="proPrice"&gt;
+        &lt;em class="num" id="price0_679026" productid="679026" adproductflag="0" yhdprice="49.9" productunit="" diapernum="0" diapernumunit=""&gt;
+            &lt;b&gt;¥&lt;/b&gt;49.90&lt;/em&gt;
+    &lt;/p&gt;
+    &lt;p class="proName clearfix"&gt;
+        &lt;a id="pdlink2_679026" pmid="0" href="//item.yhd.com/679026.html"&gt;
+            &lt;style type="text/css"&gt;
+                .preSellOrAppoint {
+                    border: 1px solid #FFFFFF;
+                }
+            &lt;/style&gt;印尼进口&lt;/a&gt;
+    &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<blockquote>
+<p>Python文件</p>
+</blockquote>
+<pre><code class="language-python">from bs4 import BeautifulSoup
+import re
+soup = BeautifulSoup(open("index.html"),"lxml")
+itemBox = soup.find("div", {"class": "itemBox"})
+proPrice = itemBox.find("p", {"class": "proPrice"}).find("em").text
+pdlink2 = itemBox.find('a',{"id": re.compile('pdlink2_*')}).text
+print(proPrice)
+print(pdlink2)
+</code></pre>
+<blockquote>
+<p>打印出查看</p>
+</blockquote>
+<pre><code>¥49.90
+.preSellOrAppoint {border: 1px solid #FFFFFF;}印尼进口
+</code></pre>
+<p>我觉得这样提取内容有些不对的。</p>
+<h3 id="">如何解决正确地提取内容：</h3>
+<blockquote>
+<p>可以用soup.select_one（）方法：</p>
+</blockquote>
+<pre><code class="language-python">from bs4 import BeautifulSoup
+
+soup = BeautifulSoup(open("index.html"),"lxml")
+proPrice = soup.select_one("p.proPrice em").contents[-1]
+pdlink2 = soup.select_one("p.proName &gt; a").contents[-1]
+print("[*] 商品价格:", proPrice)
+print("[*] 商品标题:", pdlink2)
+</code></pre>
+<blockquote>
+<p>正确打印出的结果</p>
+</blockquote>
+<pre><code>[*] 商品价格: 49.90
+[*] 商品标题: 印尼进口
+</code></pre>
+<blockquote>
+<p>或者.next_sibling允许访问<code>&lt;b&gt;</code>和<code>&lt;style&gt;</code>标签之外的文本。</p>
+</blockquote>
+<pre><code class="language-python">from bs4 import BeautifulSoup
+    
+proPrice = soup.b.next_sibling
+pdlink2 = soup.style.next_sibling
+print(proPrice)
+print(pdlink2)  
+</code></pre>
+<blockquote>
+<p>参考我的问题：<a href="https://stackoverflow.com/questions/48597821/how-to-extract-the-content-using-beautifulsoup">如何使用beautifulsoup提取内容</a></p>
+</blockquote>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

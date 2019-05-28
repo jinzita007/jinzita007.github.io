@@ -1,0 +1,198 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="编写简单的计算标准体重的程序">
+    <meta property="og:description" content="编写一段程序，如果你想知道自己的体重是否达到标准体重，就可以请输入你的身高就能计算标准体重的实数值。 建立a_03.c文件： #include &amp;lt;stdio.h&amp;gt; int main(void) {   int na;   double ave;   printf(&amp;quot;请输入您的身高:&amp;quot;);   scanf(&amp;quot;%d&amp;quot;, &amp;amp;na);   ave = (double)(na - 100) * 0.9;   printf(&amp;quot;标准体重是%4.1f\n&amp;quot;, ave);      return 0; } 编译文件： localhost:c jinghua$ make">
+    <meta property="og:url" content="http://localhost:2368/bian-xie-jian-dan-de-ji-suan-biao-zhun-ti-zhong-de-cheng-xu/">
+    <meta property="article:published_time" content="2016-11-02T06:30:00.000Z">
+    <meta property="article:modified_time" content="2016-11-19T18:31:40.000Z">
+    <meta property="article:tag" content="C">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="编写简单的计算标准体重的程序">
+    <meta name="twitter:description" content="编写一段程序，如果你想知道自己的体重是否达到标准体重，就可以请输入你的身高就能计算标准体重的实数值。 建立a_03.c文件： #include &amp;lt;stdio.h&amp;gt; int main(void) {   int na;   double ave;   printf(&amp;quot;请输入您的身高:&amp;quot;);   scanf(&amp;quot;%d&amp;quot;, &amp;amp;na);   ave = (double)(na - 100) * 0.9;   printf(&amp;quot;标准体重是%4.1f\n&amp;quot;, ave);      return 0; } 编译文件： localhost:c jinghua$ make">
+    <meta name="twitter:url" content="http://localhost:2368/bian-xie-jian-dan-de-ji-suan-biao-zhun-ti-zhong-de-cheng-xu/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="C">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "编写简单的计算标准体重的程序",
+    "url": "http://localhost:2368/bian-xie-jian-dan-de-ji-suan-biao-zhun-ti-zhong-de-cheng-xu/",
+    "datePublished": "2016-11-02T06:30:00.000Z",
+    "dateModified": "2016-11-19T18:31:40.000Z",
+    "keywords": "C",
+    "description": "编写一段程序，如果你想知道自己的体重是否达到标准体重，就可以请输入你的身高就能计算标准体重的实数值。 建立a_03.c文件： #include &amp;lt;stdio.h&amp;gt; int main(void) {   int na;   double ave;   printf(&amp;quot;请输入您的身高:&amp;quot;);   scanf(&amp;quot;%d&amp;quot;, &amp;amp;na);   ave &#x3D; (double)(na - 100) * 0.9;   printf(&amp;quot;标准体重是%4.1f\\n&amp;quot;, ave);      return 0; } 编译文件： localhost:c jinghua$ make",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-c">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="../records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>编写简单的计算标准体重的程序</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-11-02</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/c/">C</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>编写一段程序，如果你想知道自己的体重是否达到标准体重，就可以请输入你的身高就能计算标准体重的实数值。</p>
+</blockquote>
+<p>建立a_03.c文件：</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main(void) {
+  int na;
+  double ave;
+  printf("请输入您的身高:");
+  scanf("%d", &amp;na);
+  ave = (double)(na - 100) * 0.9;
+  printf("标准体重是%4.1f\n", ave);
+  
+  return 0;
+}
+</code></pre>
+<p>编译文件：</p>
+<pre><code>localhost:c jinghua$ make a_03
+cc     a_03.c   -o a_03
+</code></pre>
+<p>打开程序：</p>
+<pre><code>localhost:c jinghua$ ./a_03
+请输入您的身高:180
+标准体重是72.0
+</code></pre>
+<p>动画效果：</p>
+<p><img src="http://ofk69lr9k.bkt.clouddn.com/2001.gif" alt=""></p>
+<p>已生成了程序：<br>
+<a href="index.html">http://ofk69lr9k.bkt.clouddn.com/a_03</a></p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

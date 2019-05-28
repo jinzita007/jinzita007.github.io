@@ -1,0 +1,257 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="获取Vue评分最多的列表渲染">
+    <meta property="og:description" content="今天打算写一个简单的Vue列表渲染，不过想要获取评分最多的内容，用判断大于8.0以上就可以获取内容。暂时不用写Axios请求API接口获取内容，可以在data属性里面增加数据。 HTML文件： + &amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt; +  &amp;lt;ul&amp;gt; +    &amp;lt;li v-for=&amp;quot;item,index in movies&amp;quot;&amp;gt; +      {{item.title}} +      {{item.rating.everage}} +    &amp;lt;/li&amp;gt; +  &amp;lt;/ul&amp;gt; + &amp;lt;/div&amp;gt; + &amp;lt;script src=&amp;quot;https://cdn.jsdelivr.net/npm/">
+    <meta property="og:url" content="http://localhost:2368/huo-qu-vueping-fen-zui-duo-de-lie-biao-xuan-ran/">
+    <meta property="article:published_time" content="2018-01-19T13:01:20.000Z">
+    <meta property="article:modified_time" content="2018-01-19T12:35:25.000Z">
+    <meta property="article:tag" content="Vue.js">
+    <meta property="article:tag" content="Javascript">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="获取Vue评分最多的列表渲染">
+    <meta name="twitter:description" content="今天打算写一个简单的Vue列表渲染，不过想要获取评分最多的内容，用判断大于8.0以上就可以获取内容。暂时不用写Axios请求API接口获取内容，可以在data属性里面增加数据。">
+    <meta name="twitter:url" content="http://localhost:2368/huo-qu-vueping-fen-zui-duo-de-lie-biao-xuan-ran/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Vue.js, Javascript">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "获取Vue评分最多的列表渲染",
+    "url": "http://localhost:2368/huo-qu-vueping-fen-zui-duo-de-lie-biao-xuan-ran/",
+    "datePublished": "2018-01-19T13:01:20.000Z",
+    "dateModified": "2018-01-19T12:35:25.000Z",
+    "keywords": "Vue.js, Javascript",
+    "description": "今天打算写一个简单的Vue列表渲染，不过想要获取评分最多的内容，用判断大于8.0以上就可以获取内容。暂时不用写Axios请求API接口获取内容，可以在data属性里面增加数据。 HTML文件： + &amp;lt;div id&#x3D;&amp;quot;app&amp;quot;&amp;gt; +  &amp;lt;ul&amp;gt; +    &amp;lt;li v-for&#x3D;&amp;quot;item,index in movies&amp;quot;&amp;gt; +      {{item.title}} +      {{item.rating.everage}} +    &amp;lt;/li&amp;gt; +  &amp;lt;/ul&amp;gt; + &amp;lt;/div&amp;gt; + &amp;lt;script src&#x3D;&amp;quot;https://cdn.jsdelivr.net/npm/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-vue-js tag-javascript">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>获取Vue评分最多的列表渲染</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-01-19</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/vue-js/">Vue.js</a> <a href="../tag/javascript/">Javascript</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>今天打算写一个简单的Vue列表渲染，不过想要获取评分最多的内容，用判断大于8.0以上就可以获取内容。暂时不用写Axios请求API接口获取内容，可以在data属性里面增加数据。</p>
+</blockquote>
+<p>HTML文件：</p>
+<pre><code>+ &lt;div id="app"&gt;
++  &lt;ul&gt;
++    &lt;li v-for="item,index in movies"&gt;
++      {{item.title}}
++      {{item.rating.everage}}
++    &lt;/li&gt;
++  &lt;/ul&gt;
++ &lt;/div&gt;
++ &lt;script src="https://cdn.jsdelivr.net/npm/vue"&gt;&lt;/script&gt;
++ &lt;script src="https://unpkg.com/axios/dist/axios.min.js"&gt;&lt;/script&gt;
+</code></pre>
+<h3 id="vue">创建一个 Vue 实例</h3>
+<pre><code>+ var app = new Vue({
++  el: '#app',
++  data: {
++    movies: [
++    {
++        title: '无翼鸟',
++        rating: {
++          max: 10,
++          numRaters: 900,
++          everage: 9.0,
++          min: 0
++        },
++      },
++      {
++        title: '无问西东',
++        rating: {
++          max: 10,
++          numRaters: 714,
++          everage: 7.4,
++          min: 0
++        },
++      },
++      {
++        title: '肖申克的救赎',
++        rating: {
++          max: 10,
++          numRaters: 916,
++          everage: 9.6,
++          min: 0
++        },
++      },
++      {
++        title: '追龙',
++        rating: {
++          max: 10,
++          numRaters: 713,
++          everage: 7.3,
++          min: 0
++        }
++      }
++    ]
++  }
++  
++  
++ })
+</code></pre>
+<p>然后渲染出来的样子：</p>
+<pre><code>* 无翼鸟 9
+* 无问西东 7.4
+* 肖申克的救赎 9.6
+* 追龙 7.3
+</code></pre>
+<p>但是这个不是我想要的结果，可以用v-if判断一下获取内容，现在增加一下：</p>
+<pre><code> &lt;div id="app"&gt;
+    &lt;ul&gt;
+-      &lt;li v-for="item,index in movies"&gt;
++      &lt;li v-if="item.rating.everage &gt; 8.0" v-for="item,index in movies"&gt;
+            {{item.title}}
+            {{item.rating.everage}}
+       &lt;/li&gt;
+    &lt;/ul&gt;
+ &lt;/div&gt;
+ &lt;script src="https://cdn.jsdelivr.net/npm/vue"&gt;&lt;/script&gt;
+ &lt;script src="https://unpkg.com/axios/dist/axios.min.js"&gt;&lt;/script&gt;
+</code></pre>
+<p>最终效果图：</p>
+<pre><code>* 无翼鸟 9
+* 肖申克的救赎 9.6
+</code></pre>
+<iframe width="100%" height="300" src="http://jsfiddle.net/zhouyulong/e2fxrbqh/embedded/js,html,result/" allowpaymentrequest allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

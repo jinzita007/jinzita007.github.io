@@ -1,0 +1,195 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Vue无法获得$refs的id值(已解决)">
+    <meta property="og:description" content="我看到关于vue $refs的文档，不过不太清楚如何获得id的值？我尝试使用console.log(this.$ refs.dataInfo.id)是未定义的。我只好在Stack Overflow网站去问问，后来得到了解决答案！ 看看图片： Javascript文件： console.log(this.$ refs.dataInfo.id) HTML文件： &amp;lt;tab-item v-for=&amp;quot;item in category&amp;quot; :id=&amp;quot;item.id&amp;quot; ref=&amp;quot;dataInfo&amp;quot;&amp;gt;{{item.name}}&amp;lt;/tab-item&amp;gt; 网友给我一些建议有两种方法解决方案： 使用事件。当子组件中的道具改变，并且你想在父组件中做些什么时，你应该发出一个自定义事件。">
+    <meta property="og:url" content="http://localhost:2368/vuewu-fa-huo-de-refsde-idzhi-yi-jie-jue/">
+    <meta property="article:published_time" content="2018-01-21T11:24:05.000Z">
+    <meta property="article:modified_time" content="2018-01-21T11:11:36.000Z">
+    <meta property="article:tag" content="Vue.js">
+    <meta property="article:tag" content="Javascript">
+    <meta property="article:tag" content="前端">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Vue无法获得$refs的id值(已解决)">
+    <meta name="twitter:description" content="我看到关于vue $refs的文档，不过不太清楚如何获得id的值？我尝试使用console.log`(this.$ refs.dataInfo.id)`是未定义的。">
+    <meta name="twitter:url" content="http://localhost:2368/vuewu-fa-huo-de-refsde-idzhi-yi-jie-jue/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Vue.js, Javascript, 前端">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Vue无法获得$refs的id值(已解决)",
+    "url": "http://localhost:2368/vuewu-fa-huo-de-refsde-idzhi-yi-jie-jue/",
+    "datePublished": "2018-01-21T11:24:05.000Z",
+    "dateModified": "2018-01-21T11:11:36.000Z",
+    "keywords": "Vue.js, Javascript, 前端",
+    "description": "我看到关于vue $refs的文档，不过不太清楚如何获得id的值？我尝试使用console.log(this.$ refs.dataInfo.id)是未定义的。我只好在Stack Overflow网站去问问，后来得到了解决答案！ 看看图片： Javascript文件： console.log(this.$ refs.dataInfo.id) HTML文件： &amp;lt;tab-item v-for&#x3D;&amp;quot;item in category&amp;quot; :id&#x3D;&amp;quot;item.id&amp;quot; ref&#x3D;&amp;quot;dataInfo&amp;quot;&amp;gt;{{item.name}}&amp;lt;/tab-item&amp;gt; 网友给我一些建议有两种方法解决方案： 使用事件。当子组件中的道具改变，并且你想在父组件中做些什么时，你应该发出一个自定义事件。",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-vue-js tag-javascript tag-qian-duan">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Vue无法获得$refs的id值(已解决)</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-01-21</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/vue-js/">Vue.js</a> <a href="../tag/javascript/">Javascript</a> <a href="../tag/qian-duan/">前端</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>我看到关于vue $refs的文档，不过不太清楚如何获得id的值？我尝试使用console.log(this.$ refs.dataInfo.id)是未定义的。我只好在Stack Overflow网站去问问，后来得到了解决答案！</p>
+</blockquote>
+<p>看看图片：<br>
+<img src="https://i.stack.imgur.com/dGudb.png" alt="Snip20180121_8"></p>
+<p>Javascript文件：</p>
+<pre><code>console.log(this.$ refs.dataInfo.id)
+</code></pre>
+<p>HTML文件：</p>
+<pre><code>&lt;tab-item v-for="item in category" :id="item.id" ref="dataInfo"&gt;{{item.name}}&lt;/tab-item&gt;
+</code></pre>
+<p>网友给我一些建议有两种方法解决方案：</p>
+<ul>
+<li>使用事件。当子组件中的道具改变，并且你想在父组件中做些什么时，你应该发出一个自定义事件。你可以在子组件中做这样的事情:<code>this.$emit('dataChange',data)</code>。然后在父组件中添加一个事件监听器<code>@dataChange="myMethod"</code>给组件。</li>
+<li>使用Vuex<br>
+对数据在应用程序中流动的基本概念有一个很好的理解是必须的，不应该被忽视！</li>
+</ul>
+<p>已解决：</p>
+<pre><code>this.$refs.dataInfo[0]['$el'].id
+</code></pre>
+<p>可以查看：<br>
+<a href="https://stackoverflow.com/questions/48363873/can-not-get-the-value-of-id-with-vue-refs/48366049#48366049">Can not get the value of id with vue $refs?<br>
+</a></p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

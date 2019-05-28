@@ -1,0 +1,179 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="如何HTTPS页面里动态的引入HTTP资源(已解决)">
+    <meta property="og:description" content="当我写完了一个图书项目的时候，尝试打开网址，发现字体丢了，然后看看浏览器控制器里面说Mixed Content？因为我的域名是HTTPS，无法引入字体样式的问题，需要http的不安全请求升级为https。 index页面的里加上这句代码： &amp;lt;meta http-equiv=&amp;quot;Content-Security-Policy&amp;quot; content=&amp;quot;upgrade-insecure-requests&amp;quot;&amp;gt; 这样解决好了，可以正常打开页面，有了字体样式。 参考网址如何在HTTPS 网页中引入HTTP资源： Mixed Content？">
+    <meta property="og:url" content="http://localhost:2368/ru-he/">
+    <meta property="article:published_time" content="2018-01-31T14:18:51.000Z">
+    <meta property="article:modified_time" content="2018-01-31T14:13:46.000Z">
+    <meta property="article:tag" content="HTTPS">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="如何HTTPS页面里动态的引入HTTP资源(已解决)">
+    <meta name="twitter:description" content="当我写完了一个图书项目的时候，尝试打开网址，发现字体丢了，然后看看浏览器控制器里面说Mixed Content？因为我的域名是HTTPS，无法引入字体样式的问题，需要http的不安全请求升级为https。">
+    <meta name="twitter:url" content="http://localhost:2368/ru-he/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="HTTPS">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "如何HTTPS页面里动态的引入HTTP资源(已解决)",
+    "url": "http://localhost:2368/ru-he/",
+    "datePublished": "2018-01-31T14:18:51.000Z",
+    "dateModified": "2018-01-31T14:13:46.000Z",
+    "keywords": "HTTPS",
+    "description": "当我写完了一个图书项目的时候，尝试打开网址，发现字体丢了，然后看看浏览器控制器里面说Mixed Content？因为我的域名是HTTPS，无法引入字体样式的问题，需要http的不安全请求升级为https。 index页面的里加上这句代码： &amp;lt;meta http-equiv&#x3D;&amp;quot;Content-Security-Policy&amp;quot; content&#x3D;&amp;quot;upgrade-insecure-requests&amp;quot;&amp;gt; 这样解决好了，可以正常打开页面，有了字体样式。 参考网址如何在HTTPS 网页中引入HTTP资源： Mixed Content？",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-https">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>如何HTTPS页面里动态的引入HTTP资源(已解决)</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-01-31</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/https/">HTTPS</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>当我写完了一个图书项目的时候，尝试打开网址，发现字体丢了，然后看看浏览器控制器里面说Mixed Content？因为我的域名是HTTPS，无法引入字体样式的问题，需要http的不安全请求升级为https。</p>
+</blockquote>
+<p>index页面的</p>里加上这句代码：
+<pre><code>&lt;meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"&gt;
+</code></pre>
+<p>这样解决好了，可以正常打开页面，有了字体样式。</p>
+<p>参考网址<a href="https://segmentfault.com/q/1010000005872734/a-1020000005874533">如何在HTTPS 网页中引入HTTP资源： Mixed Content？</a></p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>

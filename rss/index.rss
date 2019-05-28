@@ -1,0 +1,633 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>无根树の博客</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><image><url>http://localhost:2368/favicon.png</url><title>无根树の博客</title><link>http://localhost:2368/</link></image><generator>Ghost 1.20</generator><lastBuildDate>Tue, 28 May 2019 06:04:43 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>React-Hot-Loader: react-🔥-dom patch is not detected. React 16.6+ features may not work.</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;React-Hot-Loader：未检测到react-🔥-dom补丁。 React 16.6+功能可能无效。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;使用启动项目,现在我在浏览器控制器看到这个警告：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;React-Hot-Loader: react-🔥-dom patch is not detected. React 16.6+ features may not work.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;参考解决：&lt;a href="https://stackoverflow.com/questions/54770535/react-hot-loader-react-dom-patch-is-not-detected"&gt;react-hot-loader-react-dom-patch-is-not-detected&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</description><link>http://localhost:2368/react-hot-loader-react-dom-patch-is-not-detected-react-16-6-features-may-not-work/</link><guid isPermaLink="false">5cc6e811ec68ac1c0ce732c1</guid><category>webpack</category><dc:creator>woaitianwen</dc:creator><pubDate>Mon, 29 Apr 2019 12:23:04 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;React-Hot-Loader：未检测到react-🔥-dom补丁。 React 16.6+功能可能无效。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;使用启动项目,现在我在浏览器控制器看到这个警告：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;React-Hot-Loader: react-🔥-dom patch is not detected. React 16.6+ features may not work.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;参考解决：&lt;a href="https://stackoverflow.com/questions/54770535/react-hot-loader-react-dom-patch-is-not-detected"&gt;react-hot-loader-react-dom-patch-is-not-detected&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>不能在webpack服务器中使用'chunkhash'</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;我在webpack dev服务器中启动入口点，在生产构建中使用'chunkhash'，但它会导致此错误&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在启动webpack服务的时候报错信息如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ERROR in chunk manifest [entry]
+[name].[chunkhash].js
+Cannot use [chunkhash] for chunk in '[name].[chunkhash].js' (use [hash] instead)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在package.js文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;scripts&amp;quot;: {
+   &amp;quot;start&amp;quot;: &amp;quot;webpack --config webpack.config.production.js --color --progress --hot --inline&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;解决问题：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;确认这个问题与将[chunkhash]与webpack-dev-server&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;</description><link>http://localhost:2368/qi-dong-webpackshi-yong-chunkhashbao-cuo/</link><guid isPermaLink="false">5cc6d727ec68ac1c0ce732bb</guid><category>webpack</category><category>前端</category><dc:creator>woaitianwen</dc:creator><pubDate>Mon, 29 Apr 2019 11:01:25 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;我在webpack dev服务器中启动入口点，在生产构建中使用'chunkhash'，但它会导致此错误&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在启动webpack服务的时候报错信息如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ERROR in chunk manifest [entry]
+[name].[chunkhash].js
+Cannot use [chunkhash] for chunk in '[name].[chunkhash].js' (use [hash] instead)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在package.js文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;scripts&amp;quot;: {
+   &amp;quot;start&amp;quot;: &amp;quot;webpack --config webpack.config.production.js --color --progress --hot --inline&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;解决问题：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;确认这个问题与将[chunkhash]与webpack-dev-server --hot --inline不兼容的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;当webpack换成webpack-dev-server，修改如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;scripts&amp;quot;: {
+   &amp;quot;start&amp;quot;: &amp;quot;webpack-dev-server --config webpack.config.production.js --color --progress --hot --inline&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;还是同样的报错，因为生产构建中不能使用[chunkhash]，将[chunkhash]更改为[hash].因为没有得到同样的效应[hash]是的散列编制，同时[chunkhash]是的散列块特定的文件。&lt;/p&gt;
+&lt;p&gt;参考地址：&lt;a href="https://github.com/rangle/rangle-starter/issues/199"&gt;Change [chunkhash] to [hash]-[id]&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Docker部署MySQL实现远程连接</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;我已经安装了Docker，要准备搭建MySQL服务&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id="mysql"&gt;创建并启动mysql服务器实例:&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -p 3306:3306 -d mysql:tag
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;some-mysql要分配给容器的名称&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;my-secret-pw是为MySQL的root用户设置的密码&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;tags指定MySQL的版本&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id=""&gt;以下命令如下：&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:5.6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=""&gt;查看镜像&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;docker images
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=""&gt;查看容器运行状态&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;docker ps
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id="mysql"&gt;进入MySQL容器&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;docker exec -it some-mysql bash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id="mysql"&gt;连接MySQL&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;mysql -uroot&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><link>http://localhost:2368/dockerbu-shu-mysqlshi-xian-yuan-cheng-lian-jie/</link><guid isPermaLink="false">5cc53c2a8c996089138dcc42</guid><category>Docker</category><category>Linux</category><dc:creator>woaitianwen</dc:creator><pubDate>Sun, 28 Apr 2019 05:57:10 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;我已经安装了Docker，要准备搭建MySQL服务&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id="mysql"&gt;创建并启动mysql服务器实例:&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -p 3306:3306 -d mysql:tag
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;some-mysql要分配给容器的名称&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;my-secret-pw是为MySQL的root用户设置的密码&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;tags指定MySQL的版本&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id=""&gt;以下命令如下：&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=root -d mysql:5.6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=""&gt;查看镜像&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;docker images
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=""&gt;查看容器运行状态&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;docker ps
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id="mysql"&gt;进入MySQL容器&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;docker exec -it some-mysql bash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id="mysql"&gt;连接MySQL&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;mysql -uroot -p
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=""&gt;选择数据库&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; use mysql;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;创建用户并授权&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; grant all privileges on *.* to 'root'@'%' identified by 'root';
+Query OK, 0 rows affected (0.00 sec)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;刷新权限&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; flush privileges;
+Query OK, 0 rows affected (0.00 sec)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=""&gt;退出容器&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;exit;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Docker容器报错</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;守护程序的错误响应：驱动程序在端点some-mysql外部连接失败&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;启动Docker容器报错信息如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/usr/bin/docker-current: Error response from daemon: driver failed programming external connectivity on endpoint some-mysql (afff9c2dab0bd38835b3b41d14f002ff4606b62b1046d9fb23646a5c47ac582d):  (iptables failed: iptables --wait -t nat -A DOCKER -p tcp -d 0/0 --dport 3306 -j DNAT --to-destination 172.17.0.2:3306 ! -i docker0: iptables: No chain/target/match by&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><link>http://localhost:2368/docker/</link><guid isPermaLink="false">5cc538be8c996089138dcc3e</guid><category>Docker</category><category>Linux</category><dc:creator>woaitianwen</dc:creator><pubDate>Sun, 28 Apr 2019 05:26:12 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;守护程序的错误响应：驱动程序在端点some-mysql外部连接失败&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;启动Docker容器报错信息如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/usr/bin/docker-current: Error response from daemon: driver failed programming external connectivity on endpoint some-mysql (afff9c2dab0bd38835b3b41d14f002ff4606b62b1046d9fb23646a5c47ac582d):  (iptables failed: iptables --wait -t nat -A DOCKER -p tcp -d 0/0 --dport 3306 -j DNAT --to-destination 172.17.0.2:3306 ! -i docker0: iptables: No chain/target/match by that name.
+ (exit status 1)).
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;解决方式：重启启动&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;systemctl restart docker
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content:encoded></item><item><title>centos 7 安装及配置 iptables</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;如何配置iptables防火墙的步骤&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;检测并关闭firewall&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;systemctl status firewalld.service #检测是否开启了firewall
+ 
+systemctl stop firewalld.service #关闭firewall
+ 
+systemctl disable firewalld.service #禁止firewall开机自启
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装iptables&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yum install iptables-services
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;写入iptables配置文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vi /etc/sysconfig/iptables
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;增加下面一行80端口&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# sample configuration for iptables service
+# you can edit this manually or use system-config-firewall
+# please do not ask us to add additional ports/services&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><link>http://localhost:2368/centos-7-an-zhuang-ji-pei-zhi-iptables/</link><guid isPermaLink="false">5cc50f02d5750a5ed279ea4d</guid><category>Linux</category><dc:creator>woaitianwen</dc:creator><pubDate>Sun, 28 Apr 2019 02:26:44 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;如何配置iptables防火墙的步骤&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;检测并关闭firewall&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;systemctl status firewalld.service #检测是否开启了firewall
+ 
+systemctl stop firewalld.service #关闭firewall
+ 
+systemctl disable firewalld.service #禁止firewall开机自启
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装iptables&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yum install iptables-services
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;写入iptables配置文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vi /etc/sysconfig/iptables
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;增加下面一行80端口&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# sample configuration for iptables service
+# you can edit this manually or use system-config-firewall
+# please do not ask us to add additional ports/services to this default configuration
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A INPUT -p icmp -j ACCEPT
+-A INPUT -i lo -j ACCEPT
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 80  -j ACCEPT 
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+COMMIT
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启firewalld&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;systemctl restart firewalld.service
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;允许firewall开机自启&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;systemctl enable iptables.service
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启防火墙&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;systemctl restart iptables.service
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Nginx重启出现Address already in use</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;启动nginx服务的时候，无法开启，发现提示错误信息，问题描述是地址已被使用，可能nginx服务卡死了，导致端口占用，出现此错误。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;下面错误信息：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nginx: [emerg] bind() to 0.0.0.0:443 failed (98: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:443 failed (98: Address&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><link>http://localhost:2368/nginxzhong-qi-chu-xian/</link><guid isPermaLink="false">5c8f1477d318d64ac804cd71</guid><category>Nginx</category><category>Linux</category><dc:creator>woaitianwen</dc:creator><pubDate>Mon, 18 Mar 2019 03:53:23 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;启动nginx服务的时候，无法开启，发现提示错误信息，问题描述是地址已被使用，可能nginx服务卡死了，导致端口占用，出现此错误。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;下面错误信息：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nginx: [emerg] bind() to 0.0.0.0:443 failed (98: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:80 failed (98: Address already in use)
+nginx: [emerg] bind() to 0.0.0.0:443 failed (98: Address already in use)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;查看端口：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[root@localhost letsencrypt]# netstat -ntpl
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      44882/nginx: worker 
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1120/sshd           
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      2245/master         
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN      44882/nginx: worker 
+tcp        0      0 103.73.162.39:8989      0.0.0.0:*               LISTEN      1757/ss-server      
+tcp        0      0 127.0.0.1:2368          0.0.0.0:*               LISTEN      2411/node /web/webn 
+tcp6       0      0 :::3306                 :::*                    LISTEN      2322/mysqld         
+tcp6       0      0 :::22                   :::*                    LISTEN      1120/sshd  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;杀掉进程：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kill 44882
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启nginx服务：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nginx -s reload
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;查看Nginx进程：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ps -ef|grep nginx
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content:encoded></item><item><title>[error] invalid PID number in nginx.pid 的解决办法</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;在重启Nginx的时候，出现了这个提示“[error] invalid PID number in nginx.pid”，这个的意思就是说不能在/var/run/nginx.pid中找到有效的PID.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;解决方法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nginx -c /etc/nginx/nginx.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后重启：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nginx -s reload
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</description><link>http://localhost:2368/error-invalid-pid-number-in-nginx-pid-de-jie-jue-ban-fa/</link><guid isPermaLink="false">5c8f12f4d318d64ac804cd6e</guid><category>Nginx</category><category>Linux</category><dc:creator>woaitianwen</dc:creator><pubDate>Mon, 18 Mar 2019 03:44:37 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;在重启Nginx的时候，出现了这个提示“[error] invalid PID number in nginx.pid”，这个的意思就是说不能在/var/run/nginx.pid中找到有效的PID.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;解决方法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nginx -c /etc/nginx/nginx.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后重启：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nginx -s reload
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Let's encrypt 遇到 'ascii' codec can't decode byte 0xe5 的解法</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;Let's encrpyt在更新续期的时候，遇到下面错误的信息：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;Attempting to renew cert (shiro.weiyuanzhuo.cc) from /etc/letsencrypt/renewal/shiro.weiyuanzhuo.cc.conf produced an unexpected error: 'ascii' codec can't decode byte 0xe8 in position 2: ordinal not in range(128). Skipping.
+All renewal attempts failed. The following certs could not be renewed:
+  /etc/letsencrypt/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><link>http://localhost:2368/lets-encrypt-yu-dao-ascii-codec-cant-decode-byte-0xe5-de-jie-fa/</link><guid isPermaLink="false">5c8f10dad318d64ac804cd6b</guid><category>Linux</category><category>SSL</category><dc:creator>woaitianwen</dc:creator><pubDate>Mon, 18 Mar 2019 03:38:41 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;Let's encrpyt在更新续期的时候，遇到下面错误的信息：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;Attempting to renew cert (shiro.weiyuanzhuo.cc) from /etc/letsencrypt/renewal/shiro.weiyuanzhuo.cc.conf produced an unexpected error: 'ascii' codec can't decode byte 0xe8 in position 2: ordinal not in range(128). Skipping.
+All renewal attempts failed. The following certs could not be renewed:
+  /etc/letsencrypt/live/shiro.weiyuanzhuo.cc/fullchain.pem (failure)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;要怎么解决如何？&lt;/p&gt;
+&lt;p&gt;我在看到有关一篇&lt;a href="https://github.com/certbot/certbot/issues/5509"&gt;UnicodeDecodeError: 'ascii' codec can't decode byte 0xe7 in position 2: ordinal not in range(128)&lt;/a&gt;，但是解决方法一样的。&lt;/p&gt;
+&lt;p&gt;使用以下命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;grep -r -P '[^\x00-\x7f]' /etc/apache2 /etc/letsencrypt /etc/nginx
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;发现问题：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/etc/nginx/conf.d/shiro.conf:   # 解决 413 Request Entity Too Large
+/etc/nginx/nginx.conf:    worker_connections  10240; # 并发十几倍提高快
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;刪除这些编号，在重新执行 Let's encrypt script 就可以通过啦~&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Ghost CLI 502 Bad Gateway</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;我正在尝试在服务器上建立一个Ghost博客。我已经启动并运行了博客，但我只能通过其IP地址访问它。当我输入域名时，我收到了502 Bad Gateway / nginx错误。但正如我所说，nginx配置没有错误的，而且输入IP地址工作正常。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当我查看Nginx站点错误日志&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;2019/01/02 01:35:47 [crit] 29810#29810: *34 connect() to 127.0.0.1:2369 failed (13: Permission denied) while connecting to upstream, client: 192.168.0.12, server: www.zhouyulong.com, request: &amp;quot;GET / HTTP/&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><link>http://localhost:2368/ghost-post/</link><guid isPermaLink="false">5c2c5e77ace48011dc434b63</guid><category>ghost</category><category>Nginx</category><category>Linux</category><dc:creator>woaitianwen</dc:creator><pubDate>Wed, 02 Jan 2019 07:00:57 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;我正在尝试在服务器上建立一个Ghost博客。我已经启动并运行了博客，但我只能通过其IP地址访问它。当我输入域名时，我收到了502 Bad Gateway / nginx错误。但正如我所说，nginx配置没有错误的，而且输入IP地址工作正常。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当我查看Nginx站点错误日志&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;2019/01/02 01:35:47 [crit] 29810#29810: *34 connect() to 127.0.0.1:2369 failed (13: Permission denied) while connecting to upstream, client: 192.168.0.12, server: www.zhouyulong.com, request: &amp;quot;GET / HTTP/1.1&amp;quot;, upstream: &amp;quot;http://127.0.0.1:2369/&amp;quot;, host: &amp;quot;145.193.10.120&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以上报错信息13: Permission denied就说明nginx的权限问题，应该证明我的问题是由于SELinux。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;应该解决如下：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;setsebool -P httpd_can_network_connect 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我检查了SELinux日志中的错误：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;sudo cat /var/log/audit/audit.log | grep nginx | grep denied
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;并发现运行以下命令修复了我的问题：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;sudo cat /var/log/audit/audit.log | grep nginx | grep denied | audit2allow -M mynginx
+sudo semodule -i mynginx.pp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/23948527/13-permission-denied-while-connecting-to-upstreamnginx"&gt;(13: Permission denied) while connecting to upstream:[nginx]&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>web前端面试</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;搜集关于web前端面试题目，以后找工作十分有用的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://github.com/xiaomuzhu/ElemeFE-node-interview"&gt;饿了么Node.JS面试题解答&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/mqyqingfeng/Blog"&gt;冴羽写博客的地方，预计写四个系列：JavaScript深入系列、JavaScript专题系列、ES6系列、React系列&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.im/post/5abb55ee6fb9a028e33b7e0a"&gt;面试官:请你实现一个深克隆&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</description><link>http://localhost:2368/webqian-duan-mian-shi/</link><guid isPermaLink="false">5c2c4f6dace48011dc434b60</guid><category>前端</category><category>面试</category><dc:creator>woaitianwen</dc:creator><pubDate>Wed, 02 Jan 2019 05:45:10 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;搜集关于web前端面试题目，以后找工作十分有用的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a href="https://github.com/xiaomuzhu/ElemeFE-node-interview"&gt;饿了么Node.JS面试题解答&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/mqyqingfeng/Blog"&gt;冴羽写博客的地方，预计写四个系列：JavaScript深入系列、JavaScript专题系列、ES6系列、React系列&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://juejin.im/post/5abb55ee6fb9a028e33b7e0a"&gt;面试官:请你实现一个深克隆&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;</content:encoded></item><item><title>[mysql报错信息]：ERROR 1558 (HY000): Column count of mysql.user is wrong.</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;我打算要撤销已经赋予给 MySQL 用户权限的权限，但是执行命令报错&lt;br&gt;
+Linux自带mysql 5.1版本，后来升级到了5.6版本，执行以下命令报错&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; revoke all on `ghost`.* from 'root'@'localhost';
+ERROR 1558 (HY000): Column count of mysql.user is wrong. Expected 43, found 39. Created with MySQL 50173, now running 50642. Please use mysql_upgrade to fix this error.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原因是因为升级不当导致，执行以下命令即可正常执行命令如下：&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;</description><link>http://localhost:2368/mysqlbao-cuo-xin-xi-error-1558-hy000-column-count-of-mysql-user-is-wrong-expected-43-found-39-created-with-mysql-50173-now-running-50642-please-use-mysql_upgrade-to-fix-this-error/</link><guid isPermaLink="false">5c29f6175f6aec331cc9dc0e</guid><category>Linux</category><category>Mysql</category><dc:creator>woaitianwen</dc:creator><pubDate>Mon, 31 Dec 2018 11:02:24 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;我打算要撤销已经赋予给 MySQL 用户权限的权限，但是执行命令报错&lt;br&gt;
+Linux自带mysql 5.1版本，后来升级到了5.6版本，执行以下命令报错&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; revoke all on `ghost`.* from 'root'@'localhost';
+ERROR 1558 (HY000): Column count of mysql.user is wrong. Expected 43, found 39. Created with MySQL 50173, now running 50642. Please use mysql_upgrade to fix this error.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原因是因为升级不当导致，执行以下命令即可正常执行命令如下：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;# mysql_upgrade -uroot -proot
+Warning: Using a password on the command line interface can be insecure.
+Looking for 'mysql' as: mysql
+Looking for 'mysqlcheck' as: mysqlcheck
+Running 'mysqlcheck with default connection arguments
+Warning: Using a password on the command line interface can be insecure.
+Running 'mysqlcheck with default connection arguments
+Warning: Using a password on the command line interface can be insecure.
+mysql.columns_priv                                 OK
+mysql.db                                           OK
+mysql.event                                        OK
+mysql.func                                         OK
+mysql.general_log                                  OK
+mysql.help_category                                OK
+mysql.help_keyword                                 OK
+mysql.help_relation                                OK
+mysql.help_topic                                   OK
+mysql.host                                         OK
+mysql.ndb_binlog_index                             OK
+mysql.plugin                                       OK
+mysql.proc                                         OK
+mysql.procs_priv                                   OK
+mysql.servers                                      OK
+mysql.slow_log                                     OK
+mysql.tables_priv                                  OK
+mysql.time_zone                                    OK
+mysql.time_zone_leap_second                        OK
+mysql.time_zone_name                               OK
+mysql.time_zone_transition                         OK
+mysql.time_zone_transition_type                    OK
+mysql.user                                         OK
+Running 'mysql_fix_privilege_tables'...
+Warning: Using a password on the command line interface can be insecure.
+Running 'mysqlcheck with default connection arguments
+Warning: Using a password on the command line interface can be insecure.
+Running 'mysqlcheck with default connection arguments
+Warning: Using a password on the command line interface can be insecure.
+ghost_dev.accesstokens                             OK
+ghost_dev.api_keys                                 OK
+ghost_dev.app_fields                               OK
+ghost_dev.app_settings                             OK
+ghost_dev.apps                                     OK
+ghost_dev.brute                                    OK
+ghost_dev.client_trusted_domains                   OK
+ghost_dev.clients                                  OK
+ghost_dev.integrations                             OK
+ghost_dev.invites                                  OK
+ghost_dev.members                                  OK
+ghost_dev.migrations                               OK
+ghost_dev.migrations_lock                          OK
+ghost_dev.mobiledoc_revisions                      OK
+ghost_dev.permissions                              OK
+ghost_dev.permissions_apps                         OK
+ghost_dev.permissions_roles                        OK
+ghost_dev.permissions_users                        OK
+ghost_dev.posts                                    OK
+ghost_dev.posts_authors                            OK
+ghost_dev.posts_tags                               OK
+ghost_dev.refreshtokens                            OK
+ghost_dev.roles                                    OK
+ghost_dev.roles_users                              OK
+ghost_dev.sessions                                 OK
+ghost_dev.settings                                 OK
+ghost_dev.subscribers                              OK
+ghost_dev.tags                                     OK
+ghost_dev.users                                    OK
+ghost_dev.webhooks                                 OK
+OK
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;取消授权用户如下：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;mysql&amp;gt; revoke all on `ghost`.* from 'root'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这样成功取消了授权用户&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Linux查看正在运行的端口</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;查看正在运行的端口：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;
+# sudo netstat -plotn
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address               Foreign Address             State       PID/Program name    Timer
+tcp        0      0 0.0.0.0:2368                0.0.0.0:*                   LISTEN      24872/node          off (0.00/0/0)
+tcp        0      0 0.0.0.0:80                  0.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><link>http://localhost:2368/untitled-2/</link><guid isPermaLink="false">5c29ee8e5f6aec331cc9dc0c</guid><category>Linux</category><dc:creator>woaitianwen</dc:creator><pubDate>Mon, 31 Dec 2018 10:26:52 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;查看正在运行的端口：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;
+# sudo netstat -plotn
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address               Foreign Address             State       PID/Program name    Timer
+tcp        0      0 0.0.0.0:2368                0.0.0.0:*                   LISTEN      24872/node          off (0.00/0/0)
+tcp        0      0 0.0.0.0:80                  0.0.0.0:*                   LISTEN      23446/nginx         off (0.00/0/0)
+tcp        0      0 0.0.0.0:22                  0.0.0.0:*                   LISTEN      1354/sshd           off (0.00/0/0)
+tcp        0      0 :::3306                     :::*                        LISTEN      15620/mysqld        off (0.00/0/0)
+tcp        0      0 :::22                       :::*                        LISTEN      1354/sshd           off (0.00/0/0)
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content:encoded></item><item><title>文件上传报错：Current request is not a multipart request</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;我使用springboot实现上传文件功能，并将上传好文件保存到指定目录下。当postman测试上传文件接口出现报错了信息，如何解决问题，并正确设置postman配置。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;{
+    &amp;quot;timestamp&amp;quot;: &amp;quot;2018-12-31 12:30:12&amp;quot;,
+    &amp;quot;status&amp;quot;: 500,
+    &amp;quot;error&amp;quot;: &amp;quot;Internal Server Error&amp;quot;,
+    &amp;quot;exception&amp;quot;: &amp;quot;org.springframework.web.multipart.MultipartException&amp;quot;,
+    &amp;quot;message&amp;quot;: &amp;quot;Current request is not a multipart request&amp;quot;,
+    &amp;quot;path&amp;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><link>http://localhost:2368/wen-jian-shang-chuan/</link><guid isPermaLink="false">5c299b075f6aec331cc9dc08</guid><category>java</category><dc:creator>woaitianwen</dc:creator><pubDate>Mon, 31 Dec 2018 04:39:20 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;我使用springboot实现上传文件功能，并将上传好文件保存到指定目录下。当postman测试上传文件接口出现报错了信息，如何解决问题，并正确设置postman配置。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;{
+    &amp;quot;timestamp&amp;quot;: &amp;quot;2018-12-31 12:30:12&amp;quot;,
+    &amp;quot;status&amp;quot;: 500,
+    &amp;quot;error&amp;quot;: &amp;quot;Internal Server Error&amp;quot;,
+    &amp;quot;exception&amp;quot;: &amp;quot;org.springframework.web.multipart.MultipartException&amp;quot;,
+    &amp;quot;message&amp;quot;: &amp;quot;Current request is not a multipart request&amp;quot;,
+    &amp;quot;path&amp;quot;: &amp;quot;/upload&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;报错信息的是Current request is not a multipart request&lt;br&gt;
+原因是Headers头部勾选Content-Type选错了application/x-www-form-urlencoded，所以要取消勾选，才能上传成功！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;{
+    &amp;quot;msg&amp;quot;: &amp;quot;上传成功&amp;quot;,
+    &amp;quot;result&amp;quot;: true,
+    &amp;quot;data&amp;quot;: &amp;quot;/Users/zhouyulong/gogs/Spring-Boot-Shiro/src/main/webapp/upload/c18127d2-cd14-435b-8172-1f3f67596208.jpg&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以上解决了问题，可以正常上传&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Linux系统MySQL开启远程连接</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;MySQL默认root用户只能本地访问，不能远程连接管理mysql数据库。这篇文章主要介绍了我们如何使用Linux系统下实现远程连接MySQL数据库的方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们命令来登录MySQL数据库&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;mysql -uroot -p 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;创建用户用来远程连接&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;grant all privileges on *.* to 'root'@'%' identified by 'password';
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;命令立即生效&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;flush privileges;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;重启服务&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;service mysql restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在本地远程连接&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;mysql -h 服务器ip地址 -P 3306 -u root -p
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;尝试连接报错信息：&lt;code&gt;Can't connect to MySQL server on 'x.x.x.x' (61)&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;查找my.cnf配置文件的位置&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;$ mysql&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><link>http://localhost:2368/linuxxi-tong-mysqlkai-qi-yuan-cheng-lian-jie/</link><guid isPermaLink="false">5c28cd1bda09925f1ca048c8</guid><category>Linux</category><category>Mysql</category><dc:creator>woaitianwen</dc:creator><pubDate>Sun, 30 Dec 2018 13:53:54 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;MySQL默认root用户只能本地访问，不能远程连接管理mysql数据库。这篇文章主要介绍了我们如何使用Linux系统下实现远程连接MySQL数据库的方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们命令来登录MySQL数据库&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;mysql -uroot -p 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;创建用户用来远程连接&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;grant all privileges on *.* to 'root'@'%' identified by 'password';
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;命令立即生效&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;flush privileges;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;重启服务&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;service mysql restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在本地远程连接&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;mysql -h 服务器ip地址 -P 3306 -u root -p
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;尝试连接报错信息：&lt;code&gt;Can't connect to MySQL server on 'x.x.x.x' (61)&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;查找my.cnf配置文件的位置&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;$ mysql --help|grep my.cnf
+order of preference, my.cnf, $MYSQL_TCP_PORT,
+/etc/mysql/my.cnf /etc/my.cnf ~/.my.cnf 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;修改my.cnf配置文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;vi /etc/my.cnf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;增加下一行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;bind-address    = 0.0.0.0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;然后重新启动服务器并再试一次&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;service mysql restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;但是要注意的是给开放3306端口&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/div&gt;</content:encoded></item><item><title>Nginx默认配置文件</title><description>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;一般使用默认站点配置文件，我们可能会删除一个站点配置文件，所以要备份一下吧。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;打开default.conf文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;server {
+    listen       8080;
+    server_name  localhost;
+
+    #charset koi8-r;
+    #access_log  /var/log/nginx/host.access.log  main;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+
+    #error_page  404              /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description><link>http://localhost:2368/nginxmo-ren-pei-zhi-wen-jian/</link><guid isPermaLink="false">5c28c80dda09925f1ca048c5</guid><category>Linux</category><category>Nginx</category><dc:creator>woaitianwen</dc:creator><pubDate>Sun, 30 Dec 2018 13:30:48 GMT</pubDate><content:encoded>&lt;div class="kg-card-markdown"&gt;&lt;blockquote&gt;
+&lt;p&gt;一般使用默认站点配置文件，我们可能会删除一个站点配置文件，所以要备份一下吧。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;打开default.conf文件&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;server {
+    listen       8080;
+    server_name  localhost;
+
+    #charset koi8-r;
+    #access_log  /var/log/nginx/host.access.log  main;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+
+    #error_page  404              /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+
+    # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+    #
+    #location ~ \.php$ {
+    #    proxy_pass   http://127.0.0.1;
+    #}
+
+    # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+    #
+    #location ~ \.php$ {
+    #    root           html;
+    #    fastcgi_pass   127.0.0.1:9000;
+    #    fastcgi_index  index.php;
+    #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+    #    include        fastcgi_params;
+    #}
+
+    # deny access to .htaccess files, if Apache's document root
+    # concurs with nginx's one
+    #
+    #location ~ /\.ht {
+    #    deny  all;
+    #}
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content:encoded></item></channel></rss>

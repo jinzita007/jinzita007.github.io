@@ -1,0 +1,233 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="使用nvm安装不同版本号的node与npm">
+    <meta property="og:description" content="nvm是Mac下的node管理工具，如果想要切换不同的node与npm，最好用nvm吧。但是nvm目前不支持Windows，不过可以去看看官方推荐是使用nvmw或nvm-windows。 卸掉node与npm 安装nvm的时候，最好卸掉已安装的node和npm，如何卸掉方法地址：http://iiiciii.com/mac-osxxia-xie-zai-nodejs/ 开始安装nvm $ curl -o- https://raw.githubusercontent.com/creationix/nvm/&amp;lt;version number&amp;gt;/install.sh | bash 注意是上面的&amp;lt;version number&amp;gt;,需要用版本号替换,比如说我想要选择v0.29.0吧，以下命令： $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/">
+    <meta property="og:url" content="http://localhost:2368/shi-yong-nvman-zhuang-bu-tong-ban-ben-hao-de-nodeyu-npm/">
+    <meta property="article:published_time" content="2016-11-25T03:14:59.000Z">
+    <meta property="article:modified_time" content="2016-11-25T05:30:29.000Z">
+    <meta property="article:tag" content="Node.js">
+    <meta property="article:tag" content="Javascript">
+    <meta property="article:tag" content="前端">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="使用nvm安装不同版本号的node与npm">
+    <meta name="twitter:description" content="nvm是Mac下的node管理工具，如果想要切换不同的node与npm，最好用nvm吧。">
+    <meta name="twitter:url" content="http://localhost:2368/shi-yong-nvman-zhuang-bu-tong-ban-ben-hao-de-nodeyu-npm/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Node.js, Javascript, 前端">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "使用nvm安装不同版本号的node与npm",
+    "url": "http://localhost:2368/shi-yong-nvman-zhuang-bu-tong-ban-ben-hao-de-nodeyu-npm/",
+    "datePublished": "2016-11-25T03:14:59.000Z",
+    "dateModified": "2016-11-25T05:30:29.000Z",
+    "keywords": "Node.js, Javascript, 前端",
+    "description": "nvm是Mac下的node管理工具，如果想要切换不同的node与npm，最好用nvm吧。但是nvm目前不支持Windows，不过可以去看看官方推荐是使用nvmw或nvm-windows。 卸掉node与npm 安装nvm的时候，最好卸掉已安装的node和npm，如何卸掉方法地址：http://iiiciii.com/mac-osxxia-xie-zai-nodejs/ 开始安装nvm $ curl -o- https://raw.githubusercontent.com/creationix/nvm/&amp;lt;version number&amp;gt;/install.sh | bash 注意是上面的&amp;lt;version number&amp;gt;,需要用版本号替换,比如说我想要选择v0.29.0吧，以下命令： $ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-node-js tag-javascript tag-qian-duan">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>使用nvm安装不同版本号的node与npm</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-11-25</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/node-js/">Node.js</a> <a href="../tag/javascript/">Javascript</a> <a href="../tag/qian-duan/">前端</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>nvm是Mac下的node管理工具，如果想要切换不同的node与npm，最好用nvm吧。但是nvm目前不支持Windows，不过可以去看看官方推荐是使用nvmw或nvm-windows。</p>
+</blockquote>
+<p><strong>卸掉node与npm</strong></p>
+<p>安装nvm的时候，最好卸掉已安装的node和npm，如何卸掉方法地址：<a href="http://iiiciii.com/mac-osxxia-xie-zai-nodejs/">http://iiiciii.com/mac-osxxia-xie-zai-nodejs/</a></p>
+<p><strong>开始安装nvm</strong></p>
+<pre><code>$ curl -o- https://raw.githubusercontent.com/creationix/nvm/&lt;version number&gt;/install.sh | bash
+</code></pre>
+<p>注意是上面的<code>&lt;version number&gt;</code>,需要用版本号替换,比如说我想要选择<strong>v0.29.0</strong>吧，以下命令：</p>
+<pre><code>$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
+</code></pre>
+<p>安装信息：</p>
+<pre><code>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  7731  100  7731    0     0   6374      0  0:00:01  0:00:01 --:--:--  6378
+=&gt; Downloading nvm from git to '/Users/jinghua/.nvm'
+=&gt; Cloning into '/Users/jinghua/.nvm'...
+remote: Counting objects: 5957, done.
+remote: Compressing objects: 100% (12/12), done.
+remote: Total 5957 (delta 4), reused 0 (delta 0), pack-reused 5945
+Receiving objects: 100% (5957/5957), 1.68 MiB | 153.00 KiB/s, done.
+Resolving deltas: 100% (3707/3707), done.
+Checking connectivity... done.
+* (HEAD detached at v0.29.0)
+  master
+
+=&gt; Appending source string to /Users/jinghua/.bashrc
+=&gt; Close and reopen your terminal to start using nvm
+</code></pre>
+<p><strong>安装切换各版本 node/npm</strong></p>
+<p>nvm会默认安装在用户主目录的.nvm子目录</p>
+<p>然后激活.nvm</p>
+<pre><code>$ source ~/.nvm/nvm.sh
+</code></pre>
+<p>激活之后，安装最新的node</p>
+<pre><code>$ nvm install node
+</code></pre>
+<p>成功安装信息：</p>
+<pre><code>Downloading https://nodejs.org/dist/v7.2.0/node-v7.2.0-darwin-x64.tar.gz...
+######################################################################## 100.0%
+WARNING: checksums are currently disabled for node.js v4.0 and later
+2016-11-25 12:38:19.674 xcodebuild[8005:655248] [MT] PluginLoading: Required plug-in compatibility UUID 7265231C-39B4-402C-89E1-16167C4CC990 for plug-in at path '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/VVDocumenter-Xcode.xcplugin' not present in DVTPlugInCompatibilityUUIDs
+Now using node v7.2.0 (npm v3.10.9)
+</code></pre>
+<p>安装完成后，切换到该版本</p>
+<pre><code>$ nvm use node
+Now using node v7.2.0 (npm v3.10.9)
+</code></pre>
+<hr>
+<pre><code>nvm install stable #安装最新稳定版 node，现在是 5.0.0
+nvm install 4.2.0 #安装 4.2.0 版本
+nvm install 0.12.7 #安装 0.12.7 版本
+
+# 特别说明：以下模块安装仅供演示说明，并非必须安装模块
+nvm use 0 #切换至 0.12.7 版本
+npm install -g mz-fis #安装 mz-fis 模块至全局目录，安装完成的路径是 /Users/&lt;你的用户名&gt;/.nvm/versions/node/v0.12.7/lib/mz-fis
+nvm use 4 #切换至 4.2.0 版本
+npm install -g react-native-cli #安装 react-native-cli 模块至全局目录，安装完成的路径是 /Users/&lt;你的用户名&gt;/.nvm/versions/node/v4.2.0/lib/react-native-cli
+
+nvm alias default 0.12.7 #设置默认 node 版本为 0.12.7
+</code></pre>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

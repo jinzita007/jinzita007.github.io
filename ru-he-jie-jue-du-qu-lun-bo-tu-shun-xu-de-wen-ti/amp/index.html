@@ -1,0 +1,254 @@
+
+<head>
+    <meta charset="utf-8">
+
+    <title>如何解决读取轮播图顺序的问题</title>
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <link rel="shortcut icon" href="../../favicon.ico">
+
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="../index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="如何解决读取轮播图顺序的问题">
+    <meta property="og:description" content="选项卡采用owl插件来改造的，适合用平常的浏览器可以看看，但是微信浏览器兼容性方面不太好，还有体验效果不好。如果不是侧滑的话，肯定不会影响用户体验吧。 我花了好几周没解决好，可能是自己的基础远远不够的。不过他用我做过的基础上改的，然后去解决读取顺序的问题。我就来讲一讲前端首页的选项卡问题，ajax获取动态正常的数据，但是用在插件方面，还有存在一个问题就是上面的导航栏品牌和下面显示内容的对应，两者是不一样的，而且顺序乱了。 我就交给小唐去解决这个问题，因为他比我写的js强了不少吧。 后来不到半个天解决好了，说明他有足够掌握js的知识。我问问他怎么解决了这个顺序问题，他说回调函数能够解决了吧。哎，原来我还没这个学过的，好好回家补充学一下哈。 我认真看了他的代码，就知道了他怎么去解决顺序问题。 index.html文件 &amp;lt;!doctype html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; 	&amp;lt;head&amp;gt; 		&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot; /&amp;gt;">
+    <meta property="og:url" content="http://localhost:2368/ru-he-jie-jue-du-qu-lun-bo-tu-shun-xu-de-wen-ti/">
+    <meta property="article:published_time" content="2016-10-22T04:20:00.000Z">
+    <meta property="article:modified_time" content="2016-11-21T09:48:00.000Z">
+    <meta property="article:tag" content="ajax">
+    <meta property="article:tag" content="Javascript">
+    <meta property="article:tag" content="jquery">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="如何解决读取轮播图顺序的问题">
+    <meta name="twitter:description" content="选项卡采用owl插件来改造的，适合用平常的浏览器可以看看，但是微信浏览器兼容性方面不太好，还有体验效果不好。如果不是侧滑的话，肯定不会影响用户体验吧。">
+    <meta name="twitter:url" content="http://localhost:2368/ru-he-jie-jue-du-qu-lun-bo-tu-shun-xu-de-wen-ti/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="ajax, Javascript, jquery">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "如何解决读取轮播图顺序的问题",
+    "url": "http://localhost:2368/ru-he-jie-jue-du-qu-lun-bo-tu-shun-xu-de-wen-ti/",
+    "datePublished": "2016-10-22T04:20:00.000Z",
+    "dateModified": "2016-11-21T09:48:00.000Z",
+    "keywords": "ajax, Javascript, jquery",
+    "description": "选项卡采用owl插件来改造的，适合用平常的浏览器可以看看，但是微信浏览器兼容性方面不太好，还有体验效果不好。如果不是侧滑的话，肯定不会影响用户体验吧。 我花了好几周没解决好，可能是自己的基础远远不够的。不过他用我做过的基础上改的，然后去解决读取顺序的问题。我就来讲一讲前端首页的选项卡问题，ajax获取动态正常的数据，但是用在插件方面，还有存在一个问题就是上面的导航栏品牌和下面显示内容的对应，两者是不一样的，而且顺序乱了。 我就交给小唐去解决这个问题，因为他比我写的js强了不少吧。 后来不到半个天解决好了，说明他有足够掌握js的知识。我问问他怎么解决了这个顺序问题，他说回调函数能够解决了吧。哎，原来我还没这个学过的，好好回家补充学一下哈。 我认真看了他的代码，就知道了他怎么去解决顺序问题。 index.html文件 &amp;lt;!doctype html&amp;gt; &amp;lt;html lang&#x3D;&amp;quot;en&amp;quot;&amp;gt; \t&amp;lt;head&amp;gt; \t\t&amp;lt;meta charset&#x3D;&amp;quot;UTF-8&amp;quot; /&amp;gt;",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../../rss/index.html">
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,600,400">
+    <style amp-custom>html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}h1{margin:0.67em 0;font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{position:relative;vertical-align:baseline;font-size:75%;line-height:0}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}amp-img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em}button,input,optgroup,select,textarea{margin:0;color:inherit;font:inherit}button{overflow:visible}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}input{line-height:normal}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button{height:auto}input[type="search"]{-webkit-appearance:textfield}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}fieldset{margin:0 2px;padding:0.35em 0.625em 0.75em;border:1px solid #c0c0c0}legend{padding:0;border:0}textarea{overflow:auto}optgroup{font-weight:bold}table{border-spacing:0;border-collapse:collapse}td,th{padding:0}html{max-height:100%;height:100%;font-size:62.5%;-webkit-tap-highlight-color:rgba(0, 0, 0, 0)}body{max-height:100%;height:100%;color:#3a4145;background:#f4f8fb;letter-spacing:0.01rem;font-family:"Merriweather", serif;font-size:1.8rem;line-height:1.75em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"kern" 1;-moz-font-feature-settings:"kern" 1;-o-font-feature-settings:"kern" 1}::-moz-selection{background:#d6edff}::selection{background:#d6edff}h1,h2,h3,h4,h5,h6{margin:0 0 0.3em 0;color:#2e2e2e;font-family:"Open Sans", sans-serif;line-height:1.15em;text-rendering:geometricPrecision;-webkit-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-moz-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1;-o-font-feature-settings:"dlig" 1, "liga" 1, "lnum" 1, "kern" 1}h1{text-indent:-2px;letter-spacing:-1px;font-size:2.6rem}h2{letter-spacing:0;font-size:2.4rem}h3{letter-spacing:-0.6px;font-size:2.1rem}h4{font-size:1.9rem}h5{font-size:1.8rem}h6{font-size:1.8rem}a{color:#4a4a4a}a:hover{color:#111}p,ul,ol,dl{margin:0 0 2.5rem 0;font-size:1.5rem;text-rendering:geometricPrecision;-webkit-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-moz-font-feature-settings:"liga" 1, "onum" 1, "kern" 1;-o-font-feature-settings:"liga" 1, "onum" 1, "kern" 1}ol,ul{padding-left:2em}ol ol,ul ul,ul ol,ol ul{margin:0 0 0.4em 0;padding-left:2em}dl dt{float:left;clear:left;overflow:hidden;margin-bottom:1em;width:180px;text-align:right;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-bottom:1em;margin-left:200px}li{margin:0.4em 0}li li{margin:0}hr{display:block;margin:1.75em 0;padding:0;height:1px;border:0;border-top:#efefef 1px solid}blockquote{box-sizing:border-box;margin:1.75em 0 1.75em 0;padding:0 0 0 1.75em;border-left:#4a4a4a 0.4em solid;-moz-box-sizing:border-box}blockquote p{margin:0.8em 0;font-style:italic}blockquote small{display:inline-block;margin:0.8em 0 0.8em 1.5em;color:#ccc;font-size:0.9em}blockquote small:before{content:"\2014 \00A0"}blockquote cite{font-weight:700}blockquote cite a{font-weight:normal}mark{background-color:#fdffb6}code,tt{padding:1px 3px;border:#e3edf3 1px solid;background:#f7fafb;border-radius:2px;white-space:pre-wrap;font-family:Inconsolata, monospace, sans-serif;font-size:0.85em;font-feature-settings:"liga" 0;-webkit-font-feature-settings:"liga" 0;-moz-font-feature-settings:"liga" 0}pre{overflow:auto;box-sizing:border-box;margin:0 0 1.75em 0;padding:10px;width:100%;border:#e3edf3 1px solid;background:#f7fafb;border-radius:3px;white-space:pre;font-family:Inconsolata, monospace, sans-serif;font-size:0.9em;-moz-box-sizing:border-box}pre code,pre tt{padding:0;border:none;background:transparent;white-space:pre-wrap;font-size:inherit}kbd{display:inline-block;margin-bottom:0.4em;padding:1px 8px;border:#ccc 1px solid;background:#f4f4f4;border-radius:4px;box-shadow:0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;color:#666;text-shadow:#fff 0 1px 0;font-size:0.9em;font-weight:700}table{box-sizing:border-box;margin:1.75em 0;max-width:100%;width:100%;background-color:transparent;-moz-box-sizing:border-box}table th,table td{padding:8px;border-top:#efefef 1px solid;vertical-align:top;text-align:left;line-height:20px}table th{color:#000}table caption + thead tr:first-child th,table caption + thead tr:first-child td,table colgroup + thead tr:first-child th,table colgroup + thead tr:first-child td,table thead:first-child tr:first-child th,table thead:first-child tr:first-child td{border-top:0}table tbody + tbody{border-top:#efefef 2px solid}table table table{background-color:#fff}table tbody > tr:nth-child(odd) > td,table tbody > tr:nth-child(odd) > th{background-color:#f6f6f6}table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd) > th{background:transparent}iframe,amp-iframe,.fluid-width-video-wrapper{display:block;margin:1.75em 0}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper amp-iframe{margin:0}textarea,select,input{margin:0 0 5px 0;padding:6px 9px;width:260px;outline:0;border:#e7eef2 1px solid;background:#fff;border-radius:4px;box-shadow:none;font-family:"Open Sans", sans-serif;font-size:1.6rem;line-height:1.4em;font-weight:100;-webkit-appearance:none}textarea{min-width:250px;min-height:80px;max-width:340px;width:100%;height:auto}input[type="text"]:focus,input[type="email"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="number"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="week"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,textarea:focus{outline:none;outline-width:0;border:#bbc7cc 1px solid;background:#fff}select{width:270px;height:30px;line-height:30px}.clearfix:before,.clearfix:after{content:" ";display:table}.clearfix:after{clear:both}.clearfix{zoom:1}.main-header{position:relative;display:table;overflow:hidden;box-sizing:border-box;width:100%;height:50px;background:#5ba4e5 no-repeat center center;background-size:cover;text-align:left;-webkit-box-sizing:border-box;-moz-box-sizing:border-box}.content{background:#fff;padding-top:15px}.blog-title,.content{margin:auto;max-width:600px}.blog-title a{display:block;padding-right:16px;padding-left:16px;height:50px;color:#fff;text-decoration:none;font-family:"Open Sans", sans-serif;font-size:16px;line-height:50px;font-weight:600}.post{position:relative;margin-top:0;margin-right:16px;margin-left:16px;padding-bottom:0;max-width:100%;border-bottom:#ebf2f6 1px solid;word-wrap:break-word;font-size:0.95em;line-height:1.65em}.post-header{margin-bottom:1rem}.post-title{margin-bottom:0}.post-title a{text-decoration:none}.post-meta{display:block;margin:3px 0 0 0;color:#9eabb3;font-family:"Open Sans", sans-serif;font-size:1.3rem;line-height:2.2rem}.post-meta a{color:#9eabb3;text-decoration:none}.post-meta a:hover{text-decoration:underline}.post-meta .author{margin:0;font-size:1.3rem;line-height:1.3em}.post-date{display:inline-block;text-transform:uppercase;white-space:nowrap;font-size:1.2rem;line-height:1.2em}.post-image{margin:0;padding-top:3rem;padding-bottom:30px;border-top:1px #E8E8E8 solid}.post-content amp-img,.post-content amp-anim{position:relative;left:50%;display:block;padding:0;min-width:0;max-width:112%;width:calc(100% + 32px);height:auto;transform:translateX(-50%);-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%)}.footnotes{font-size:1.3rem;line-height:1.6em;font-style:italic}.footnotes li{margin:0.6rem 0}.footnotes p{margin:0}.footnotes p a:last-child{text-decoration:none}.site-footer{position:relative;margin:0 auto 20px auto;padding:1rem 15px;max-width:600px;color:rgba(0,0,0,0.5);font-family:"Open Sans", sans-serif;font-size:1.1rem;line-height:1.75em}.site-footer a{color:rgba(0,0,0,0.5);text-decoration:none;font-weight:bold}.site-footer a:hover{border-bottom:#bbc7cc 1px solid}.poweredby{display:block;float:right;width:45%;text-align:right}.copyright{display:block;float:left;width:45%}</style>
+
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    
+
+</head>
+
+<body class="amp-template">
+    <header class="main-header">
+        <nav class="blog-title">
+            <a href="../../">无根树の博客</a>
+        </nav>
+    </header>
+
+    <main class="content" role="main">
+        <article class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">如何解决读取轮播图顺序的问题</h1>
+                <section class="post-meta">
+                    <p class="author">by <a href="../../"></a></p>
+                    <time class="post-date" datetime="2016-10-22">2016-10-22</time>
+                </section>
+            </header>
+            <section class="post-content">
+
+                <div class="kg-card-markdown"><blockquote>
+<p>选项卡采用owl插件来改造的，适合用平常的浏览器可以看看，但是微信浏览器兼容性方面不太好，还有体验效果不好。如果不是侧滑的话，肯定不会影响用户体验吧。</p>
+</blockquote>
+<p>我花了好几周没解决好，可能是自己的基础远远不够的。不过他用我做过的基础上改的，然后去解决读取顺序的问题。我就来讲一讲前端首页的选项卡问题，ajax获取动态正常的数据，但是用在插件方面，还有存在一个问题就是上面的导航栏品牌和下面显示内容的对应，两者是不一样的，而且顺序乱了。</p>
+<p>我就交给小唐去解决这个问题，因为他比我写的js强了不少吧。<br>
+后来不到半个天解决好了，说明他有足够掌握js的知识。我问问他怎么解决了这个顺序问题，他说回调函数能够解决了吧。哎，原来我还没这个学过的，好好回家补充学一下哈。</p>
+<p>我认真看了他的代码，就知道了他怎么去解决顺序问题。</p>
+<p>index.html文件</p>
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+	&lt;head&gt;
+		&lt;meta charset="UTF-8" /&gt;
+		&lt;title&gt;水到家&lt;/title&gt;
+		&lt;meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no"&gt;
+	&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="component"&gt;
+            &lt;!--选项卡导航栏--&gt;
+			&lt;div class="thumbnails-wrapper"&gt;
+				&lt;div id="thumbnails" class="owl-carousel"&gt;
+					
+				&lt;/div&gt;
+			&lt;/div&gt;
+            &lt;!--选项卡显示内容--&gt;
+			&lt;div id="carousel" class="owl-carousel main-carousel"&gt;
+				
+			&lt;/div&gt;
+
+		&lt;/div&gt;
+        
+        &lt;script src="js/jquery-2.1.1.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+		&lt;script src="js/owl.carousel.min.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+        &lt;script src="js/index.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+        
+      &lt;/body&gt;  
+  &lt;/html&gt;
+
+</code></pre>
+<p>index.js文件</p>
+<pre><code class="language-javascript">		  var primary = $("#carousel");
+			var secondary = $("#thumbnails");
+		    function syncPosition(el) {
+					var current = this.currentItem;
+					secondary.find(".owl-item").removeClass("synced").eq(current).addClass("synced");
+					if(secondary.data("owlCarousel") !== undefined) {
+						center(current);
+					}
+					$('.current-item').html(this.owl.currentItem + 1);
+					$('.max-items').html(this.owl.owlItems.length);
+				}
+			secondary.on("click", ".owl-item", function(e) {
+				e.preventDefault();
+				var number = $(this).data("owlItem");
+				primary.trigger("owl.goTo", number);
+			});
+			function center(number) {
+				var sync2visible = secondary.data("owlCarousel").owl.visibleItems;
+				var num = number;
+				var found = false;
+				for(var i in sync2visible) {
+					if(num === sync2visible[i]) {
+						var found = true;
+					}
+				}
+
+				if(found === false) {
+					if(num &gt; sync2visible[sync2visible.length - 1]) {
+						secondary.trigger("owl.goTo", num - sync2visible.length + 2);
+					} else {
+						if(num - 1 === -1) {
+							num = 0;
+						}
+						secondary.trigger("owl.goTo", num);
+					}
+				} else if(num === sync2visible[sync2visible.length - 1]) {
+					secondary.trigger("owl.goTo", sync2visible[1]);
+				} else if(num === sync2visible[0]) {
+					secondary.trigger("owl.goTo", num - 1);
+				}
+			}
+			function call(){
+				    primary.owlCarousel({
+						singleItem: true,
+						slideSpeed: 1000,
+						pagination: false,
+						afterAction: syncPosition,
+						responsiveRefreshRate: 200,
+						navigation: false,
+						navigationText: ["", ""]
+					});
+					secondary.owlCarousel({
+						items: 3,
+						itemsDesktop: [1200, 3],
+						itemsDesktopSmall: [992, 3],
+						itemsTablet: [768, 3],
+						itemsMobile: [480, 3],
+						pagination: false,
+						responsiveRefreshRate: 100,
+						/*navigation: true,
+						navigationText: ["", ""],*/
+						afterInit: function(el) {
+							el.find(".owl-item").eq(0).addClass("synced");
+						}
+					});
+			}
+			$.ajax({
+				url: '',
+				type: 'GET',
+				dataType: 'jsonp',
+				success: function(data) {
+					var pinpai=data.data;
+				    var i=-1;
+				    ajax();
+				    function ajax(){
+				    	i++;
+				    	if(i&gt;=pinpai.length){
+				    		call();
+				    		return;
+				    	}else{
+	                       $.ajax({
+								url: "",
+								async:true,
+								type: 'GET',
+								data: {
+									brand_id:pinpai[i].brand_id,
+								},
+								dataType: 'jsonp',
+								success:function(result) {
+									$('#thumbnails').append('&lt;div class="item"&gt;&lt;a class="image" href="#"&gt;'+pinpai[i].brand_name+'&lt;/a&gt;&lt;/div&gt;');
+									var sP=result.data;
+									var str='&lt;div class="item"&gt;&lt;ul class="mui-table-view" id="mui-table-view"&gt;';
+									for(var j=0;j&lt;sP.length;j++){
+	                                    str+='&lt;li class="mui-table-view-cell mui-media"&gt;&lt;a href="waterticket/buywater_pop.html"&gt;&lt;img class="mui-media-object mui-pull-left" src="images/01.png"&gt;&lt;div class="mui-media-body"&gt;'+sP[j].goods_name+'&lt;p class="mui-ellipsis"&gt;'+sP[j].goods_title+'&lt;/p&gt;&lt;p class="price"&gt;&lt;span class="money colred"&gt;&lt;em class="smallyuan"&gt;&amp;yen;&lt;/em&gt;'+sP[j].goods_price+'&lt;/span&gt;&lt;span class="jiuzhe"&gt;&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/a&gt;&lt;div class="mui-numbox jiajian mui-pull-right" data-numbox-min="0" data-numbox-max="100000"&gt;&lt;button class="mui-btn mui-numbox-btn-minus" type="button"&gt;-&lt;/button&gt;&lt;input class="mui-numbox-input numBox" type="number" value="0" readonly="readonly" /&gt;&lt;button data-title="农夫矿泉水2" data-price="10" class="mui-btn mui-numbox-btn-plus" type="button"&gt;+&lt;/button&gt;&lt;input type="hidden" value="0" class="goods_totalPrice"&gt;&lt;/div&gt;&lt;/li&gt;'
+	                                };
+	                                str+='&lt;/ul&gt;&lt;/div&gt;';
+	                                $('#carousel').append(str);
+	                                ajax();
+								}
+							});
+                       }
+					};
+				}
+			});
+</code></pre>
+<p>这个不能多说了，因为源码保密性不能随便讲一下哈。我们辛苦了研究很多天哈哈，其实收获了不少的知识，也许是值得了吧。</p>
+</div>
+
+            </section>
+
+        </article>
+    </main>
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="../../">无根树の博客</a> © 2019</section>
+        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+    </footer>
+</body>

@@ -1,0 +1,256 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Angular4菜单功能">
+    <meta property="og:description" content="最近学完了Angular4基础知识，然后想做一个简单的小项目，就是二级菜单，这个东西我没做过的，但是我需要一段时间去研究一下，应该差不多完成了小项目。 首先安装Angular cli npm install -g @angular/cli 创建一个文件工程 ng new my-app 启动服务 cd my-app ng serve --open menu.ts //菜单数据 export class MenuData {     //ID     id: number;     //父ID     parentId: number;     //名称     name: string;     //是否展开     isExpend?: boolean;     //URL     url?: string;     //子节点     children?: Array&amp;lt;MenuData&amp;gt;">
+    <meta property="og:url" content="http://localhost:2368/angular4cai-dan-gong-neng/">
+    <meta property="article:published_time" content="2018-01-18T17:21:17.000Z">
+    <meta property="article:modified_time" content="2018-01-18T17:13:19.000Z">
+    <meta property="article:tag" content="Angular">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Angular4菜单功能">
+    <meta name="twitter:description" content="最近学完了Angular4基础知识，然后想做一个简单的小项目，就是二级菜单，这个东西我没做过的，但是我需要一段时间去研究一下，应该差不多完成了小项目。">
+    <meta name="twitter:url" content="http://localhost:2368/angular4cai-dan-gong-neng/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Angular">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "Angular4菜单功能",
+    "url": "http://localhost:2368/angular4cai-dan-gong-neng/",
+    "datePublished": "2018-01-18T17:21:17.000Z",
+    "dateModified": "2018-01-18T17:13:19.000Z",
+    "keywords": "Angular",
+    "description": "最近学完了Angular4基础知识，然后想做一个简单的小项目，就是二级菜单，这个东西我没做过的，但是我需要一段时间去研究一下，应该差不多完成了小项目。 首先安装Angular cli npm install -g @angular/cli 创建一个文件工程 ng new my-app 启动服务 cd my-app ng serve --open menu.ts //菜单数据 export class MenuData {     //ID     id: number;     //父ID     parentId: number;     //名称     name: string;     //是否展开     isExpend?: boolean;     //URL     url?: string;     //子节点     children?: Array&amp;lt;MenuData&amp;gt;",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-angular">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="../records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>Angular4菜单功能</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2018-01-18</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/angular/">Angular</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>最近学完了Angular4基础知识，然后想做一个简单的小项目，就是二级菜单，这个东西我没做过的，但是我需要一段时间去研究一下，应该差不多完成了小项目。</p>
+</blockquote>
+<h2 id="angularcli">首先安装Angular cli</h2>
+<pre><code>npm install -g @angular/cli
+</code></pre>
+<h2 id="">创建一个文件工程</h2>
+<pre><code>ng new my-app
+</code></pre>
+<h2 id="">启动服务</h2>
+<pre><code>cd my-app
+ng serve --open
+</code></pre>
+<p><strong>menu.ts</strong></p>
+<pre><code>//菜单数据
+export class MenuData {
+    //ID
+    id: number;
+    //父ID
+    parentId: number;
+    //名称
+    name: string;
+    //是否展开
+    isExpend?: boolean;
+    //URL
+    url?: string;
+    //子节点
+    children?: Array&lt;MenuData&gt;;
+}
+</code></pre>
+<p><strong>app.component.ts</strong></p>
+<pre><code>import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+//import { MainData,MenuData} from './main.model';
+import { MenuData } from './menu';
+import { MenuService } from './menu.service';
+
+
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
+  providers: [ MenuService ]
+})
+export class AppComponent implements OnInit{
+  title = 'Menu菜单测试';
+  //获取菜单的数据
+  menu = this.menu;
+  
+  /**
+   * 构造方法
+   */
+  constructor(
+    private router: Router, private menuService: MenuService) { }
+
+  /**
+   * 初始化
+   */
+  ngOnInit() {
+    this.menuService.getJSON().subscribe(data =&gt; {
+      this.menu = data;
+      //console.log(data); 
+      
+    })
+  }
+  /**
+   * 是否有子节点
+   * @param one 
+   */
+  isLeaf(one: MenuData) {
+    return !one.children || !one.children.length;
+  }
+  /**
+   * 点击
+   * @param one 
+   */
+  itemClicked(one: MenuData) {
+    if (!this.isLeaf(one)) {
+      one.isExpend = !one.isExpend;
+    } else {
+      this.router.navigate([one.url]);
+    }
+  }
+
+}
+</code></pre>
+<h2 id="">等有时间补上完整的文章！</h2>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+

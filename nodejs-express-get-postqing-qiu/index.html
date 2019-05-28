@@ -1,0 +1,260 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../assets/css/main.css?v=5e892d17e0" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=5e892d17e0">
+    <link rel="stylesheet" href="https://highlightjs.org/static/demo/styles/github.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.6/highlight.min.js"></script>
+    
+
+    <title></title>
+     <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="无根树の博客">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="在Node.js中的GET和POST请求使用Express">
+    <meta property="og:description" content="在本教程中，我们将学习如何使用Express在Node.js中处理GET和POST请求，还使用了Mysql从数据库中读取和发布 安装依赖 Express 4 Body parser Mysql 我们创建一个package.json文件 { &amp;quot;name&amp;quot;: &amp;quot;GET-POST-Request&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;0.0.1&amp;quot;, &amp;quot;main&amp;quot;: &amp;quot;server.js&amp;quot;, &amp;quot;dependencies&amp;quot;: {         &amp;quot;express&amp;quot;: &amp;quot;^4.8.7&amp;quot;,         &amp;quot;mysql&amp;quot;:&amp;quot;^2.5.">
+    <meta property="og:url" content="http://localhost:2368/nodejs-express-get-postqing-qiu/">
+    <meta property="article:published_time" content="2016-11-30T03:39:00.000Z">
+    <meta property="article:modified_time" content="2016-11-30T03:48:04.000Z">
+    <meta property="article:tag" content="Node.js">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="在Node.js中的GET和POST请求使用Express">
+    <meta name="twitter:description" content="在本教程中，我们将学习如何使用Express在Node.js中处理GET和POST请求，还使用了Mysql从数据库中读取和发布。">
+    <meta name="twitter:url" content="http://localhost:2368/nodejs-express-get-postqing-qiu/">
+    <meta name="twitter:label2" content="Filed under">
+    <meta name="twitter:data2" content="Node.js">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "无根树の博客",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http://localhost:2368/favicon.ico",
+            "width": 60,
+            "height": 60
+        }
+    },
+    "author": {
+        "@type": "Person",
+        "name": "",
+        "url": "http://localhost:2368/author/",
+        "sameAs": []
+    },
+    "headline": "在Node.js中的GET和POST请求使用Express",
+    "url": "http://localhost:2368/nodejs-express-get-postqing-qiu/",
+    "datePublished": "2016-11-30T03:39:00.000Z",
+    "dateModified": "2016-11-30T03:48:04.000Z",
+    "keywords": "Node.js",
+    "description": "在本教程中，我们将学习如何使用Express在Node.js中处理GET和POST请求，还使用了Mysql从数据库中读取和发布 安装依赖 Express 4 Body parser Mysql 我们创建一个package.json文件 { &amp;quot;name&amp;quot;: &amp;quot;GET-POST-Request&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;0.0.1&amp;quot;, &amp;quot;main&amp;quot;: &amp;quot;server.js&amp;quot;, &amp;quot;dependencies&amp;quot;: {         &amp;quot;express&amp;quot;: &amp;quot;^4.8.7&amp;quot;,         &amp;quot;mysql&amp;quot;:&amp;quot;^2.5.",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368/"
+    }
+}
+    </script>
+
+    <script type="text/javascript" src="../public/ghost-sdk.min.js?v=5e892d17e0"></script>
+<script type="text/javascript">
+ghost.init({
+	clientId: "ghost-frontend",
+	clientSecret: "a41d73990106"
+});
+</script>
+    <meta name="generator" content="Ghost 1.20">
+    <link rel="alternate" type="application/rss+xml" title="无根树の博客" href="../rss/index.html">
+</head>
+
+<body class="post-template tag-node-js">
+
+    
+ <div class="header">
+    <div class="header-inder">
+        <nav class="site-navs">
+            <div class="site-nav-left">
+                <a class="site-nav-logo" href="../">无根树の博客</a>
+                  <ul class="nav" role="menu">
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io">首页</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/records">归档</a></li>
+    <li class="nav-" role="menuitem"><a href="https://jinzita007.github.io/tags">标签</a></li>
+    <li class="nav-github" role="menuitem"><a href="https://github.com/jinzita007">github</a></li>
+</ul>
+ 
+            </div>
+            <div class="site-nav-right">
+                <form class="form-inline my-2 my-lg-0">
+                    <input id="search-field" class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <!--<button class="btn btn-secondary my-2 my-sm-0" type="submit">搜索</button>-->
+                </form>
+            </div>
+
+        </nav>
+    </div>
+</div>
+<section id="results-main">
+    <ul id="results" class="results-search">
+    </ul>
+</section>
+    <div class="container">
+        <div class="wrap">
+            <div class="content-main">
+                 
+                <div class="content-title">
+                    <h1>在Node.js中的GET和POST请求使用Express</h1>
+                    <span class="post-main">
+                        <span class="post-time">
+                            <span class="post-meta-item-icon">
+                                <i class="fa fa-calendar-o"></i>
+                            </span>
+                            <time class="post-meta-time">2016-11-30</time>
+                        </span>  |   
+                        <span class="tags">
+                             <a href="../tag/node-js/">Node.js</a>
+                        </span>
+                    </span>
+                </div>
+                <div class="content-dec">
+                    
+                    <div class="kg-card-markdown"><blockquote>
+<p>在本教程中，我们将学习如何使用Express在Node.js中处理GET和POST请求，还使用了Mysql从数据库中读取和发布</p>
+</blockquote>
+<p>安装依赖</p>
+<ul>
+<li>Express 4</li>
+<li>Body parser</li>
+<li>Mysql</li>
+</ul>
+<p>我们创建一个package.json文件</p>
+<pre><code>{
+"name": "GET-POST-Request",
+"version": "0.0.1",
+"main": "server.js",
+"dependencies": {
+        "express": "^4.8.7",
+        "mysql":"^2.5.5",
+        "body-parser":"^1.12.0"
+    }
+}
+</code></pre>
+<p>通过终端器命令，可以安装依赖项</p>
+<pre><code>npm install
+</code></pre>
+<p>注意：如果在本地工作，必须安装Mysql服务</p>
+<p>首先包括require模块和http服务器，此外我们已经完成了Mysql的GET和POST数据的连接。</p>
+<p>在终端器命令：</p>
+<pre><code>touch server.js
+</code></pre>
+<pre><code>var app   = require('express')(); // Express App include
+var http = require('http').Server(app); // http server
+var mysql = require('mysql'); // Mysql include
+var bodyParser = require("body-parser"); // Body parser for fetch posted data
+var connection = mysql.createConnection({ // Mysql Connection
+        host     : 'localhost',
+        user     : 'root',
+        password : '',
+        database : 'abc',
+    });
+app.use(bodyParser.urlencoded({ extended: false })); 
+app.use(bodyParser.json()); // Body parser use JSON data
+</code></pre>
+<p>在GET请求中，我们基本是从数据库获取数据，并显示为json格式</p>
+<pre><code>app.get('/fetchdata',function(req,res){
+    var data = {
+        "Data":""
+    };
+    
+    connection.query("SELECT * from testing",function(err, rows, fields){
+        if(rows.length != 0){
+            data["Data"] = rows;
+            res.json(data);
+        }else{
+            data["Data"] = 'No data Found..';
+            res.json(data);
+        }
+    });
+});
+</code></pre>
+<p>使用app.get(“/url”,function)的时候，我们可以做URL路由，并根据需要获取数据</p>
+<p>在connection.query(“Query”,function)中，将用于写入查询和在回调获得所需的数据，可以看到上面的代码</p>
+<pre><code>app.post('/login',function(req,res){
+    var email = req.body.email;
+    var pass = req.body.password;
+    var data = {
+        "Data":""
+    };
+    connection.query("SELECT * from login WHERE email=? and password=? LIMIT 1",[email,pass],function(err, rows, fields){
+        if(rows.length != 0){
+            data["Data"] = "Successfully logged in..";
+            res.json(data);
+        }else{
+            data["Data"] = "Email or password is incorrect.";
+            res.json(data);
+        }
+    });
+});
+</code></pre>
+<p>使用app.post(“/url”,function)中，我们可以做URL路由，并根据需要获取或发布数据</p>
+<p>首先将通过使用“req.body”（即：req.body.email＆req.body.password）获取发布的数据。</p>
+<p>现在使用查询中的数据来检查用户是否存在，并请求返回响应</p>
+<p>然后通过在终端中键入以下命令安装所有必需的依赖关系（即express，express-session和body-parser）</p>
+<pre><code>npm install
+</code></pre>
+<p>现在，使用以下命令运行服务器</p>
+<pre><code>node server.js
+</code></pre>
+<p>在浏览器输入localhost:8080中可以看到内容</p>
+<p>参考资料：</p>
+<p><a href="https://code.ciphertrick.com/2015/02/25/get-post-requests-in-node-js-using-express-4/">https://code.ciphertrick.com/2015/02/25/get-post-requests-in-node-js-using-express-4/</a></p>
+</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+   
+    </script> 
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.2.0/jquery.min.js"></script>
+<script src="../assets/js/jquery.ghostHunter.js?v=5e892d17e0" type="text/javascript"></script>
+<script>
+
+    //实时监听input框输入值并增加搜索
+    var input = document.getElementById('search-field');
+    $("#search-field").ghostHunter({
+        results: "#results",
+        onKeyUp: true,
+        displaySearchInfo: false,
+        before: function () {
+            input.oninput = function () {
+                //如果输入值为空时，列表内容就显示出来
+                if (input.value === '') {
+                    //console.log(input.value);
+                    $(".wrap-active").removeClass("results-hide");
+                } else {
+                    //如果输入值为有字符，列表内容就隐藏
+                    //console.log(input.value);
+                    $(".wrap-active").addClass("results-hide");
+                }
+            }
+        }
+    });
+
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
